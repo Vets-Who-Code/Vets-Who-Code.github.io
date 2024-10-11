@@ -2,8 +2,11 @@ site_name: Vets Who Code Playbook
 
 nav:
   - Home: index.md
-  - About: about.md
-  - Contact: contact.md
+
 
 theme:
   name: "readthedocs"
+
+# Link to the custom CSS
+extra_css:
+  - css/custom.css
