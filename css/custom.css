@@ -1,0 +1,136 @@
+/* Global Styles */
+body {
+  font-family: 'Gotham', sans-serif;  /* Custom Gotham font */
+  color: #091f40;  /* Navy Blue for text */
+  background-color: #ffffff;  /* White background */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #091f40;  /* Navy Blue background */
+  color: #ffffff;  /* White text */
+  padding: 20px;
+  text-align: center;
+}
+
+/* Logo styling */
+.logo {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  background-color: #ffffff;  /* White background for logo */
+  border-radius: 50%;  /* Circle logo container */
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #ffffff;  /* White text for navigation links */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Main Content */
+main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Headlines */
+h1, h2, h3 {
+  font-family: 'Gotham Bold', sans-serif;  /* Bold headlines */
+  color: #c5203e;  /* Red for headlines */
+  margin-bottom: 20px;
+}
+
+/* Body Text */
+p {
+  font-family: 'Gotham Book', sans-serif;
+  font-weight: 400;  /* Regular weight for body text */
+  color: #091f40;  /* Navy Blue for body text */
+  margin-bottom: 20px;
+}
+
+/* Captions */
+.caption {
+  font-family: 'Gotham Book Italic', sans-serif;  /* Italic for captions */
+  font-style: italic;
+  color: #091f40;  /* Navy Blue for captions */
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.button {
+  background-color: #c5203e;  /* Red background for buttons */
+  color: #ffffff;  /* White text */
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #091f40;  /* Navy Blue on hover */
+  color: #ffffff;  /* Keep white text */
+}
+
+/* Customize the sidebar */
+.wy-nav-side {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 2em;
+  width: 300px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  min-height: 100%;
+  color: #ffffff;  /* Change text color to white */
+  background: #091f40;  /* Navy blue background */
+  z-index: 200;
+}
+
+/* Customize the sidebar links */
+.wy-nav-side ul li a {
+  color: #ffffff;  /* Change link text color to white */
+}
+
+.wy-nav-side ul li a:hover {
+  color: #c5203e;  /* Change link color to red on hover */
+}
+
+/* Footer */
+footer {
+  background-color: #091f40;  /* Navy Blue background */
+  color: #ffffff;  /* White text */
+  padding: 20px;
+  text-align: center;
+}
