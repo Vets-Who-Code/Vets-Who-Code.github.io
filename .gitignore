@@ -1,0 +1,27 @@
+# Virtual environment directory
+env/
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# MkDocs build directory
+site/
+
+# System-specific files
+.DS_Store
+Thumbs.db
+
+# Editor or IDE settings (optional, depending on what you're using)
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Mac specific files
+.DS_Store
