@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Command Line Basics SOP - Vets Who Code SOP's</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Command Line Basics SOP";
+        var mkdocs_page_input_path = "command-line-basics.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Vets Who Code SOP's
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Vets Who Code SOP's</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Command Line Basics SOP</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="command-line-basics-sop">Command Line Basics SOP</h1>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>This Standard Operating Procedure (SOP) outlines the fundamental commands and techniques for effective command line usage. Mastering these basics is crucial for efficient system navigation, file management, and maintaining operational security in a digital environment.</p>
+<h2 id="2-navigating-directories">2. Navigating Directories</h2>
+<h3 id="21-essential-navigation-commands">2.1 Essential Navigation Commands</h3>
+<h4 id="211-pwd-print-working-directory">2.1.1 pwd (Print Working Directory)</h4>
+<p>Confirms your current location in the file system.</p>
+<pre><code class="language-bash">pwd
+</code></pre>
+<h4 id="212-cd-change-directory">2.1.2 cd (Change Directory)</h4>
+<p>Primary command for moving between directories.
+- Move to home directory: <code>cd</code> or <code>cd ~</code>
+- Move to previous directory: <code>cd -</code>
+- Move up one level: <code>cd ..</code>
+- Move to specific directory: <code>cd /path/to/directory</code></p>
+<h4 id="213-ls-list">2.1.3 ls (List)</h4>
+<p>Provides reconnaissance on directory contents.
+- Basic listing: <code>ls</code>
+- Detailed listing: <code>ls -l</code>
+- Show hidden files: <code>ls -a</code>
+- Detailed listing with hidden files: <code>ls -la</code>
+- Sort by size: <code>ls -S</code></p>
+<h4 id="214-tree">2.1.4 tree</h4>
+<p>Offers a hierarchical view of the directory structure.
+- Limited depth view: <code>tree -L 2</code>
+- Directory-only view: <code>tree -d</code></p>
+<h3 id="22-advanced-navigation-techniques">2.2 Advanced Navigation Techniques</h3>
+<ul>
+<li>Use tab completion to auto-complete file and directory names.</li>
+<li>Utilize the up and down arrow keys to navigate command history.</li>
+<li>Create aliases for frequently used commands to enhance efficiency.</li>
+</ul>
+<h2 id="3-file-operations">3. File Operations</h2>
+<h3 id="31-basic-file-management">3.1 Basic File Management</h3>
+<h4 id="311-cp-copy">3.1.1 cp (Copy)</h4>
+<p>Copies files or directories.</p>
+<pre><code class="language-bash">cp source_file target_file
+cp -R source_directory target_directory
+</code></pre>
+<h4 id="312-mv-move">3.1.2 mv (Move)</h4>
+<p>Moves or renames files and directories.</p>
+<pre><code class="language-bash">mv old_filename new_filename
+mv file_to_move target_directory/
+</code></pre>
+<h4 id="313-rm-remove">3.1.3 rm (Remove)</h4>
+<p>Deletes files or directories.</p>
+<pre><code class="language-bash">rm filename
+rm -r directory_name
+rm -i filename  # Interactive mode, asks for confirmation
+</code></pre>
+<h4 id="314-touch">3.1.4 touch</h4>
+<p>Creates new empty files or updates file timestamps.</p>
+<pre><code class="language-bash">touch new_file
+</code></pre>
+<h4 id="315-mkdir-make-directory">3.1.5 mkdir (Make Directory)</h4>
+<p>Creates new directories.</p>
+<pre><code class="language-bash">mkdir new_directory
+mkdir -p parent_directory/new_directory
+</code></pre>
+<h3 id="32-advanced-file-operations">3.2 Advanced File Operations</h3>
+<h4 id="321-find">3.2.1 find</h4>
+<p>Searches for files and directories based on various criteria.</p>
+<pre><code class="language-bash">find /path/to/search -name &quot;filename&quot;
+find ~ -name &quot;*.txt&quot;  # Find all .txt files in home directory
+</code></pre>
+<h4 id="322-locate">3.2.2 locate</h4>
+<p>Quickly searches for files using a pre-built database.</p>
+<pre><code class="language-bash">locate filename
+sudo updatedb  # Update the database
+</code></pre>
+<h2 id="4-working-with-wildcards">4. Working with Wildcards</h2>
+<p>Wildcards enhance precision and efficiency in file operations.</p>
+<h3 id="41-asterisk">4.1 Asterisk (*)</h3>
+<p>Matches zero or more characters.</p>
+<pre><code class="language-bash">ls *.jpg  # Lists all JPEG files
+</code></pre>
+<h3 id="42-question-mark">4.2 Question Mark (?)</h3>
+<p>Matches exactly one character.</p>
+<pre><code class="language-bash">ls report_?.txt  # Matches report_1.txt, report_2.txt, but not report_10.txt
+</code></pre>
+<h3 id="43-square-brackets">4.3 Square Brackets ([])</h3>
+<p>Matches any single character within the brackets.</p>
+<pre><code class="language-bash">ls [a-c]*.txt  # Lists files starting with a, b, or c and ending with .txt
+</code></pre>
+<h3 id="44-curly-braces">4.4 Curly Braces ({})</h3>
+<p>Specifies multiple discrete patterns.</p>
+<pre><code class="language-bash">ls {*.txt,*.pdf}  # Lists all text and PDF files
+</code></pre>
+<h2 id="5-managing-permissions">5. Managing Permissions</h2>
+<p>Proper permission management is crucial for system security.</p>
+<h3 id="51-chmod-change-mode">5.1 chmod (Change Mode)</h3>
+<p>Adjusts file and directory permissions.</p>
+<pre><code class="language-bash">chmod u+x file.txt  # Adds execute permission for the owner
+chmod 755 script.sh  # Sets rwxr-xr-x permissions
+</code></pre>
+<h3 id="52-chown-change-owner">5.2 chown (Change Owner)</h3>
+<p>Transfers file or directory ownership.</p>
+<pre><code class="language-bash">chown user:group file.txt
+</code></pre>
+<h3 id="53-chgrp-change-group">5.3 chgrp (Change Group)</h3>
+<p>Modifies the group ownership of files or directories.</p>
+<pre><code class="language-bash">chgrp team project/
+</code></pre>
+<h3 id="54-umask">5.4 umask</h3>
+<p>Sets default creation permissions for new files and directories.</p>
+<pre><code class="language-bash">umask 022  # Sets default permissions to 644 for files and 755 for directories
+</code></pre>
+<h2 id="6-disk-and-directory-usage">6. Disk and Directory Usage</h2>
+<h3 id="61-df-disk-free">6.1 df (Disk Free)</h3>
+<p>Displays disk space usage.</p>
+<pre><code class="language-bash">df -h  # Human-readable format
+</code></pre>
+<h3 id="62-du-disk-usage">6.2 du (Disk Usage)</h3>
+<p>Estimates space used by directories and files.</p>
+<pre><code class="language-bash">du -sh /path/to/directory
+</code></pre>
+<h2 id="7-summary">7. Summary</h2>
+<p>Mastering these command line basics provides a solid foundation for efficient system management and navigation. Regular practice and application of these commands will enhance your operational capabilities in a digital environment. Remember, the command line is your primary interface for precise control and management of your system resources.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

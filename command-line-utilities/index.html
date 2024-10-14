@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Command Line Utilities SOP - Vets Who Code SOP's</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Command Line Utilities SOP";
+        var mkdocs_page_input_path = "command-line-utilities.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Vets Who Code SOP's
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Vets Who Code SOP's</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Command Line Utilities SOP</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="command-line-utilities-sop">Command Line Utilities SOP</h1>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>This Standard Operating Procedure (SOP) outlines essential command line utilities that enhance productivity and efficiency in various tech-related tasks. These tools are crucial for data transfer, file compression, network management, package management, system monitoring, and user administration. Mastering these utilities will significantly improve your command line proficiency and overall system management capabilities.</p>
+<h2 id="2-data-transfer">2. Data Transfer</h2>
+<h3 id="21-scp-secure-copy-protocol">2.1 scp (Secure Copy Protocol)</h3>
+<p>Securely transfer files between systems using SSH.</p>
+<pre><code class="language-bash">scp -P 2222 user@remote:/path/to/file /local/directory
+scp -r user@remote:/directory/ /local/directory
+</code></pre>
+<h3 id="22-rsync-remote-sync">2.2 rsync (Remote Sync)</h3>
+<p>Efficiently synchronize files and directories between systems.</p>
+<pre><code class="language-bash">rsync -avz user@remote:/source /local/destination
+rsync -av --exclude 'path/to/exclude' /source /destination
+rsync --bwlimit=1000 /source /destination
+</code></pre>
+<h3 id="23-wget-web-get">2.3 wget (Web Get)</h3>
+<p>Retrieve files from web servers.</p>
+<pre><code class="language-bash">wget -b url
+wget --retry-connrefused --waitretry=10 --timeout=60 url
+</code></pre>
+<h3 id="24-ftp-file-transfer-protocol">2.4 ftp (File Transfer Protocol)</h3>
+<p>Basic file transfer for non-secure data movements.</p>
+<pre><code class="language-bash">ftp -p host
+ftp -s:script.txt host
+</code></pre>
+<h2 id="3-file-compression">3. File Compression</h2>
+<h3 id="31-zip">3.1 zip</h3>
+<p>Package and compress files for easy sharing and storage.</p>
+<pre><code class="language-bash">zip archive.zip -r target_folder/ -x \*exclude_pattern\*
+zip -u archive.zip updated_file.txt
+</code></pre>
+<h3 id="32-tar">3.2 tar</h3>
+<p>Bundle files and directories efficiently.</p>
+<pre><code class="language-bash">tar --listed-incremental=snapshot.file -cvzf backup.tar.gz target_directory/
+tar czf - target_directory/ | ssh user@remote &quot;cat &gt; remote_backup.tar.gz&quot;
+</code></pre>
+<h3 id="33-gzip">3.3 gzip</h3>
+<p>Maximize compression ratios for faster transfers.</p>
+<pre><code class="language-bash">gzip -S .custom_suffix large_file
+cat archive_part1.gz archive_part2.gz &gt; combined_archive.gz
+</code></pre>
+<h3 id="34-bzip2">3.4 bzip2</h3>
+<p>Provide superior compression efficiency for large-scale archival.</p>
+<pre><code class="language-bash">bzip2 -dc archive.bz2 &gt; output_file
+pbzip2 -p4 massive_file
+</code></pre>
+<h2 id="4-network-tools">4. Network Tools</h2>
+<h3 id="41-ping">4.1 ping</h3>
+<p>Test connectivity and measure round-trip time to a host.</p>
+<pre><code class="language-bash">ping -c 4 google.com
+</code></pre>
+<h3 id="42-ssh-secure-shell">4.2 ssh (Secure Shell)</h3>
+<p>Securely access and execute commands on remote machines.</p>
+<pre><code class="language-bash">ssh -p port user@hostname
+ssh -i ~/.ssh/mykey user@192.168.1.100
+</code></pre>
+<h2 id="5-package-management">5. Package Management</h2>
+<h3 id="51-apt-advanced-package-tool">5.1 apt (Advanced Package Tool)</h3>
+<p>Manage software on Debian-based systems.</p>
+<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt upgrade -y
+echo &quot;package_name hold&quot; | sudo dpkg --set-selections
+</code></pre>
+<h3 id="52-brew-homebrew">5.2 brew (Homebrew)</h3>
+<p>Package management for macOS.</p>
+<pre><code class="language-bash">brew tap custom/repo
+brew services start service_name
+</code></pre>
+<h3 id="53-yum-yellowdog-updater-modified">5.3 yum (Yellowdog Updater, Modified)</h3>
+<p>Manage RPM packages on Red Hat-based systems.</p>
+<pre><code class="language-bash">yum history
+yum --enablerepo=repo_name install package_name
+</code></pre>
+<h3 id="54-dpkg-debian-package">5.4 dpkg (Debian Package)</h3>
+<p>Low-level package management for Debian-based systems.</p>
+<pre><code class="language-bash">dpkg-query -l
+dpkg-reconfigure package_name
+</code></pre>
+<h2 id="6-system-information-tools">6. System Information Tools</h2>
+<h3 id="61-uname">6.1 uname</h3>
+<p>Display system information.</p>
+<pre><code class="language-bash">uname -a  # Display all information
+uname -s  # Display kernel name
+uname -r  # Display kernel release
+</code></pre>
+<h3 id="62-lscpu">6.2 lscpu</h3>
+<p>Display CPU architecture information.</p>
+<pre><code class="language-bash">lscpu
+lscpu | grep Virtualization  # Check virtualization support
+</code></pre>
+<h3 id="63-lshw">6.3 lshw</h3>
+<p>Display detailed hardware information.</p>
+<pre><code class="language-bash">sudo lshw -short  # Display brief hardware summary
+sudo lshw -C network  # Display network hardware details
+</code></pre>
+<h3 id="64-dmesg">6.4 dmesg</h3>
+<p>Display kernel messages.</p>
+<pre><code class="language-bash">dmesg -Tw  # Display kernel messages in real-time with timestamps
+</code></pre>
+<h2 id="7-system-monitoring">7. System Monitoring</h2>
+<h3 id="71-top">7.1 top</h3>
+<p>Monitor system processes and resource usage in real-time.</p>
+<pre><code class="language-bash">top -b -n 1 &gt; top_output.txt  # Capture a snapshot of system state
+top -p PID1,PID2  # Monitor specific processes
+</code></pre>
+<h3 id="72-htop">7.2 htop</h3>
+<p>Interactive process viewer and system monitor.</p>
+<pre><code class="language-bash">htop -u username  # Monitor processes for a specific user
+htop --output-setup-json &gt; setup.json  # Export htop configuration
+</code></pre>
+<h3 id="73-iostat">7.3 iostat</h3>
+<p>Report CPU statistics and I/O statistics for devices and partitions.</p>
+<pre><code class="language-bash">iostat -d /dev/sda  # Display I/O statistics for a specific device
+iostat -e  # Display extended statistics
+</code></pre>
+<h3 id="74-vmstat">7.4 vmstat</h3>
+<p>Report virtual memory statistics.</p>
+<pre><code class="language-bash">vmstat -d  # Display disk statistics
+vmstat -e  # Display event counter information
+</code></pre>
+<h2 id="8-user-and-group-management">8. User and Group Management</h2>
+<h3 id="81-useradd">8.1 useradd</h3>
+<p>Create a new user account.</p>
+<pre><code class="language-bash">useradd -m -d /home/jdoe -e 2023-12-31 jdoe  # Create user with home directory and expiration date
+</code></pre>
+<h3 id="82-groupadd">8.2 groupadd</h3>
+<p>Create a new group.</p>
+<pre><code class="language-bash">groupadd -r -g 101 developers  # Create a system group with specific GID
+</code></pre>
+<h3 id="83-sudo">8.3 sudo</h3>
+<p>Execute a command as another user, typically with administrative privileges.</p>
+<pre><code class="language-bash">sudo -u jdoe ls /home/jdoe  # Execute command as another user
+</code></pre>
+<h3 id="84-passwd">8.4 passwd</h3>
+<p>Change user password and manage account locks.</p>
+<pre><code class="language-bash">passwd -l jdoe  # Lock user account
+passwd -u jdoe  # Unlock user account
+</code></pre>
+<h2 id="9-best-practices">9. Best Practices</h2>
+<ol>
+<li>Always verify the integrity of transferred data.</li>
+<li>Use compression to reduce bandwidth usage and storage requirements.</li>
+<li>Regularly update package lists and installed software to ensure security.</li>
+<li>Exercise caution when removing packages to avoid unintended consequences.</li>
+<li>Use SSH keys for secure, passwordless authentication when accessing remote systems.</li>
+<li>Implement rate limiting and throttling for large data transfers to avoid network congestion.</li>
+<li>Choose the appropriate compression algorithm based on the specific requirements of speed, size, and computational resources.</li>
+<li>Regularly review and update SSH keys to maintain security.</li>
+<li>Regularly monitor system performance and resource usage to identify and address issues proactively.</li>
+<li>Use system information tools to gather detailed hardware and software information for troubleshooting and inventory management.</li>
+<li>Implement proper user and group management practices to enhance system security and organization.</li>
+<li>Utilize sudo instead of switching to the root user for better security and accountability.</li>
+<li>Regularly review and update user accounts, removing or disabling unnecessary accounts to maintain system security.</li>
+</ol>
+<h2 id="10-summary">10. Summary</h2>
+<p>Mastering these command line utilities provides a comprehensive toolkit for efficient system management, data handling, network operations, system monitoring, and user management. From secure file transfers and compression to network diagnostics, package management, and system performance analysis, these tools form the backbone of effective command line operations. </p>
+<p>The ability to gather detailed system information, monitor performance in real-time, and manage users and groups effectively are crucial skills for system administrators and power users. By incorporating these utilities into your workflow, you can significantly enhance your ability to manage, troubleshoot, and optimize Linux systems.</p>
+<p>Regular practice and application of these utilities will significantly enhance your proficiency in various tech-related roles, from system administration to software development and cybersecurity.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Getting to Know the Command Line - Vets Who Code SOP's</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Getting to Know the Command Line";
+        var mkdocs_page_input_path = "getting-to-know-the-command-line.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Vets Who Code SOP's
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Vets Who Code SOP's</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Getting to Know the Command Line</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="getting-to-know-the-command-line">Getting to Know the Command Line</h1>
+<h2 id="introduction">Introduction</h2>
+<p>The command line interface (CLI) is a powerful tool that allows users to interact directly with their computer's operating system through text-based commands. Despite the prevalence of graphical user interfaces (GUIs), the command line remains an essential skill for developers, system administrators, and power users. This guide will introduce you to the world of command-line interfaces, explain their importance, and help you understand the key components involved.</p>
+<h2 id="what-is-the-command-line">What is the Command Line?</h2>
+<p>The command line, or CLI, is an environment where users can input text commands to perform specific tasks on a computer. Unlike GUIs, which use visual elements for interaction, the CLI relies entirely on textual input and output.</p>
+<h3 id="historical-context">Historical Context</h3>
+<p>Originating in the 1960s, the command line predates graphical interfaces, offering an advanced method of computer interaction. This era of computing required users to engage directly with the system through typed commands, a significant evolution from punch cards and manual input methods.</p>
+<h2 id="why-use-the-command-line">Why Use the Command Line?</h2>
+<p>Despite the user-friendliness of modern GUIs, the command line offers several compelling advantages:</p>
+<ol>
+<li><strong>Speed</strong>: Execute commands and manage system resources quickly, bypassing graphical overhead.</li>
+<li><strong>Versatility</strong>: Perform complex operations that might be cumbersome or impossible through a GUI.</li>
+<li><strong>Automation</strong>: Write scripts to automate tasks, saving time and reducing human error.</li>
+<li><strong>Remote Management</strong>: Access and control remote systems without needing a graphical interface.</li>
+</ol>
+<p>These benefits make the CLI an invaluable tool for various tech-related fields, including software development, system administration, and data science.</p>
+<h2 id="understanding-terminals-and-shells">Understanding Terminals and Shells</h2>
+<p>To effectively use the command line, it's crucial to understand two key components: terminals and shells.</p>
+<h3 id="terminal-emulators">Terminal Emulators</h3>
+<p>A terminal emulator is a software application that provides a graphical interface for interacting with the shell. It simulates the functionality of traditional hardware terminals within modern desktop environments.</p>
+<p>Popular terminal emulators include:</p>
+<ul>
+<li><strong>Hyper</strong>: Cross-platform, built with web technologies, and highly extensible.</li>
+<li><strong>iTerm2</strong>: Feature-rich terminal for macOS with advanced customization options.</li>
+<li><strong>PuTTY</strong>: Commonly used in Windows environments, supporting various network protocols.</li>
+</ul>
+<h3 id="shells">Shells</h3>
+<p>The shell acts as an interpreter, executing user commands and managing communication between the user and the kernel. It provides a scripting language and executes system commands and scripts.</p>
+<p>Common shell types include:</p>
+<ul>
+<li><strong>Bash (Bourne-Again SHell)</strong>: The default shell in many Linux distributions and older macOS versions.</li>
+<li><strong>Zsh (Z Shell)</strong>: The default shell in newer macOS versions, known for its customizability.</li>
+<li><strong>Fish (Friendly Interactive SHell)</strong>: Focused on user-friendliness with features like autosuggestions.</li>
+<li><strong>Dash (Debian Almquist Shell)</strong>: Prioritizes efficiency and speed, often used for system-level scripting.</li>
+</ul>
+<h2 id="key-differences-terminal-vs-shell">Key Differences: Terminal vs. Shell</h2>
+<p>While often mentioned together, terminals and shells serve distinct roles:</p>
+<ul>
+<li><strong>Terminal</strong>: Provides the user interface for command input and system feedback.</li>
+<li><strong>Shell</strong>: Interprets and executes the commands entered in the terminal.</li>
+</ul>
+<p>Understanding this distinction helps clarify the layers of interaction in command-line usage.</p>
+<h2 id="getting-started-with-the-command-line">Getting Started with the Command Line</h2>
+<p>To begin using the command line:</p>
+<ol>
+<li>Open your system's terminal emulator (e.g., Terminal on macOS, Command Prompt on Windows).</li>
+<li>Familiarize yourself with basic commands like <code>ls</code> (list files), <code>cd</code> (change directory), and <code>pwd</code> (print working directory).</li>
+<li>Experiment with command options and arguments to modify their behavior.</li>
+<li>Learn about your system's default shell and consider exploring alternatives that might better suit your needs.</li>
+</ol>
+<h2 id="customization-and-productivity-tips">Customization and Productivity Tips</h2>
+<p>Enhance your command-line experience with these tips:</p>
+<ul>
+<li>Customize your terminal's appearance with themes and color schemes.</li>
+<li>Learn keyboard shortcuts to navigate and edit commands more efficiently.</li>
+<li>Explore shell plugins and extensions to add functionality.</li>
+<li>Practice scripting to automate repetitive tasks.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>The command line is a powerful tool that offers speed, versatility, and control over your computing environment. By understanding the roles of terminals and shells and learning to navigate the CLI effectively, you can significantly enhance your productivity and capabilities in various tech-related fields. Whether you're a beginner or looking to deepen your skills, mastering the command line is a valuable investment in your technical toolkit.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

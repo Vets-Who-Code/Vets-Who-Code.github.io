@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Advanced Command Line Features SOP - Vets Who Code SOP's</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Advanced Command Line Features SOP";
+        var mkdocs_page_input_path = "advanced-command-line-features.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Vets Who Code SOP's
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Vets Who Code SOP's</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Advanced Command Line Features SOP</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="advanced-command-line-features-sop">Advanced Command Line Features SOP</h1>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>This Standard Operating Procedure (SOP) outlines advanced command line features and techniques that enhance productivity and efficiency for software engineers, writers, instructors, and other tech professionals. These advanced features include shell scripting basics, environmental variables, aliases and shortcuts, command history manipulation, job control, and task scheduling.</p>
+<h2 id="2-shell-scripting-basics">2. Shell Scripting Basics</h2>
+<p>Shell scripting allows for automation of complex tasks and repetitive operations.</p>
+<h3 id="21-creating-a-shell-script">2.1 Creating a Shell Script</h3>
+<ol>
+<li>Create a new file with a <code>.sh</code> extension.</li>
+<li>Add the shebang line at the top: <code>#!/bin/bash</code></li>
+<li>Make the script executable: <code>chmod +x script.sh</code></li>
+</ol>
+<h3 id="22-syntax">2.2 Syntax</h3>
+<h4 id="variables">Variables</h4>
+<pre><code class="language-bash">variable_name=value
+my_var=&quot;Hello, World&quot;
+</code></pre>
+<h4 id="conditional-statements">Conditional Statements</h4>
+<pre><code class="language-bash">if [ &quot;$variable_one&quot; -gt &quot;$variable_two&quot; ]; then
+  echo &quot;Variable one is greater&quot;
+elif [ &quot;$variable_one&quot; -eq &quot;$variable_two&quot; ]; then
+  echo &quot;Variables are equal&quot;
+else
+  echo &quot;Variable two is greater&quot;
+fi
+</code></pre>
+<h4 id="loops">Loops</h4>
+<p>For Loop:</p>
+<pre><code class="language-bash">for i in {1..10}; do
+  echo $i
+done
+</code></pre>
+<p>While Loop:</p>
+<pre><code class="language-bash">count=0
+while [ $count -lt 10 ]; do
+  echo $count
+  ((count++))
+done
+</code></pre>
+<h3 id="23-structure">2.3 Structure</h3>
+<h4 id="shebang">Shebang</h4>
+<pre><code class="language-bash">#!/bin/bash
+</code></pre>
+<h4 id="functions">Functions</h4>
+<pre><code class="language-bash">my_function() {
+  echo &quot;Hello from my_function!&quot;
+}
+
+# Call the function
+my_function
+</code></pre>
+<h3 id="24-best-practices">2.4 Best Practices</h3>
+<ul>
+<li>Use consistent indentation (2 or 4 spaces).</li>
+<li>Comment your code for clarity.</li>
+<li>Handle errors and check return codes.</li>
+</ul>
+<h3 id="25-debugging">2.5 Debugging</h3>
+<p>Basic debugging:</p>
+<pre><code class="language-bash">bash -x script.sh
+</code></pre>
+<p>Advanced debugging:</p>
+<pre><code class="language-bash">set -e  # Exit on first error
+set -u  # Treat unset variables as errors
+set +e  # Continue even if there is an error
+</code></pre>
+<h2 id="3-environmental-variables">3. Environmental Variables</h2>
+<p>Environmental variables store system-wide or user-specific configuration information.</p>
+<h3 id="31-setting-variables">3.1 Setting Variables</h3>
+<pre><code class="language-bash"># Temporary (session only)
+VARIABLE_NAME=value
+
+# Permanent (add to ~/.bashrc or ~/.bash_profile)
+echo 'export PERMANENT_VAR=&quot;I'm here to stay!&quot;' &gt;&gt; ~/.bashrc
+source ~/.bashrc
+</code></pre>
+<h3 id="32-retrieving-variables">3.2 Retrieving Variables</h3>
+<pre><code class="language-bash">echo $VARIABLE_NAME
+env  # List all environment variables
+</code></pre>
+<h3 id="33-exporting-variables">3.3 Exporting Variables</h3>
+<pre><code class="language-bash">export VARIABLE_NAME
+# Or in one line
+export VARIABLE_NAME=value
+</code></pre>
+<h3 id="34-unsetting-variables">3.4 Unsetting Variables</h3>
+<pre><code class="language-bash">unset VARIABLE_NAME
+</code></pre>
+<h2 id="4-aliases-and-shortcuts">4. Aliases and Shortcuts</h2>
+<p>Aliases allow you to create custom shortcuts for frequently used commands.</p>
+<h3 id="41-creating-aliases">4.1 Creating Aliases</h3>
+<pre><code class="language-bash"># Temporary (session only)
+alias myalias='my long command here'
+
+# Permanent (add to ~/.bashrc or ~/.zshrc)
+echo &quot;alias persist='I will survive reboots!'&quot; &gt;&gt; ~/.bashrc
+source ~/.bashrc
+</code></pre>
+<h3 id="42-common-aliases">4.2 Common Aliases</h3>
+<pre><code class="language-bash">alias ll='ls -l'
+alias la='ls -A'
+alias ..='cd ..'
+</code></pre>
+<h3 id="43-functions">4.3 Functions</h3>
+<p>For more complex operations, use functions:</p>
+<pre><code class="language-bash">myfunc() {
+  echo &quot;Doing complex stuff!&quot;
+}
+</code></pre>
+<h2 id="5-command-history">5. Command History</h2>
+<p>Command history allows you to recall and reuse previously executed commands.</p>
+<h3 id="51-navigating-history">5.1 Navigating History</h3>
+<ul>
+<li>Use Up and Down arrow keys to navigate through history.</li>
+<li><code>Ctrl+r</code>: Search backward through history.</li>
+</ul>
+<h3 id="52-repeating-commands">5.2 Repeating Commands</h3>
+<pre><code class="language-bash">!!  # Repeat the last command
+!n  # Repeat the nth command in history
+!-n  # Repeat the nth last command
+</code></pre>
+<h3 id="53-modifying-history">5.3 Modifying History</h3>
+<pre><code class="language-bash">history -c  # Clear current session's history
+history -d n  # Delete the nth command from history
+history -a  # Manually save session's history
+</code></pre>
+<h2 id="6-job-control">6. Job Control</h2>
+<p>Job control allows management of multiple processes within a single terminal session.</p>
+<h3 id="61-background-and-foreground-jobs">6.1 Background and Foreground Jobs</h3>
+<pre><code class="language-bash">command &amp;  # Start a job in the background
+Ctrl+Z  # Pause the current foreground job
+fg %n  # Bring job n to the foreground
+bg %n  # Continue job n in the background
+</code></pre>
+<h3 id="62-listing-and-managing-jobs">6.2 Listing and Managing Jobs</h3>
+<pre><code class="language-bash">jobs  # List all jobs
+kill %n  # Terminate job n
+</code></pre>
+<h3 id="63-signals">6.3 Signals</h3>
+<pre><code class="language-bash">kill -l  # List all available signals
+kill -SIGSTOP %n  # Pause job n
+kill -SIGCONT %n  # Resume job n
+kill -SIGKILL %n  # Forcefully terminate job n
+</code></pre>
+<h2 id="7-scheduling-tasks">7. Scheduling Tasks</h2>
+<p>The <code>cron</code> utility allows scheduling of recurring tasks.</p>
+<h3 id="71-editing-the-crontab">7.1 Editing the Crontab</h3>
+<pre><code class="language-bash">crontab -e
+</code></pre>
+<h3 id="72-crontab-syntax">7.2 Crontab Syntax</h3>
+<pre><code>* * * * * command_to_execute
+│ │ │ │ │
+│ │ │ │ └─── day of week (0 - 7) (Sunday = 0 or 7)
+│ │ │ └────── month (1 - 12)
+│ │ └─────────── day of month (1 - 31)
+│ └──────────────── hour (0 - 23)
+└───────────────────── minute (0 - 59)
+</code></pre>
+<h3 id="73-example-cron-job">7.3 Example Cron Job</h3>
+<pre><code>0 2 * * * /path/to/backup_script.sh
+</code></pre>
+<p>This runs the backup script every day at 2:00 AM.</p>
+<h2 id="8-best-practices">8. Best Practices</h2>
+<ol>
+<li>Use meaningful names for variables, aliases, and functions.</li>
+<li>Comment your scripts and complex commands for better readability.</li>
+<li>Be cautious when modifying system-wide environmental variables.</li>
+<li>Regularly review and clean up your command history and cron jobs.</li>
+<li>Use job control judiciously to manage system resources effectively.</li>
+<li>Test scripts and scheduled tasks thoroughly before implementation.</li>
+<li>Keep your shell configuration files (e.g., .bashrc, .zshrc) organized and well-commented.</li>
+<li>Use error handling in your scripts to make them more robust.</li>
+<li>When working with environmental variables, consider using lowercase for local variables and uppercase for exported variables to maintain clarity.</li>
+<li>Utilize shell script debugging tools like <code>set -x</code> for troubleshooting.</li>
+</ol>
+<h2 id="9-summary">9. Summary</h2>
+<p>Mastering these advanced command line features significantly enhances your ability to work efficiently in a Unix-like environment. From automating tasks with shell scripts to managing complex job workflows, these tools provide powerful capabilities for system administration, software development, and general productivity. </p>
+<p>Environmental variables offer a flexible way to configure your system and applications, while shell scripting allows you to automate complex tasks and create powerful utilities. Aliases and shortcuts streamline your workflow, and command history manipulation helps you work more efficiently. Job control gives you fine-grained management of processes, and task scheduling with cron allows for automation of recurring tasks.</p>
+<p>Regular practice and exploration of these features will continue to improve your command line proficiency. Remember to always consider security implications when working with sensitive data in scripts or environmental variables, and to document your work for future reference and collaboration.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
