@@ -67,6 +67,20 @@
                   <li class="toctree-l1 current"><a class="reference internal current" >Git</a>
     <ul class="current">
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">Git Basics</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#objectives">Objectives</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#section-1-configuring-git">Section 1: Configuring Git</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#setting-up-user-information">Setting Up User Information</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../git-and-github/">Git And Github</a>
                 </li>
@@ -102,65 +116,81 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p>Setting up Git</p>
-<p>Introduction</p>
+                <h1 id="setting-up-git">Setting up Git</h1>
+<h2 id="introduction">Introduction</h2>
 <p>This guide will walk you through the steps to properly set up Git on your machine. You will configure Git, generate SSH keys for secure authentication, set up your user identity, and, if necessary, configure a proxy for Git operations.</p>
-<p>Objectives</p>
-<p>By the end of this guide, you will:</p>
-<pre><code>•   Configure Git using the terminal.
-•   Generate SSH keys for secure communication.
-•   Set and manage your Git user identity.
-•   Configure a proxy for Git operations (if required).
-</code></pre>
-<p>Section 1: Configuring Git</p>
-<p>Setting Up User Information</p>
+<h3 id="objectives">Objectives</h3>
+<p>By the end of this guide, you will be able to:</p>
+<ul>
+<li>Configure Git using the terminal.</li>
+<li>Generate SSH keys for secure communication.</li>
+<li>Set and manage your Git user identity.</li>
+<li>Configure a proxy for Git operations (if required).</li>
+</ul>
+<hr />
+<h2 id="section-1-configuring-git">Section 1: Configuring Git</h2>
+<h3 id="setting-up-user-information">Setting Up User Information</h3>
 <p>To personalize your Git environment, configure your username and email. This information will be attached to every commit you make.</p>
 <p>Use the following commands:</p>
-<p>git config --global user.name "Your Name"
+<p>```bash
+git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"</p>
 <p>Verifying Configuration</p>
-<p>To check your current settings, use:</p>
-<p>git config --list</p>
-<p>Task: Set your username and email, then verify the configuration using the above command.</p>
+<p>To check your current settings, use:
+```bash
+git config --list</p>
+<p>Task:
+Set your username and email, then verify the configuration using the above command.</p>
 <p>Section 2: Generating SSH Keys</p>
 <p>SSH keys provide secure access to Git services (like GitHub or GitLab), allowing you to interact with remote repositories without entering your password every time.</p>
 <p>Generating an SSH Key</p>
 <p>Run the following command in your terminal:</p>
-<p>ssh-keygen -t rsa -b 4096</p>
+<p>```bash
+ssh-keygen -t rsa -b 4096</p>
 <p>Follow the prompts and press Enter to accept the default file location.</p>
 <p>Adding SSH Key to GitHub/GitLab</p>
 <p>Once the key is generated:</p>
-<pre><code>1.  Copy the public key to your clipboard:
-</code></pre>
-<p>cat ~/.ssh/id_rsa.pub</p>
-<pre><code>2.  Go to your GitHub or GitLab account settings.
-3.  Navigate to SSH and GPG keys and paste the key.
-</code></pre>
-<p>Task: Generate an SSH key and add it to your GitHub or GitLab account.</p>
+<ul>
+<li>Copy the public key to your clipboard:</li>
+</ul>
+<p>```bash
+cat ~/.ssh/id_rsa.pub</p>
+<ul>
+<li>Go to your GitHub or GitLab account settings.</li>
+<li>Navigate to SSH and GPG keys and paste the key.</li>
+</ul>
+<p>Task:
+Generate an SSH key and add it to your GitHub or GitLab account.</p>
 <p>Section 3: Proxy Configuration (Optional)</p>
 <p>If you’re working behind a corporate firewall or restricted network, you may need to configure Git to use a proxy.</p>
 <p>Setting Up a Proxy</p>
 <p>To set up a proxy, run:</p>
-<p>git config --global http.proxy http://proxy.example.com:8080</p>
+<p>```bash
+git config --global http.proxy http://proxy.example.com:8080</p>
 <p>Replace proxy.example.com:8080 with your actual proxy details.</p>
 <p>Verifying Proxy Configuration</p>
 <p>To confirm the proxy is set up correctly:</p>
-<p>git config --global http.proxy</p>
-<p>Task: If needed, configure your proxy settings and verify them using the above commands.</p>
+<p>```bash
+git config --global http.proxy</p>
+<p>Task:
+If needed, configure your proxy settings and verify them using the above commands.</p>
 <p>Practical Exercise</p>
 <p>Follow these steps to complete your setup:</p>
-<pre><code>1.  Configure Git with your username and email.
-2.  Generate an SSH key and add it to your GitHub or GitLab account.
-3.  If necessary, set up a proxy.
+<pre><code>-   Configure Git with your username and email.
+-   Generate an SSH key and add it to your GitHub or GitLab account.
+-   If necessary, set up a proxy.
 </code></pre>
 <p>Verify your configuration with:</p>
-<p>git config --list</p>
+<p>```bash
+git config --list</p>
 <p>Additional Resources</p>
-<pre><code>•   Official Git Documentation
-•   GitHub SSH Key Setup Guide
-•   Git Configuration Best Practices
-</code></pre>
+<ul>
+<li>Official Git Documentation</li>
+<li>GitHub SSH Key Setup Guide</li>
+<li>Git Configuration Best Practices</li>
+</ul>
 <p>With these steps completed, Git is now properly configured on your machine, and you’re ready to start working with version control.</p>
+<p>This format is designed for an MkDocs-based project, with clear sections and tasks. Let me know if you'd like to make any further adjustments!</p>
               
             </div>
           </div><footer>
