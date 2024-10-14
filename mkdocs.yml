@@ -13,7 +13,6 @@ nav:
       - Git Basics: basics-of-git.md
       - Git And Github: git-and-github.md
       - Git Flow: git-flow.md
-      - Github Workflow: git-flow.md
       - Github CLI: github-cli.md
 
 theme:
