@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Command Line Basics SOP - Vets Who Code SOP's</title>
+    <title>Command Line Basics - Vets Who Code SOP's</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Command Line Basics SOP";
+        var mkdocs_page_name = "Command Line Basics";
         var mkdocs_page_input_path = "command-line-basics.md";
         var mkdocs_page_url = null;
       </script>
@@ -44,6 +44,112 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../code-of-conduct/">Code Of Conduct</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../getting-to-know-the-command-line/">Command Line</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Command Line Basics</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-introduction">1. Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-navigating-directories">2. Navigating Directories</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#21-essential-navigation-commands">2.1 Essential Navigation Commands</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#211-pwd-print-working-directory">2.1.1 pwd (Print Working Directory)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#212-cd-change-directory">2.1.2 cd (Change Directory)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#213-ls-list">2.1.3 ls (List)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#214-tree">2.1.4 tree</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#22-advanced-navigation-techniques">2.2 Advanced Navigation Techniques</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-file-operations">3. File Operations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#31-basic-file-management">3.1 Basic File Management</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#311-cp-copy">3.1.1 cp (Copy)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#312-mv-move">3.1.2 mv (Move)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#313-rm-remove">3.1.3 rm (Remove)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#314-touch">3.1.4 touch</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#315-mkdir-make-directory">3.1.5 mkdir (Make Directory)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#32-advanced-file-operations">3.2 Advanced File Operations</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#321-find">3.2.1 find</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#322-locate">3.2.2 locate</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-working-with-wildcards">4. Working with Wildcards</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#41-asterisk">4.1 Asterisk (*)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#42-question-mark">4.2 Question Mark (?)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#43-square-brackets">4.3 Square Brackets ([])</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#44-curly-braces">4.4 Curly Braces ({})</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-managing-permissions">5. Managing Permissions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#51-chmod-change-mode">5.1 chmod (Change Mode)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#52-chown-change-owner">5.2 chown (Change Owner)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#53-chgrp-change-group">5.3 chgrp (Change Group)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#54-umask">5.4 umask</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-disk-and-directory-usage">6. Disk and Directory Usage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#61-df-disk-free">6.1 df (Disk Free)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#62-du-disk-usage">6.2 du (Disk Usage)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7-summary">7. Summary</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../command-line-text-manipulation/">Command Line Text Manipulation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../command-line-utilities/">Command Line Utilities</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../advanced-command-line-features/">Advanced Command Line Features</a>
+                </li>
+              </ul>
       </div>
     </div>
     </nav>
@@ -58,7 +164,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Command Line Basics SOP</li>
+      <li class="breadcrumb-item active">Command Line Basics</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -188,6 +294,10 @@ chmod 755 script.sh  # Sets rwxr-xr-x permissions
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../getting-to-know-the-command-line/" class="btn btn-neutral float-left" title="Command Line"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../command-line-text-manipulation/" class="btn btn-neutral float-right" title="Command Line Text Manipulation">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -209,6 +319,10 @@ chmod 755 script.sh  # Sets rwxr-xr-x permissions
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../getting-to-know-the-command-line/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../command-line-text-manipulation/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

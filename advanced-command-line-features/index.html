@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Advanced Command Line Features SOP - Vets Who Code SOP's</title>
+    <title>Advanced Command Line Features - Vets Who Code SOP's</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Advanced Command Line Features SOP";
+        var mkdocs_page_name = "Advanced Command Line Features";
         var mkdocs_page_input_path = "advanced-command-line-features.md";
         var mkdocs_page_url = null;
       </script>
@@ -44,6 +44,118 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../code-of-conduct/">Code Of Conduct</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../getting-to-know-the-command-line/">Command Line</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../command-line-basics/">Command Line Basics</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../command-line-text-manipulation/">Command Line Text Manipulation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../command-line-utilities/">Command Line Utilities</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Advanced Command Line Features</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-introduction">1. Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-shell-scripting-basics">2. Shell Scripting Basics</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#21-creating-a-shell-script">2.1 Creating a Shell Script</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#22-syntax">2.2 Syntax</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#variables">Variables</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#conditional-statements">Conditional Statements</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#loops">Loops</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#23-structure">2.3 Structure</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#shebang">Shebang</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#functions">Functions</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#24-best-practices">2.4 Best Practices</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#25-debugging">2.5 Debugging</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-environmental-variables">3. Environmental Variables</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#31-setting-variables">3.1 Setting Variables</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#32-retrieving-variables">3.2 Retrieving Variables</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#33-exporting-variables">3.3 Exporting Variables</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#34-unsetting-variables">3.4 Unsetting Variables</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-aliases-and-shortcuts">4. Aliases and Shortcuts</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#41-creating-aliases">4.1 Creating Aliases</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#42-common-aliases">4.2 Common Aliases</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#43-functions">4.3 Functions</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-command-history">5. Command History</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#51-navigating-history">5.1 Navigating History</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#52-repeating-commands">5.2 Repeating Commands</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#53-modifying-history">5.3 Modifying History</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-job-control">6. Job Control</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#61-background-and-foreground-jobs">6.1 Background and Foreground Jobs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#62-listing-and-managing-jobs">6.2 Listing and Managing Jobs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#63-signals">6.3 Signals</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7-scheduling-tasks">7. Scheduling Tasks</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#71-editing-the-crontab">7.1 Editing the Crontab</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#72-crontab-syntax">7.2 Crontab Syntax</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#73-example-cron-job">7.3 Example Cron Job</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#8-best-practices">8. Best Practices</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#9-summary">9. Summary</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
       </div>
     </div>
     </nav>
@@ -58,7 +170,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Advanced Command Line Features SOP</li>
+      <li class="breadcrumb-item active">Advanced Command Line Features</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -248,6 +360,9 @@ kill -SIGKILL %n  # Forcefully terminate job n
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../command-line-utilities/" class="btn btn-neutral float-left" title="Command Line Utilities"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
 
   <hr/>
 
@@ -268,6 +383,8 @@ kill -SIGKILL %n  # Forcefully terminate job n
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
+    
+      <span><a href="../command-line-utilities/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
   </span>
