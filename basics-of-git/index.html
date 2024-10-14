@@ -74,11 +74,33 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#section-1-configuring-git">Section 1: Configuring Git</a>
+    <li class="toctree-l3"><a class="reference internal" href="#configuring-git">Configuring Git</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#setting-up-user-information">Setting Up User Information</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#verifying-configuration">Verifying Configuration</a>
+    </li>
         </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#generating-ssh-keys">Generating SSH Keys</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#generating-an-ssh-key">Generating an SSH Key</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#adding-ssh-key-to-githubgitlab">Adding SSH Key to GitHub/GitLab</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proxy-configuration-optional">Proxy Configuration (Optional)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#setting-up-a-proxy">Setting Up a Proxy</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#verifying-proxy-configuration">Verifying Proxy Configuration</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#practical-exercise">Practical Exercise</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#additional-resources">Additional Resources</a>
     </li>
     </ul>
                 </li>
@@ -127,70 +149,71 @@
 <li>Set and manage your Git user identity.</li>
 <li>Configure a proxy for Git operations (if required).</li>
 </ul>
-<hr />
-<h2 id="section-1-configuring-git">Section 1: Configuring Git</h2>
+<h2 id="configuring-git">Configuring Git</h2>
 <h3 id="setting-up-user-information">Setting Up User Information</h3>
 <p>To personalize your Git environment, configure your username and email. This information will be attached to every commit you make.</p>
 <p>Use the following commands:</p>
 <pre><code class="language-bash">git config --global user.name &quot;Your Name&quot;
 git config --global user.email &quot;your.email@example.com&quot;
 </code></pre>
-<p>Verifying Configuration</p>
+<h3 id="verifying-configuration">Verifying Configuration</h3>
 <p>To check your current settings, use:</p>
 <pre><code class="language-bash">git config --list
 </code></pre>
-<p>Task:
-Set your username and email, then verify the configuration using the above command.</p>
-<p>Section 2: Generating SSH Keys</p>
+<p>!!! task
+    Set your username and email, then verify the configuration using the above command.</p>
+<h2 id="generating-ssh-keys">Generating SSH Keys</h2>
 <p>SSH keys provide secure access to Git services (like GitHub or GitLab), allowing you to interact with remote repositories without entering your password every time.</p>
-<p>Generating an SSH Key</p>
+<h3 id="generating-an-ssh-key">Generating an SSH Key</h3>
 <p>Run the following command in your terminal:</p>
 <pre><code class="language-bash">ssh-keygen -t rsa -b 4096
 </code></pre>
 <p>Follow the prompts and press Enter to accept the default file location.</p>
-<p>Adding SSH Key to GitHub/GitLab</p>
+<h3 id="adding-ssh-key-to-githubgitlab">Adding SSH Key to GitHub/GitLab</h3>
 <p>Once the key is generated:</p>
-<ul>
-<li>Copy the public key to your clipboard:</li>
-</ul>
-<pre><code class="language-bash">cat ~/.ssh/id_rsa.pub
-</code></pre>
-<ul>
-<li>Go to your GitHub or GitLab account settings.</li>
+<ol>
+<li>
+<p>Copy the public key to your clipboard:</p>
+<p><code>bash
+cat ~/.ssh/id_rsa.pub</code></p>
+</li>
+<li>
+<p>Go to your GitHub or GitLab account settings.</p>
+</li>
 <li>Navigate to SSH and GPG keys and paste the key.</li>
-</ul>
-<p>Task:
-Generate an SSH key and add it to your GitHub or GitLab account.</p>
-<p>Section 3: Proxy Configuration (Optional)</p>
-<p>If you’re working behind a corporate firewall or restricted network, you may need to configure Git to use a proxy.</p>
-<p>Setting Up a Proxy</p>
+</ol>
+<p>!!! task
+    Generate an SSH key and add it to your GitHub or GitLab account.</p>
+<h2 id="proxy-configuration-optional">Proxy Configuration (Optional)</h2>
+<p>If you're working behind a corporate firewall or restricted network, you may need to configure Git to use a proxy.</p>
+<h3 id="setting-up-a-proxy">Setting Up a Proxy</h3>
 <p>To set up a proxy, run:</p>
-<p>```bash
-git config --global http.proxy http://proxy.example.com:8080</p>
-<p>Replace proxy.example.com:8080 with your actual proxy details.</p>
-<p>Verifying Proxy Configuration</p>
-<p>To confirm the proxy is set up correctly:</p>
-<p>```bash
-git config --global http.proxy</p>
-<p>Task:
-If needed, configure your proxy settings and verify them using the above commands.</p>
-<p>Practical Exercise</p>
-<p>Follow these steps to complete your setup:</p>
-<pre><code>-   Configure Git with your username and email.
--   Generate an SSH key and add it to your GitHub or GitLab account.
--   If necessary, set up a proxy.
+<pre><code class="language-bash">git config --global http.proxy http://proxy.example.com:8080
 </code></pre>
+<p>Replace <code>proxy.example.com:8080</code> with your actual proxy details.</p>
+<h3 id="verifying-proxy-configuration">Verifying Proxy Configuration</h3>
+<p>To confirm the proxy is set up correctly:</p>
+<pre><code class="language-bash">git config --global http.proxy
+</code></pre>
+<p>!!! task
+    If needed, configure your proxy settings and verify them using the above commands.</p>
+<h2 id="practical-exercise">Practical Exercise</h2>
+<p>Follow these steps to complete your setup:</p>
+<ol>
+<li>Configure Git with your username and email.</li>
+<li>Generate an SSH key and add it to your GitHub or GitLab account.</li>
+<li>If necessary, set up a proxy.</li>
+</ol>
 <p>Verify your configuration with:</p>
-<p>```bash
-git config --list</p>
-<p>Additional Resources</p>
+<pre><code class="language-bash">git config --list
+</code></pre>
+<h2 id="additional-resources">Additional Resources</h2>
 <ul>
-<li>Official Git Documentation</li>
-<li>GitHub SSH Key Setup Guide</li>
-<li>Git Configuration Best Practices</li>
+<li><a href="https://git-scm.com/doc">Official Git Documentation</a></li>
+<li><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">GitHub SSH Key Setup Guide</a></li>
+<li><a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration">Git Configuration Best Practices</a></li>
 </ul>
-<p>With these steps completed, Git is now properly configured on your machine, and you’re ready to start working with version control.</p>
-<p>This format is designed for an MkDocs-based project, with clear sections and tasks. Let me know if you'd like to make any further adjustments!</p>
+<p>With these steps completed, Git is now properly configured on your machine, and you're ready to start working with version control. Happy coding!</p>
               
             </div>
           </div><footer>
