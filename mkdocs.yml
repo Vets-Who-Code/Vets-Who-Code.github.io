@@ -3,17 +3,18 @@ site_name: Vets Who Code SOP's
 nav:
   - Home: index.md
   - Code Of Conduct: code-of-conduct.md
-  - Command Line:
-      - Command Line Basics: command-line-basics.md
-      - Command Line Text Manipulation: command-line-text-manipulation.md
-      - Command Line Utilities: command-line-utilities.md
-      - Advanced Command Line Features: advanced-command-line-features.md
-  - Bash Scripting: bash.md
-  - Git:
-      - Git Basics: basics-of-git.md
-      - Git And Github: git-and-github.md
-      - Git Flow: git-flow.md
-      - Github CLI: github-cli.md
+  - Curriculum:
+    - Command Line:
+        - Command Line Basics: command-line-basics.md
+        - Command Line Text Manipulation: command-line-text-manipulation.md
+        - Command Line Utilities: command-line-utilities.md
+        - Advanced Command Line Features: advanced-command-line-features.md
+    - Bash Scripting: bash.md
+    - Git:
+        - Git Basics: basics-of-git.md
+        - Git And Github: git-and-github.md
+        - Git Flow: git-flow.md
+        - Github CLI: github-cli.md
 
 theme:
   name: "readthedocs"
