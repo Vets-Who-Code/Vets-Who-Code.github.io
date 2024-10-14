@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Git Flow - Vets Who Code SOP's</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Git Flow";
+        var mkdocs_page_input_path = "git-flow.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Vets Who Code SOP's
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../code-of-conduct/">Code Of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Command Line</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../command-line-basics/">Command Line Basics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../command-line-text-manipulation/">Command Line Text Manipulation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../command-line-utilities/">Command Line Utilities</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../advanced-command-line-features/">Advanced Command Line Features</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../bash/">Bash Scripting</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Git</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../basics-of-git/">Git Basics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../git-and-github/">Git And Github</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Git Flow</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Git Flow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../github-cli/">Github CLI</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Vets Who Code SOP's</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Git</li>
+      <li class="breadcrumb-item active">Git Flow</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p>Git Flow Overview</p>
+<p>Understanding Git Flow</p>
+<p>Introduction</p>
+<p>This guide will help you understand Git Flow, an advanced workflow that simplifies the management of complex projects. Git Flow introduces a branching model designed to keep your development process organized, from feature development to handling hotfixes and releases.</p>
+<p>Learning Outcomes</p>
+<p>By the end of this guide, you will:</p>
+<pre><code>•   Understand what Git Flow is and how it improves project workflow.
+•   Implement a feature using Git Flow.
+•   Manage hotfixes and releases effectively.
+•   Use Git tags for version control and learn versioning best practices.
+</code></pre>
+<p>Section 1: What is Git Flow? (UI &amp; Terminal)</p>
+<p>Definition</p>
+<p>Git Flow is a branching model that helps teams manage project development in a structured way. It ensures that work on new features, bug fixes, and releases is done in isolation and merged back into the main codebase when ready.</p>
+<p>Key Components</p>
+<pre><code>•   Main Branch: The production-ready branch, always reflecting the latest release.
+•   Develop Branch: The integration branch where features are merged and tested before release.
+•   Feature Branches: Temporary branches for developing new features or functionalities.
+•   Release Branches: Used to prepare new releases, allowing final fixes and tests.
+•   Hotfix Branches: Created for critical patches in the production branch.
+</code></pre>
+<p>Section 2: Implementing a Feature using Git Flow (Terminal)</p>
+<p>Workflow for Features</p>
+<p>Git Flow makes it easy to develop new features in isolation before integrating them into the main codebase.</p>
+<pre><code>1.  Checkout the develop branch:
+</code></pre>
+<p>git checkout develop</p>
+<pre><code>2.  Create a new feature branch:
+</code></pre>
+<p>git checkout -b feature/new-feature</p>
+<pre><code>3.  Develop the feature:
+</code></pre>
+<p>Add your code and commit regularly:</p>
+<p>git add .
+git commit -m "Start implementing new feature"</p>
+<pre><code>4.  Merge the feature back into develop:
+</code></pre>
+<p>Once the feature is complete:</p>
+<p>git checkout develop
+git merge feature/new-feature</p>
+<pre><code>5.  Delete the feature branch (optional):
+</code></pre>
+<p>Clean up by deleting the feature branch:</p>
+<p>git branch -d feature/new-feature</p>
+<p>Section 3: Hotfixes and Releases (Terminal)</p>
+<p>Hotfix Workflow</p>
+<p>Hotfixes are quick patches applied directly to the production code. Git Flow makes it easy to apply fixes and keep both the main and develop branches updated.</p>
+<pre><code>1.  Create a hotfix branch from main:
+</code></pre>
+<p>git checkout -b hotfix/urgent-fix main</p>
+<pre><code>2.  Apply the fix and commit it:
+</code></pre>
+<p>git add .
+git commit -m "Apply urgent fix for production"</p>
+<pre><code>3.  Merge the fix back into main and develop:
+</code></pre>
+<p>git checkout main
+git merge hotfix/urgent-fix
+git checkout develop
+git merge hotfix/urgent-fix</p>
+<p>Release Workflow</p>
+<p>Releases prepare the develop branch for production. Final bug fixes, versioning, and testing occur on the release branch before merging into main.</p>
+<pre><code>1.  Create a release branch from develop:
+</code></pre>
+<p>git checkout -b release/v1.0 develop</p>
+<pre><code>2.  Perform final changes and commit:
+</code></pre>
+<p>git add .
+git commit -m "Prepare for release v1.0"</p>
+<pre><code>3.  Merge the release into main and tag the release:
+</code></pre>
+<p>git checkout main
+git merge release/v1.0
+git tag -a v1.0 -m "Release version 1.0"</p>
+<pre><code>4.  Merge the release back into develop (to ensure any last-minute fixes are included):
+</code></pre>
+<p>git checkout develop
+git merge main</p>
+<p>Section 4: Git Tags and Versioning (Terminal)</p>
+<p>Using Git Tags</p>
+<p>Tags allow you to mark important points in your project’s history, such as a new release. Tags can be lightweight (simple references) or annotated (contain metadata).</p>
+<pre><code>1.  Create an annotated tag for a release:
+</code></pre>
+<p>git tag -a v1.0 -m "Release version 1.0"</p>
+<pre><code>2.  Push the tags to your remote repository:
+</code></pre>
+<p>git push origin --tags</p>
+<p>Versioning Practices</p>
+<p>When tagging releases, many developers follow semantic versioning, which uses the format MAJOR.MINOR.PATCH. For example:</p>
+<pre><code>•   MAJOR: Increment for incompatible changes (e.g., v2.0.0).
+•   MINOR: Increment for new backward-compatible functionality (e.g., v1.1.0).
+•   PATCH: Increment for backward-compatible bug fixes (e.g., v1.0.1).
+</code></pre>
+<p>Summary</p>
+<p>With Git Flow, you’ve learned how to manage features, releases, and hotfixes in a structured, organized way. You also gained an understanding of tagging releases and versioning best practices to keep your projects clean and maintainable. Keep practicing these workflows, and you’ll streamline your project management processes significantly!</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="./" class="btn btn-neutral float-left" title="Git Flow"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../github-cli/" class="btn btn-neutral float-right" title="Github CLI">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="./" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../github-cli/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

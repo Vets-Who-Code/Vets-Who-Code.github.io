@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Command Line Cheat Sheet - Vets Who Code SOP's</title>
+    <title>Git Basics - Vets Who Code SOP's</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Command Line Cheat Sheet";
-        var mkdocs_page_input_path = "command-line-cheat-sheet.md";
+        var mkdocs_page_name = "Git Basics";
+        var mkdocs_page_input_path = "basics-of-git.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -64,8 +64,8 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Git</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../basics-of-git/">Git Basics</a>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Git Basics</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../git-and-github/">Git And Github</a>
                   </li>
@@ -90,7 +90,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Command Line Cheat Sheet</li>
+          <li class="breadcrumb-item">Git</li>
+      <li class="breadcrumb-item active">Git Basics</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -99,84 +100,72 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="command-line-cheat-sheet">Command Line Cheat Sheet</h1>
-<h2 id="navigation">Navigation</h2>
-<pre><code class="language-bash">pwd                 # Print working directory
-ls                  # List directory contents
-ls -la              # List detailed contents, including hidden files
-cd &lt;directory&gt;      # Change directory
-cd ..               # Move up one directory
-cd ~                # Go to home directory
+                <p>Setting up Git</p>
+<p>Introduction</p>
+<p>This guide will walk you through the steps to properly set up Git on your machine. You will configure Git, generate SSH keys for secure authentication, set up your user identity, and, if necessary, configure a proxy for Git operations.</p>
+<p>Objectives</p>
+<p>By the end of this guide, you will:</p>
+<pre><code>•   Configure Git using the terminal.
+•   Generate SSH keys for secure communication.
+•   Set and manage your Git user identity.
+•   Configure a proxy for Git operations (if required).
 </code></pre>
-<h2 id="file-operations">File Operations</h2>
-<pre><code class="language-bash">touch &lt;file&gt;        # Create a new file
-mkdir &lt;directory&gt;   # Create a new directory
-cp &lt;source&gt; &lt;dest&gt;  # Copy file or directory
-mv &lt;source&gt; &lt;dest&gt;  # Move or rename file or directory
-rm &lt;file&gt;           # Remove a file
-rm -r &lt;directory&gt;   # Remove a directory and its contents
+<p>Section 1: Configuring Git</p>
+<p>Setting Up User Information</p>
+<p>To personalize your Git environment, configure your username and email. This information will be attached to every commit you make.</p>
+<p>Use the following commands:</p>
+<p>git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"</p>
+<p>Verifying Configuration</p>
+<p>To check your current settings, use:</p>
+<p>git config --list</p>
+<p>Task: Set your username and email, then verify the configuration using the above command.</p>
+<p>Section 2: Generating SSH Keys</p>
+<p>SSH keys provide secure access to Git services (like GitHub or GitLab), allowing you to interact with remote repositories without entering your password every time.</p>
+<p>Generating an SSH Key</p>
+<p>Run the following command in your terminal:</p>
+<p>ssh-keygen -t rsa -b 4096</p>
+<p>Follow the prompts and press Enter to accept the default file location.</p>
+<p>Adding SSH Key to GitHub/GitLab</p>
+<p>Once the key is generated:</p>
+<pre><code>1.  Copy the public key to your clipboard:
 </code></pre>
-<h2 id="file-viewing-and-editing">File Viewing and Editing</h2>
-<pre><code class="language-bash">cat &lt;file&gt;          # Display file contents
-less &lt;file&gt;         # View file contents with pagination
-head &lt;file&gt;         # Show first 10 lines of file
-tail &lt;file&gt;         # Show last 10 lines of file
-nano &lt;file&gt;         # Open file in nano text editor
-vim &lt;file&gt;          # Open file in vim text editor
+<p>cat ~/.ssh/id_rsa.pub</p>
+<pre><code>2.  Go to your GitHub or GitLab account settings.
+3.  Navigate to SSH and GPG keys and paste the key.
 </code></pre>
-<h2 id="file-permissions">File Permissions</h2>
-<pre><code class="language-bash">chmod +x &lt;file&gt;     # Make file executable
-chmod 755 &lt;file&gt;    # Set read, write, execute permissions
-chown &lt;user&gt; &lt;file&gt; # Change file owner
+<p>Task: Generate an SSH key and add it to your GitHub or GitLab account.</p>
+<p>Section 3: Proxy Configuration (Optional)</p>
+<p>If you’re working behind a corporate firewall or restricted network, you may need to configure Git to use a proxy.</p>
+<p>Setting Up a Proxy</p>
+<p>To set up a proxy, run:</p>
+<p>git config --global http.proxy http://proxy.example.com:8080</p>
+<p>Replace proxy.example.com:8080 with your actual proxy details.</p>
+<p>Verifying Proxy Configuration</p>
+<p>To confirm the proxy is set up correctly:</p>
+<p>git config --global http.proxy</p>
+<p>Task: If needed, configure your proxy settings and verify them using the above commands.</p>
+<p>Practical Exercise</p>
+<p>Follow these steps to complete your setup:</p>
+<pre><code>1.  Configure Git with your username and email.
+2.  Generate an SSH key and add it to your GitHub or GitLab account.
+3.  If necessary, set up a proxy.
 </code></pre>
-<h2 id="system-information">System Information</h2>
-<pre><code class="language-bash">uname -a            # Display system information
-df -h               # Show disk usage
-free -h             # Display free and used memory
-top                 # Show running processes (interactive)
-ps aux              # List all running processes
+<p>Verify your configuration with:</p>
+<p>git config --list</p>
+<p>Additional Resources</p>
+<pre><code>•   Official Git Documentation
+•   GitHub SSH Key Setup Guide
+•   Git Configuration Best Practices
 </code></pre>
-<h2 id="network">Network</h2>
-<pre><code class="language-bash">ping &lt;host&gt;         # Ping a host
-ssh &lt;user&gt;@&lt;host&gt;   # SSH into a remote machine
-scp &lt;file&gt; &lt;user&gt;@&lt;host&gt;:&lt;path&gt; # Secure copy file to remote host
-wget &lt;url&gt;          # Download file from web
-curl &lt;url&gt;          # Send HTTP request
-</code></pre>
-<h2 id="package-management-debianubuntu">Package Management (Debian/Ubuntu)</h2>
-<pre><code class="language-bash">apt update          # Update package list
-apt upgrade         # Upgrade installed packages
-apt install &lt;pkg&gt;   # Install a package
-apt remove &lt;pkg&gt;    # Remove a package
-</code></pre>
-<h2 id="text-processing">Text Processing</h2>
-<pre><code class="language-bash">grep &lt;pattern&gt; &lt;file&gt;    # Search for pattern in file
-sed 's/old/new/g' &lt;file&gt; # Replace text in file
-awk '{print $1}' &lt;file&gt;  # Print first column of file
-</code></pre>
-<h2 id="process-management">Process Management</h2>
-<pre><code class="language-bash">&lt;command&gt; &amp;         # Run command in background
-jobs                # List background jobs
-fg                  # Bring most recent job to foreground
-kill &lt;pid&gt;          # Terminate process by ID
-</code></pre>
-<h2 id="shortcuts">Shortcuts</h2>
-<pre><code class="language-bash">Ctrl + C            # Interrupt current process
-Ctrl + Z            # Suspend current process
-Ctrl + D            # Exit current shell
-Ctrl + L            # Clear screen
-Ctrl + R            # Search command history
-</code></pre>
-<h2 id="miscellaneous">Miscellaneous</h2>
-<pre><code class="language-bash">man &lt;command&gt;       # Display manual for command
-history             # Show command history
-echo $PATH          # Display PATH environment variable
-which &lt;command&gt;     # Show full path of command
-</code></pre>
-<p>Remember, these commands may vary slightly depending on your specific operating system and shell. Always refer to the man pages (<code>man &lt;command&gt;</code>) for detailed information about each command.</p>
+<p>With these steps completed, Git is now properly configured on your machine, and you’re ready to start working with version control.</p>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../bash/" class="btn btn-neutral float-left" title="Bash Scripting"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../git-and-github/" class="btn btn-neutral float-right" title="Git And Github">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -198,6 +187,10 @@ which &lt;command&gt;     # Show full path of command
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../bash/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../git-and-github/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
