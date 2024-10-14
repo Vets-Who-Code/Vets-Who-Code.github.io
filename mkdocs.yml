@@ -4,10 +4,10 @@ nav:
   - Home: index.md
   - Code Of Conduct: code-of-conduct.md
   - Command Line: getting-to-know-the-command-line.md
-    - Command Line Basics: command-line-basics.md
-    - Command Line Text Manipulation: command-line-text-manipulation.md
-    - Command Line Utilities: command-line-utilities.md
-    - Advanced Command Line Features: advanced-command-line-features.md
+  - Command Line Basics: command-line-basics.md
+  - Command Line Text Manipulation: command-line-text-manipulation.md
+  - Command Line Utilities: command-line-utilities.md
+  - Advanced Command Line Features: advanced-command-line-features.md
 
 
 
