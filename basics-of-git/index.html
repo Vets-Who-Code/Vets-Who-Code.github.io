@@ -132,29 +132,29 @@
 <h3 id="setting-up-user-information">Setting Up User Information</h3>
 <p>To personalize your Git environment, configure your username and email. This information will be attached to every commit you make.</p>
 <p>Use the following commands:</p>
-<p>```bash
-git config --global user.name "Your Name"
-git config --global user.email "your.email@example.com"</p>
+<pre><code class="language-bash">git config --global user.name &quot;Your Name&quot;
+git config --global user.email &quot;your.email@example.com&quot;
+</code></pre>
 <p>Verifying Configuration</p>
-<p>To check your current settings, use:
-```bash
-git config --list</p>
+<p>To check your current settings, use:</p>
+<pre><code class="language-bash">git config --list
+</code></pre>
 <p>Task:
 Set your username and email, then verify the configuration using the above command.</p>
 <p>Section 2: Generating SSH Keys</p>
 <p>SSH keys provide secure access to Git services (like GitHub or GitLab), allowing you to interact with remote repositories without entering your password every time.</p>
 <p>Generating an SSH Key</p>
 <p>Run the following command in your terminal:</p>
-<p>```bash
-ssh-keygen -t rsa -b 4096</p>
+<pre><code class="language-bash">ssh-keygen -t rsa -b 4096
+</code></pre>
 <p>Follow the prompts and press Enter to accept the default file location.</p>
 <p>Adding SSH Key to GitHub/GitLab</p>
 <p>Once the key is generated:</p>
 <ul>
 <li>Copy the public key to your clipboard:</li>
 </ul>
-<p>```bash
-cat ~/.ssh/id_rsa.pub</p>
+<pre><code class="language-bash">cat ~/.ssh/id_rsa.pub
+</code></pre>
 <ul>
 <li>Go to your GitHub or GitLab account settings.</li>
 <li>Navigate to SSH and GPG keys and paste the key.</li>
