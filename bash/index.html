@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Bash Scripting - Vets Who Code SOP's</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Bash Scripting";
+        var mkdocs_page_input_path = "bash.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Vets Who Code SOP's
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../code-of-conduct/">Code Of Conduct</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../getting-to-know-the-command-line/">Command Line</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../command-line-basics/">Command Line Basics</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../command-line-text-manipulation/">Command Line Text Manipulation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../command-line-utilities/">Command Line Utilities</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../advanced-command-line-features/">Advanced Command Line Features</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Bash Scripting</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#table-of-contents">Table of Contents</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-introduction-to-bash">1. Introduction to Bash</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-basic-syntax">2. Basic Syntax</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#comments">Comments</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#commands">Commands</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-variables">3. Variables</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#declaring-and-using-variables">Declaring and Using Variables</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#command-substitution">Command Substitution</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-control-structures">4. Control Structures</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#if-else-statement">If-Else Statement</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#loops">Loops</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#for-loop">For Loop</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#while-loop">While Loop</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-functions">5. Functions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-input-and-output">6. Input and Output</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#reading-user-input">Reading User Input</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#redirecting-output">Redirecting Output</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7-command-line-arguments">7. Command Line Arguments</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#8-basic-string-operations">8. Basic String Operations</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#9-basic-arithmetic">9. Basic Arithmetic</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#10-useful-bash-commands">10. Useful Bash Commands</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#11-intermediate-bash-techniques">11. Intermediate Bash Techniques</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#arrays">Arrays</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#case-statements">Case Statements</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#here-documents">Here Documents</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#subshells">Subshells</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#12-advanced-bash-techniques">12. Advanced Bash Techniques</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#regular-expressions">Regular Expressions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#process-substitution">Process Substitution</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#traps">Traps</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#debugging">Debugging</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#parameter-expansion">Parameter Expansion</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#13-best-practices-and-tips">13. Best Practices and Tips</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Vets Who Code SOP's</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Bash Scripting</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="comprehensive-bash-guide-from-basics-to-advanced-techniques">Comprehensive Bash Guide: From Basics to Advanced Techniques</h1>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#comprehensive-bash-guide-from-basics-to-advanced-techniques">Comprehensive Bash Guide: From Basics to Advanced Techniques</a></li>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#1-introduction-to-bash">1. Introduction to Bash</a></li>
+<li><a href="#2-basic-syntax">2. Basic Syntax</a><ul>
+<li><a href="#comments">Comments</a></li>
+<li><a href="#commands">Commands</a></li>
+</ul>
+</li>
+<li><a href="#3-variables">3. Variables</a><ul>
+<li><a href="#declaring-and-using-variables">Declaring and Using Variables</a></li>
+<li><a href="#command-substitution">Command Substitution</a></li>
+</ul>
+</li>
+<li><a href="#4-control-structures">4. Control Structures</a><ul>
+<li><a href="#if-else-statement">If-Else Statement</a></li>
+<li><a href="#loops">Loops</a></li>
+<li><a href="#for-loop">For Loop</a></li>
+<li><a href="#while-loop">While Loop</a></li>
+</ul>
+</li>
+<li><a href="#5-functions">5. Functions</a></li>
+<li><a href="#6-input-and-output">6. Input and Output</a><ul>
+<li><a href="#reading-user-input">Reading User Input</a></li>
+<li><a href="#redirecting-output">Redirecting Output</a></li>
+</ul>
+</li>
+<li><a href="#7-command-line-arguments">7. Command Line Arguments</a></li>
+<li><a href="#8-basic-string-operations">8. Basic String Operations</a></li>
+<li><a href="#9-basic-arithmetic">9. Basic Arithmetic</a></li>
+<li><a href="#10-useful-bash-commands">10. Useful Bash Commands</a></li>
+<li><a href="#11-intermediate-bash-techniques">11. Intermediate Bash Techniques</a><ul>
+<li><a href="#arrays">Arrays</a></li>
+<li><a href="#case-statements">Case Statements</a></li>
+<li><a href="#here-documents">Here Documents</a></li>
+<li><a href="#subshells">Subshells</a></li>
+</ul>
+</li>
+<li><a href="#12-advanced-bash-techniques">12. Advanced Bash Techniques</a><ul>
+<li><a href="#regular-expressions">Regular Expressions</a></li>
+<li><a href="#process-substitution">Process Substitution</a></li>
+<li><a href="#traps">Traps</a></li>
+<li><a href="#debugging">Debugging</a></li>
+<li><a href="#parameter-expansion">Parameter Expansion</a></li>
+</ul>
+</li>
+<li><a href="#13-best-practices-and-tips">13. Best Practices and Tips</a></li>
+</ul>
+<h2 id="1-introduction-to-bash">1. Introduction to Bash</h2>
+<p>Bash (Bourne Again SHell) is a command processor that typically runs in a text window where the user types commands that cause actions. Bash can also read and execute commands from a file, called a script.</p>
+<h2 id="2-basic-syntax">2. Basic Syntax</h2>
+<h3 id="comments">Comments</h3>
+<pre><code class="language-bash"># This is a comment
+</code></pre>
+<h3 id="commands">Commands</h3>
+<pre><code class="language-bash">echo &quot;Hello, World!&quot;  # Prints &quot;Hello, World!&quot;
+</code></pre>
+<h2 id="3-variables">3. Variables</h2>
+<h3 id="declaring-and-using-variables">Declaring and Using Variables</h3>
+<pre><code class="language-bash">name=&quot;John&quot;
+echo &quot;Hello, $name&quot;  # Prints &quot;Hello, John&quot;
+</code></pre>
+<h3 id="command-substitution">Command Substitution</h3>
+<pre><code class="language-bash">current_date=$(date)
+echo &quot;Today is $current_date&quot;
+</code></pre>
+<h2 id="4-control-structures">4. Control Structures</h2>
+<h3 id="if-else-statement">If-Else Statement</h3>
+<pre><code class="language-bash">if [ &quot;$name&quot; == &quot;John&quot; ]; then
+    echo &quot;Hello, John!&quot;
+else
+    echo &quot;You're not John&quot;
+fi
+</code></pre>
+<h3 id="loops">Loops</h3>
+<h4 id="for-loop">For Loop</h4>
+<pre><code class="language-bash">for i in 1 2 3 4 5
+do
+   echo &quot;Number: $i&quot;
+done
+</code></pre>
+<h4 id="while-loop">While Loop</h4>
+<pre><code class="language-bash">count=0
+while [ $count -lt 5 ]
+do
+   echo &quot;Count: $count&quot;
+   ((count++))
+done
+</code></pre>
+<h2 id="5-functions">5. Functions</h2>
+<pre><code class="language-bash">greet() {
+    echo &quot;Hello, $1!&quot;
+}
+
+greet &quot;World&quot;  # Calls the function, prints &quot;Hello, World!&quot;
+</code></pre>
+<h2 id="6-input-and-output">6. Input and Output</h2>
+<h3 id="reading-user-input">Reading User Input</h3>
+<pre><code class="language-bash">echo &quot;What's your name?&quot;
+read user_name
+echo &quot;Hello, $user_name!&quot;
+</code></pre>
+<h3 id="redirecting-output">Redirecting Output</h3>
+<pre><code class="language-bash">echo &quot;This goes to a file&quot; &gt; output.txt
+echo &quot;This is appended to the file&quot; &gt;&gt; output.txt
+</code></pre>
+<h2 id="7-command-line-arguments">7. Command Line Arguments</h2>
+<pre><code class="language-bash"># Save as script.sh and run with: ./script.sh arg1 arg2
+echo &quot;First argument: $1&quot;
+echo &quot;Second argument: $2&quot;
+echo &quot;All arguments: $@&quot;
+echo &quot;Number of arguments: $#&quot;
+</code></pre>
+<h2 id="8-basic-string-operations">8. Basic String Operations</h2>
+<pre><code class="language-bash">string=&quot;Hello, World!&quot;
+echo &quot;${string:0:5}&quot;  # Prints &quot;Hello&quot;
+echo &quot;${string/World/Bash}&quot;  # Prints &quot;Hello, Bash!&quot;
+echo &quot;${#string}&quot;  # Prints the length of the string
+</code></pre>
+<h2 id="9-basic-arithmetic">9. Basic Arithmetic</h2>
+<pre><code class="language-bash">a=5
+b=3
+echo $((a + b))  # Addition
+echo $((a - b))  # Subtraction
+echo $((a * b))  # Multiplication
+echo $((a / b))  # Division
+echo $((a % b))  # Modulus
+</code></pre>
+<h2 id="10-useful-bash-commands">10. Useful Bash Commands</h2>
+<ul>
+<li><code>source script.sh</code>: Execute commands from a file in the current shell</li>
+<li><code>export VAR="value"</code>: Make a variable available to child processes</li>
+<li><code>alias ls='ls -la'</code>: Create a shortcut for a command</li>
+<li><code>set -e</code>: Exit immediately if a command exits with a non-zero status</li>
+<li><code>set -x</code>: Print commands and their arguments as they are executed</li>
+</ul>
+<h2 id="11-intermediate-bash-techniques">11. Intermediate Bash Techniques</h2>
+<h3 id="arrays">Arrays</h3>
+<pre><code class="language-bash">fruits=(&quot;apple&quot; &quot;banana&quot; &quot;cherry&quot;)
+echo ${fruits[1]}  # Prints &quot;banana&quot;
+echo ${fruits[@]}  # Prints all elements
+echo ${#fruits[@]}  # Prints number of elements
+</code></pre>
+<h3 id="case-statements">Case Statements</h3>
+<pre><code class="language-bash">case $fruit in
+    &quot;apple&quot;)
+        echo &quot;It's an apple&quot;
+        ;;
+    &quot;banana&quot;|&quot;plantain&quot;)
+        echo &quot;It's a banana or plantain&quot;
+        ;;
+    *)
+        echo &quot;Unknown fruit&quot;
+        ;;
+esac
+</code></pre>
+<h3 id="here-documents">Here Documents</h3>
+<pre><code class="language-bash">cat &lt;&lt; EOF &gt; file.txt
+This is a multi-line
+text that will be written
+to file.txt
+EOF
+</code></pre>
+<h3 id="subshells">Subshells</h3>
+<pre><code class="language-bash">(cd /tmp &amp;&amp; echo &quot;Current dir: $PWD&quot;)
+echo &quot;We're back in $PWD&quot;
+</code></pre>
+<h2 id="12-advanced-bash-techniques">12. Advanced Bash Techniques</h2>
+<h3 id="regular-expressions">Regular Expressions</h3>
+<pre><code class="language-bash">if [[ &quot;example@email.com&quot; =~ ^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$ ]]; then
+    echo &quot;Valid email&quot;
+fi
+</code></pre>
+<h3 id="process-substitution">Process Substitution</h3>
+<pre><code class="language-bash">diff &lt;(ls dir1) &lt;(ls dir2)
+</code></pre>
+<h3 id="traps">Traps</h3>
+<pre><code class="language-bash">trap 'echo &quot;Ctrl+C is trapped&quot;' INT
+</code></pre>
+<h3 id="debugging">Debugging</h3>
+<pre><code class="language-bash">set -x  # Enable debugging
+set -e  # Exit on error
+set -u  # Treat unset variables as an error
+</code></pre>
+<h3 id="parameter-expansion">Parameter Expansion</h3>
+<pre><code class="language-bash">name=&quot;John&quot;
+echo ${name:-&quot;Default&quot;}  # Use default if name is unset
+echo ${name:=&quot;NewDefault&quot;}  # Assign default if name is unset
+echo ${name:+&quot;Alternative&quot;}  # Use alternative if name is set
+echo ${name:?&quot;Error message&quot;}  # Display error if name is unset
+</code></pre>
+<h2 id="13-best-practices-and-tips">13. Best Practices and Tips</h2>
+<ol>
+<li>Use shellcheck for script validation</li>
+<li>Use functions for repeated code</li>
+<li>Use meaningful variable names</li>
+<li>Quote variables to prevent word splitting</li>
+<li>Use <code>set -e</code> to exit on error</li>
+<li>Use <code>set -u</code> to catch unset variables</li>
+<li>Use <code>[[ ]]</code> for conditionals instead of <code>[ ]</code></li>
+<li>Use <code>$(command)</code> instead of backticks for command substitution</li>
+<li>Use <code>$()</code> for arithmetic instead of <code>expr</code></li>
+<li>Use <code>trap</code> to handle signals and perform cleanup</li>
+</ol>
+<p>Remember, this guide covers a wide range of Bash features, but Bash is incredibly rich and there's always more to learn. Always refer to the Bash manual (<code>man bash</code>) for the most up-to-date and detailed information.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../advanced-command-line-features/" class="btn btn-neutral float-left" title="Advanced Command Line Features"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../advanced-command-line-features/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
