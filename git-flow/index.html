@@ -71,6 +71,48 @@
                 <li class="toctree-l2"><a class="reference internal" href="../git-and-github/">Git And Github</a>
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">Git Flow</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#understanding-git-flow">Understanding Git Flow</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#learning-outcomes">Learning Outcomes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#what-is-git-flow-ui-terminal">What is Git Flow? (UI &amp; Terminal)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#definition">Definition</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#key-components">Key Components</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#implementing-a-feature-using-git-flow-terminal">Implementing a Feature using Git Flow (Terminal)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#workflow-for-features">Workflow for Features</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#hotfixes-and-releases-terminal">Hotfixes and Releases (Terminal)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#hotfix-workflow">Hotfix Workflow</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#release-workflow">Release Workflow</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#git-tags-and-versioning-terminal">Git Tags and Versioning (Terminal)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#using-git-tags">Using Git Tags</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#versioning-practices">Versioning Practices</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#summary">Summary</a>
+    </li>
+    </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../github-cli/">Github CLI</a>
                 </li>
@@ -102,101 +144,140 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p>Git Flow Overview</p>
-<p>Understanding Git Flow</p>
-<p>Introduction</p>
+                <h1 id="git-flow-overview">Git Flow Overview</h1>
+<h2 id="understanding-git-flow">Understanding Git Flow</h2>
+<h3 id="introduction">Introduction</h3>
 <p>This guide will help you understand Git Flow, an advanced workflow that simplifies the management of complex projects. Git Flow introduces a branching model designed to keep your development process organized, from feature development to handling hotfixes and releases.</p>
-<p>Learning Outcomes</p>
+<h3 id="learning-outcomes">Learning Outcomes</h3>
 <p>By the end of this guide, you will:</p>
-<pre><code>•   Understand what Git Flow is and how it improves project workflow.
-•   Implement a feature using Git Flow.
-•   Manage hotfixes and releases effectively.
-•   Use Git tags for version control and learn versioning best practices.
-</code></pre>
-<p>Section 1: What is Git Flow? (UI &amp; Terminal)</p>
-<p>Definition</p>
+<ul>
+<li>Understand what Git Flow is and how it improves project workflow.</li>
+<li>Implement a feature using Git Flow.</li>
+<li>Manage hotfixes and releases effectively.</li>
+<li>Use Git tags for version control and learn versioning best practices.</li>
+</ul>
+<h2 id="what-is-git-flow-ui-terminal">What is Git Flow? (UI &amp; Terminal)</h2>
+<h3 id="definition">Definition</h3>
 <p>Git Flow is a branching model that helps teams manage project development in a structured way. It ensures that work on new features, bug fixes, and releases is done in isolation and merged back into the main codebase when ready.</p>
-<p>Key Components</p>
-<pre><code>•   Main Branch: The production-ready branch, always reflecting the latest release.
-•   Develop Branch: The integration branch where features are merged and tested before release.
-•   Feature Branches: Temporary branches for developing new features or functionalities.
-•   Release Branches: Used to prepare new releases, allowing final fixes and tests.
-•   Hotfix Branches: Created for critical patches in the production branch.
-</code></pre>
-<p>Section 2: Implementing a Feature using Git Flow (Terminal)</p>
-<p>Workflow for Features</p>
+<h3 id="key-components">Key Components</h3>
+<ul>
+<li><strong>Main Branch</strong>: The production-ready branch, always reflecting the latest release.</li>
+<li><strong>Develop Branch</strong>: The integration branch where features are merged and tested before release.</li>
+<li><strong>Feature Branches</strong>: Temporary branches for developing new features or functionalities.</li>
+<li><strong>Release Branches</strong>: Used to prepare new releases, allowing final fixes and tests.</li>
+<li><strong>Hotfix Branches</strong>: Created for critical patches in the production branch.</li>
+</ul>
+<h2 id="implementing-a-feature-using-git-flow-terminal">Implementing a Feature using Git Flow (Terminal)</h2>
+<h3 id="workflow-for-features">Workflow for Features</h3>
 <p>Git Flow makes it easy to develop new features in isolation before integrating them into the main codebase.</p>
-<pre><code>1.  Checkout the develop branch:
-</code></pre>
-<p>git checkout develop</p>
-<pre><code>2.  Create a new feature branch:
-</code></pre>
-<p>git checkout -b feature/new-feature</p>
-<pre><code>3.  Develop the feature:
-</code></pre>
-<p>Add your code and commit regularly:</p>
-<p>git add .
-git commit -m "Start implementing new feature"</p>
-<pre><code>4.  Merge the feature back into develop:
-</code></pre>
-<p>Once the feature is complete:</p>
-<p>git checkout develop
-git merge feature/new-feature</p>
-<pre><code>5.  Delete the feature branch (optional):
-</code></pre>
-<p>Clean up by deleting the feature branch:</p>
-<p>git branch -d feature/new-feature</p>
-<p>Section 3: Hotfixes and Releases (Terminal)</p>
-<p>Hotfix Workflow</p>
+<ol>
+<li>
+<p>Checkout the develop branch:</p>
+<p><code>bash
+git checkout develop</code></p>
+</li>
+<li>
+<p>Create a new feature branch:</p>
+<p><code>bash
+git checkout -b feature/new-feature</code></p>
+</li>
+<li>
+<p>Develop the feature:
+   Add your code and commit regularly:</p>
+<p><code>bash
+git add .
+git commit -m "Start implementing new feature"</code></p>
+</li>
+<li>
+<p>Merge the feature back into develop:
+   Once the feature is complete:</p>
+<p><code>bash
+git checkout develop
+git merge feature/new-feature</code></p>
+</li>
+<li>
+<p>Delete the feature branch (optional):
+   Clean up by deleting the feature branch:</p>
+<p><code>bash
+git branch -d feature/new-feature</code></p>
+</li>
+</ol>
+<h2 id="hotfixes-and-releases-terminal">Hotfixes and Releases (Terminal)</h2>
+<h3 id="hotfix-workflow">Hotfix Workflow</h3>
 <p>Hotfixes are quick patches applied directly to the production code. Git Flow makes it easy to apply fixes and keep both the main and develop branches updated.</p>
-<pre><code>1.  Create a hotfix branch from main:
-</code></pre>
-<p>git checkout -b hotfix/urgent-fix main</p>
-<pre><code>2.  Apply the fix and commit it:
-</code></pre>
-<p>git add .
-git commit -m "Apply urgent fix for production"</p>
-<pre><code>3.  Merge the fix back into main and develop:
-</code></pre>
-<p>git checkout main
+<ol>
+<li>
+<p>Create a hotfix branch from main:</p>
+<p><code>bash
+git checkout -b hotfix/urgent-fix main</code></p>
+</li>
+<li>
+<p>Apply the fix and commit it:</p>
+<p><code>bash
+git add .
+git commit -m "Apply urgent fix for production"</code></p>
+</li>
+<li>
+<p>Merge the fix back into main and develop:</p>
+<p><code>bash
+git checkout main
 git merge hotfix/urgent-fix
 git checkout develop
-git merge hotfix/urgent-fix</p>
-<p>Release Workflow</p>
+git merge hotfix/urgent-fix</code></p>
+</li>
+</ol>
+<h3 id="release-workflow">Release Workflow</h3>
 <p>Releases prepare the develop branch for production. Final bug fixes, versioning, and testing occur on the release branch before merging into main.</p>
-<pre><code>1.  Create a release branch from develop:
-</code></pre>
-<p>git checkout -b release/v1.0 develop</p>
-<pre><code>2.  Perform final changes and commit:
-</code></pre>
-<p>git add .
-git commit -m "Prepare for release v1.0"</p>
-<pre><code>3.  Merge the release into main and tag the release:
-</code></pre>
-<p>git checkout main
+<ol>
+<li>
+<p>Create a release branch from develop:</p>
+<p><code>bash
+git checkout -b release/v1.0 develop</code></p>
+</li>
+<li>
+<p>Perform final changes and commit:</p>
+<p><code>bash
+git add .
+git commit -m "Prepare for release v1.0"</code></p>
+</li>
+<li>
+<p>Merge the release into main and tag the release:</p>
+<p><code>bash
+git checkout main
 git merge release/v1.0
-git tag -a v1.0 -m "Release version 1.0"</p>
-<pre><code>4.  Merge the release back into develop (to ensure any last-minute fixes are included):
-</code></pre>
-<p>git checkout develop
-git merge main</p>
-<p>Section 4: Git Tags and Versioning (Terminal)</p>
-<p>Using Git Tags</p>
-<p>Tags allow you to mark important points in your project’s history, such as a new release. Tags can be lightweight (simple references) or annotated (contain metadata).</p>
-<pre><code>1.  Create an annotated tag for a release:
-</code></pre>
-<p>git tag -a v1.0 -m "Release version 1.0"</p>
-<pre><code>2.  Push the tags to your remote repository:
-</code></pre>
-<p>git push origin --tags</p>
-<p>Versioning Practices</p>
+git tag -a v1.0 -m "Release version 1.0"</code></p>
+</li>
+<li>
+<p>Merge the release back into develop (to ensure any last-minute fixes are included):</p>
+<p><code>bash
+git checkout develop
+git merge main</code></p>
+</li>
+</ol>
+<h2 id="git-tags-and-versioning-terminal">Git Tags and Versioning (Terminal)</h2>
+<h3 id="using-git-tags">Using Git Tags</h3>
+<p>Tags allow you to mark important points in your project's history, such as a new release. Tags can be lightweight (simple references) or annotated (contain metadata).</p>
+<ol>
+<li>
+<p>Create an annotated tag for a release:</p>
+<p><code>bash
+git tag -a v1.0 -m "Release version 1.0"</code></p>
+</li>
+<li>
+<p>Push the tags to your remote repository:</p>
+<p><code>bash
+git push origin --tags</code></p>
+</li>
+</ol>
+<h3 id="versioning-practices">Versioning Practices</h3>
 <p>When tagging releases, many developers follow semantic versioning, which uses the format MAJOR.MINOR.PATCH. For example:</p>
-<pre><code>•   MAJOR: Increment for incompatible changes (e.g., v2.0.0).
-•   MINOR: Increment for new backward-compatible functionality (e.g., v1.1.0).
-•   PATCH: Increment for backward-compatible bug fixes (e.g., v1.0.1).
-</code></pre>
-<p>Summary</p>
-<p>With Git Flow, you’ve learned how to manage features, releases, and hotfixes in a structured, organized way. You also gained an understanding of tagging releases and versioning best practices to keep your projects clean and maintainable. Keep practicing these workflows, and you’ll streamline your project management processes significantly!</p>
+<ul>
+<li>MAJOR: Increment for incompatible changes (e.g., v2.0.0).</li>
+<li>MINOR: Increment for new backward-compatible functionality (e.g., v1.1.0).</li>
+<li>PATCH: Increment for backward-compatible bug fixes (e.g., v1.0.1).</li>
+</ul>
+<h2 id="summary">Summary</h2>
+<p>With Git Flow, you've learned how to manage features, releases, and hotfixes in a structured, organized way. You also gained an understanding of tagging releases and versioning best practices to keep your projects clean and maintainable. Keep practicing these workflows, and you'll streamline your project management processes significantly!</p>
               
             </div>
           </div><footer>

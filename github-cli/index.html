@@ -73,6 +73,62 @@
                 <li class="toctree-l2"><a class="reference internal" href="../git-flow/">Git Flow</a>
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">Github CLI</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#introduction-to-github-cli">Introduction to GitHub CLI</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#learning-outcomes">Learning Outcomes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#installing-github-cli-terminal">Installing GitHub CLI (Terminal)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#installation-steps">Installation Steps</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#verification">Verification</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#basic-github-cli-commands-terminal">Basic GitHub CLI Commands (Terminal)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#key-commands">Key Commands</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#creating-aliases-in-github-cli-terminal">Creating Aliases in GitHub CLI (Terminal)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#authentication-with-github-cli-terminal">Authentication with GitHub CLI (Terminal)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#managing-repositories-with-github-cli">Managing Repositories with GitHub CLI</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#learning-outcomes_1">Learning Outcomes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#creating-and-cloning-repositories-terminal">Creating and Cloning Repositories (Terminal)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#forking-and-making-pull-requests-terminal">Forking and Making Pull Requests (Terminal)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#issue-management-terminal">Issue Management (Terminal)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cleaning-up-repositories-terminal">Cleaning Up Repositories (Terminal)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#navigating-github-with-github-cli">Navigating GitHub with GitHub CLI</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#learning-outcomes_2">Learning Outcomes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#managing-issues-and-pull-requests-terminal">Managing Issues and Pull Requests (Terminal)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#working-with-gists-and-actions-terminal">Working with Gists and Actions (Terminal)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#navigating-repositories-terminal">Navigating Repositories (Terminal)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#searching-and-filtering-terminal">Searching and Filtering (Terminal)</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                 </li>
     </ul>
                   </li>
@@ -102,98 +158,128 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p>GitHub CLI Overview</p>
-<p>Introduction to GitHub CLI</p>
-<p>Introduction</p>
-<p>This guide covers the essential aspects of GitHub CLI (Command Line Interface), a powerful tool that allows you to interact with GitHub repositories directly from your terminal. Whether you’re creating pull requests, managing issues, or navigating repositories, GitHub CLI helps streamline your workflow.</p>
-<p>Learning Outcomes</p>
-<pre><code>•   Install GitHub CLI
-•   Execute basic GitHub CLI commands
-•   Create and manage aliases for frequently used operations
-•   Authenticate your GitHub account via the CLI
-</code></pre>
-<p>Section 1: Installing GitHub CLI (Terminal)</p>
-<p>Installation Steps</p>
+                <h1 id="github-cli-overview">GitHub CLI Overview</h1>
+<h2 id="introduction-to-github-cli">Introduction to GitHub CLI</h2>
+<h3 id="introduction">Introduction</h3>
+<p>This guide covers the essential aspects of GitHub CLI (Command Line Interface), a powerful tool that allows you to interact with GitHub repositories directly from your terminal. Whether you're creating pull requests, managing issues, or navigating repositories, GitHub CLI helps streamline your workflow.</p>
+<h3 id="learning-outcomes">Learning Outcomes</h3>
+<p>By the end of this guide, you will:</p>
+<ul>
+<li>Install GitHub CLI</li>
+<li>Execute basic GitHub CLI commands</li>
+<li>Create and manage aliases for frequently used operations</li>
+<li>Authenticate your GitHub account via the CLI</li>
+</ul>
+<h2 id="installing-github-cli-terminal">Installing GitHub CLI (Terminal)</h2>
+<h3 id="installation-steps">Installation Steps</h3>
 <p>For macOS users:</p>
-<p>brew install gh</p>
+<pre><code class="language-bash">brew install gh
+</code></pre>
 <p>For Ubuntu users:</p>
-<p>sudo apt install gh</p>
-<p>Verification</p>
+<pre><code class="language-bash">sudo apt install gh
+</code></pre>
+<h3 id="verification">Verification</h3>
 <p>To ensure the installation was successful, check the installed version:</p>
-<p>gh --version</p>
-<p>Section 2: Basic GitHub CLI Commands (Terminal)</p>
-<p>Key Commands</p>
-<pre><code>•   View repository details:
+<pre><code class="language-bash">gh --version
 </code></pre>
-<p>gh repo view</p>
-<pre><code>•   Check pull request status:
+<h2 id="basic-github-cli-commands-terminal">Basic GitHub CLI Commands (Terminal)</h2>
+<h3 id="key-commands">Key Commands</h3>
+<ul>
+<li>View repository details:</li>
+</ul>
+<pre><code class="language-bash">gh repo view
 </code></pre>
-<p>gh pr status</p>
-<pre><code>•   List repository issues:
+<ul>
+<li>Check pull request status:</li>
+</ul>
+<pre><code class="language-bash">gh pr status
 </code></pre>
-<p>gh issue list</p>
-<p>Section 3: Creating Aliases in GitHub CLI (Terminal)</p>
+<ul>
+<li>List repository issues:</li>
+</ul>
+<pre><code class="language-bash">gh issue list
+</code></pre>
+<h2 id="creating-aliases-in-github-cli-terminal">Creating Aliases in GitHub CLI (Terminal)</h2>
 <p>Aliases let you create shortcuts for frequently used commands to save time. For example, to create an alias for viewing pull requests:</p>
-<p>gh alias set pr-list 'pr list'</p>
-<p>Now, instead of typing gh pr list, you can simply type gh pr-list.</p>
-<p>Section 4: Authentication with GitHub CLI (Terminal)</p>
+<pre><code class="language-bash">gh alias set pr-list 'pr list'
+</code></pre>
+<p>Now, instead of typing <code>gh pr list</code>, you can simply type <code>gh pr-list</code>.</p>
+<h2 id="authentication-with-github-cli-terminal">Authentication with GitHub CLI (Terminal)</h2>
 <p>To authenticate GitHub CLI with your GitHub account, use the following command:</p>
-<p>gh auth login</p>
+<pre><code class="language-bash">gh auth login
+</code></pre>
 <p>Follow the on-screen prompts to complete the authentication process.</p>
-<p>Managing Repositories with GitHub CLI</p>
-<p>Learning Outcomes</p>
-<pre><code>•   Create and clone repositories using GitHub CLI
-•   Fork repositories and create pull requests
-•   Manage issues within a repository
-•   Clean up repositories efficiently
-</code></pre>
-<p>Section 1: Creating and Cloning Repositories (Terminal)</p>
+<h2 id="managing-repositories-with-github-cli">Managing Repositories with GitHub CLI</h2>
+<h3 id="learning-outcomes_1">Learning Outcomes</h3>
+<ul>
+<li>Create and clone repositories using GitHub CLI</li>
+<li>Fork repositories and create pull requests</li>
+<li>Manage issues within a repository</li>
+<li>Clean up repositories efficiently</li>
+</ul>
+<h3 id="creating-and-cloning-repositories-terminal">Creating and Cloning Repositories (Terminal)</h3>
 <p>To create a new repository:</p>
-<p>gh repo create <repository-name></p>
-<p>To clone an existing repository:</p>
-<p>gh repo clone <repository-name></p>
-<p>Section 2: Forking and Making Pull Requests (Terminal)</p>
-<p>Fork a repository to your account:</p>
-<p>gh repo fork <original-repo></p>
-<p>Create a pull request from your branch:</p>
-<p>gh pr create</p>
-<p>Follow the interactive prompts to provide a title, description, and reviewers for your pull request.</p>
-<p>Section 3: Issue Management (Terminal)</p>
-<p>To create a new issue:</p>
-<p>gh issue create</p>
-<p>List all open issues:</p>
-<p>gh issue list</p>
-<p>Close an issue by its number:</p>
-<p>gh issue close <issue-number></p>
-<p>Section 4: Cleaning Up Repositories (Terminal)</p>
-<p>To delete a repository from GitHub:</p>
-<p>gh repo delete <repository-name></p>
-<p>Navigating GitHub with GitHub CLI</p>
-<p>Learning Outcomes</p>
-<pre><code>•   Manage issues and pull requests efficiently
-•   Work with GitHub Gists and Actions
-•   Navigate between repositories
-•   Use search filters to find specific repositories or issues
+<pre><code class="language-bash">gh repo create &lt;repository-name&gt;
 </code></pre>
-<p>Section 1: Managing Issues and Pull Requests (Terminal)</p>
+<p>To clone an existing repository:</p>
+<pre><code class="language-bash">gh repo clone &lt;repository-name&gt;
+</code></pre>
+<h3 id="forking-and-making-pull-requests-terminal">Forking and Making Pull Requests (Terminal)</h3>
+<p>Fork a repository to your account:</p>
+<pre><code class="language-bash">gh repo fork &lt;original-repo&gt;
+</code></pre>
+<p>Create a pull request from your branch:</p>
+<pre><code class="language-bash">gh pr create
+</code></pre>
+<p>Follow the interactive prompts to provide a title, description, and reviewers for your pull request.</p>
+<h3 id="issue-management-terminal">Issue Management (Terminal)</h3>
+<p>To create a new issue:</p>
+<pre><code class="language-bash">gh issue create
+</code></pre>
+<p>List all open issues:</p>
+<pre><code class="language-bash">gh issue list
+</code></pre>
+<p>Close an issue by its number:</p>
+<pre><code class="language-bash">gh issue close &lt;issue-number&gt;
+</code></pre>
+<h3 id="cleaning-up-repositories-terminal">Cleaning Up Repositories (Terminal)</h3>
+<p>To delete a repository from GitHub:</p>
+<pre><code class="language-bash">gh repo delete &lt;repository-name&gt;
+</code></pre>
+<h2 id="navigating-github-with-github-cli">Navigating GitHub with GitHub CLI</h2>
+<h3 id="learning-outcomes_2">Learning Outcomes</h3>
+<ul>
+<li>Manage issues and pull requests efficiently</li>
+<li>Work with GitHub Gists and Actions</li>
+<li>Navigate between repositories</li>
+<li>Use search filters to find specific repositories or issues</li>
+</ul>
+<h3 id="managing-issues-and-pull-requests-terminal">Managing Issues and Pull Requests (Terminal)</h3>
 <p>To view the status of all open issues:</p>
-<p>gh issue status</p>
+<pre><code class="language-bash">gh issue status
+</code></pre>
 <p>To check the status of pull requests:</p>
-<p>gh pr status</p>
-<p>Section 2: Working with Gists and Actions (Terminal)</p>
+<pre><code class="language-bash">gh pr status
+</code></pre>
+<h3 id="working-with-gists-and-actions-terminal">Working with Gists and Actions (Terminal)</h3>
 <p>To create a GitHub Gist from a file:</p>
-<p>gh gist create <file-name></p>
+<pre><code class="language-bash">gh gist create &lt;file-name&gt;
+</code></pre>
 <p>To view the list of GitHub Actions workflows:</p>
-<p>gh run list</p>
-<p>Section 3: Navigating Repositories (Terminal)</p>
+<pre><code class="language-bash">gh run list
+</code></pre>
+<h3 id="navigating-repositories-terminal">Navigating Repositories (Terminal)</h3>
 <p>To open the main page of a repository in your browser:</p>
-<p>gh repo view --web</p>
-<p>This command opens the repository’s webpage, making it easier to review and interact with the project.</p>
-<p>Section 4: Searching and Filtering (Terminal)</p>
+<pre><code class="language-bash">gh repo view --web
+</code></pre>
+<p>This command opens the repository's webpage, making it easier to review and interact with the project.</p>
+<h3 id="searching-and-filtering-terminal">Searching and Filtering (Terminal)</h3>
 <p>To search for repositories owned by a specific user or organization:</p>
-<p>gh repo list <owner> --limit <n></p>
+<pre><code class="language-bash">gh repo list &lt;owner&gt; --limit &lt;n&gt;
+</code></pre>
 <p>To filter issues based on specific labels:</p>
-<p>gh issue list --label "bug"</p>
+<pre><code class="language-bash">gh issue list --label &quot;bug&quot;
+</code></pre>
 <p>By mastering GitHub CLI, you can significantly boost your productivity by performing GitHub operations directly from the terminal. Keep practicing these commands and use GitHub CLI as part of your development workflow for faster and more efficient project management!</p>
               
             </div>
