@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>System Design Patterns - Vets Who Code SOPs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "System Design Patterns";
+        var mkdocs_page_input_path = "system-design-patterns.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Vets Who Code SOPs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../code-of-conduct/">Code Of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Curriculum</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Command Line</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../getting-to-know-the-command-line/">Getting To Know The Command Line</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-basics/">Command Line Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-text-manipulation/">Command Line Text Manipulation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-utilities/">Command Line Utilities</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-command-line-features/">Advanced Command Line Features</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-cheat-sheet/">Command Line Cheat Sheet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../bash/">Bash Scripting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Git</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github-voice-overview/">AI Voice Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github/">Git And Github</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../basics-of-git/">Git Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-flow/">Git Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../github-cli/">Github CLI</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../intro-to-python/">Introduction To Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-python-operations/">Advanced Python Operations</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Patterns</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../coding-patterns-for-interviews/">Coding Interview Patterns</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../software-design-patterns/">Software Engineering Design Patterns</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">System Design Patterns</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#table-of-contents">Table of Contents</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#scalability-patterns">Scalability Patterns</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#military-context">Military Context</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#1-load-balancer-pattern-unit-distribution">1. Load Balancer Pattern - Unit Distribution</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-database-sharding-territory-division">2. Database Sharding - Territory Division</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reliability-patterns">Reliability Patterns</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#military-context_1">Military Context</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#1-circuit-breaker-tactical-retreat">1. Circuit Breaker - Tactical Retreat</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-bulkhead-pattern-compartmentalization">2. Bulkhead Pattern - Compartmentalization</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#data-management-patterns">Data Management Patterns</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#military-context_2">Military Context</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#1-cqrs-operations-and-intelligence-separation">1. CQRS - Operations and Intelligence Separation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-api-gateway-forward-operating-base">2. API Gateway - Forward Operating Base</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#additional-resources">Additional Resources</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#training-materials">Training Materials</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#field-notes">Field Notes</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../data-patterns/">Data Patterns</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >FastAPI</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api/">Introduction To FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-fast-api/">Advanced FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api-testing/">Testing In FastAPI</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Streamlit</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../streamlit-fundamentals/">Streamlit Fundamentals</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-streamlit/">Advanced Streamlit</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Vets Who Code SOPs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Curriculum</li>
+          <li class="breadcrumb-item">Patterns</li>
+      <li class="breadcrumb-item active">System Design Patterns</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vetswhocode-strategic-system-design-patterns">VetsWhoCode: Strategic System Design Patterns 🎖️</h1>
+<blockquote>
+<p>"Like military logistics, system design requires planning for scale, resilience, and rapid response." - VetsWhoCode</p>
+</blockquote>
+<h2 id="overview">Overview</h2>
+<p>This field manual covers large-scale system design patterns through a military perspective. Each pattern represents battle-tested approaches to building robust, scalable systems.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#scalability-patterns">Scalability Patterns</a></li>
+<li><a href="#reliability-patterns">Reliability Patterns</a></li>
+<li><a href="#data-management-patterns">Data Management Patterns</a></li>
+</ul>
+<hr />
+<h2 id="scalability-patterns">Scalability Patterns</h2>
+<h3 id="military-context">Military Context</h3>
+<p>Like expanding military operations from platoon to battalion level, scalability patterns enable systems to grow while maintaining operational effectiveness.</p>
+<h3 id="1-load-balancer-pattern-unit-distribution">1. Load Balancer Pattern - Unit Distribution</h3>
+<pre><code class="language-python">class LoadBalancer:
+    &quot;&quot;&quot;
+    Mission: Distribute incoming requests across multiple servers.
+
+    Tactical Application:
+    - Like distributing troops across multiple objectives
+    - Prevents single point of failure
+    - Maintains operational tempo under heavy load
+
+    Strategy:
+    - Round-robin distribution
+    - Health monitoring
+    - Automatic failover
+    &quot;&quot;&quot;
+    def __init__(self):
+        self.servers = []
+        self.current_index = 0
+
+    def add_server(self, server):
+        self.servers.append({
+            'address': server,
+            'health': 100,
+            'active': True
+        })
+
+    def get_next_server(self):
+        # Round-robin selection of healthy servers
+        available_servers = [s for s in self.servers if s['active']]
+        if not available_servers:
+            raise Exception(&quot;No servers available&quot;)
+
+        server = available_servers[self.current_index % len(available_servers)]
+        self.current_index += 1
+        return server['address']
+
+    def health_check(self):
+        # Simulate health checks like checking troops' readiness
+        for server in self.servers:
+            if server['health'] &lt; 50:
+                server['active'] = False
+
+# Field Implementation
+balancer = LoadBalancer()
+balancer.add_server(&quot;server-alpha&quot;)
+balancer.add_server(&quot;server-bravo&quot;)
+balancer.add_server(&quot;server-charlie&quot;)
+</code></pre>
+<h3 id="2-database-sharding-territory-division">2. Database Sharding - Territory Division</h3>
+<pre><code class="language-python">class DatabaseShard:
+    &quot;&quot;&quot;
+    Mission: Distribute data across multiple databases for improved performance.
+
+    Tactical Application:
+    - Like dividing territory into operational sectors
+    - Each shard responsible for specific data range
+    - Enables parallel operations
+    &quot;&quot;&quot;
+    def __init__(self, shard_key):
+        self.shard_key = shard_key
+        self.data = {}
+
+    def write(self, key, value):
+        self.data[key] = value
+
+    def read(self, key):
+        return self.data.get(key)
+
+class ShardManager:
+    def __init__(self, num_shards):
+        self.shards = [DatabaseShard(i) for i in range(num_shards)]
+
+    def get_shard(self, key):
+        # Determine shard based on key hash
+        shard_id = hash(key) % len(self.shards)
+        return self.shards[shard_id]
+
+    def write_data(self, key, value):
+        shard = self.get_shard(key)
+        shard.write(key, value)
+
+    def read_data(self, key):
+        shard = self.get_shard(key)
+        return shard.read(key)
+
+# Field Implementation
+shard_manager = ShardManager(3)  # 3 operational sectors
+shard_manager.write_data(&quot;soldier_1&quot;, &quot;Alpha Company&quot;)
+shard_manager.write_data(&quot;soldier_2&quot;, &quot;Bravo Company&quot;)
+</code></pre>
+<hr />
+<h2 id="reliability-patterns">Reliability Patterns</h2>
+<h3 id="military-context_1">Military Context</h3>
+<p>Like establishing defensive positions and fallback plans, reliability patterns ensure system resilience under adverse conditions.</p>
+<h3 id="1-circuit-breaker-tactical-retreat">1. Circuit Breaker - Tactical Retreat</h3>
+<pre><code class="language-python">class CircuitBreaker:
+    &quot;&quot;&quot;
+    Mission: Prevent system failure by monitoring and stopping problematic operations.
+
+    Tactical Application:
+    - Like calling tactical retreat to prevent casualties
+    - Monitors failure rates
+    - Automatic system protection
+    &quot;&quot;&quot;
+    def __init__(self, failure_threshold):
+        self.failure_threshold = failure_threshold
+        self.failure_count = 0
+        self.state = &quot;CLOSED&quot;  # CLOSED = operational, OPEN = stopped
+        self.last_failure_time = None
+        self.reset_timeout = 60  # seconds
+
+    def execute(self, operation):
+        if self.state == &quot;OPEN&quot;:
+            if self._should_reset():
+                self._reset()
+            else:
+                raise Exception(&quot;Circuit breaker is OPEN&quot;)
+
+        try:
+            result = operation()
+            self._success()
+            return result
+        except Exception as e:
+            self._failure()
+            raise e
+
+    def _failure(self):
+        self.failure_count += 1
+        if self.failure_count &gt;= self.failure_threshold:
+            self.state = &quot;OPEN&quot;
+            self.last_failure_time = time.time()
+
+    def _success(self):
+        self.failure_count = 0
+
+    def _should_reset(self):
+        return time.time() - self.last_failure_time &gt; self.reset_timeout
+
+# Field Implementation
+circuit = CircuitBreaker(failure_threshold=5)
+def risky_operation():
+    # Simulate remote operation
+    pass
+
+try:
+    circuit.execute(risky_operation)
+except Exception:
+    print(&quot;Falling back to safe mode&quot;)
+</code></pre>
+<h3 id="2-bulkhead-pattern-compartmentalization">2. Bulkhead Pattern - Compartmentalization</h3>
+<pre><code class="language-python">import threading
+from queue import Queue
+
+class Bulkhead:
+    &quot;&quot;&quot;
+    Mission: Isolate components to prevent cascade failures.
+
+    Tactical Application:
+    - Like compartmentalizing ship sections
+    - Isolates failures to specific areas
+    - Prevents total system failure
+    &quot;&quot;&quot;
+    def __init__(self, name, max_concurrent_calls):
+        self.name = name
+        self.semaphore = threading.Semaphore(max_concurrent_calls)
+        self.queue = Queue()
+
+    def execute(self, operation):
+        if not self.semaphore.acquire(blocking=False):
+            raise Exception(f&quot;Bulkhead {self.name} is full&quot;)
+
+        try:
+            result = operation()
+            return result
+        finally:
+            self.semaphore.release()
+
+# Field Implementation
+database_bulkhead = Bulkhead(&quot;Database&quot;, max_concurrent_calls=10)
+api_bulkhead = Bulkhead(&quot;API&quot;, max_concurrent_calls=20)
+</code></pre>
+<hr />
+<h2 id="data-management-patterns">Data Management Patterns</h2>
+<h3 id="military-context_2">Military Context</h3>
+<p>Like managing military intelligence and logistics, data management patterns ensure efficient information flow and resource utilization.</p>
+<h3 id="1-cqrs-operations-and-intelligence-separation">1. CQRS - Operations and Intelligence Separation</h3>
+<pre><code class="language-python">class CommandStack:
+    &quot;&quot;&quot;
+    Mission: Handle write operations separately from read operations.
+
+    Tactical Application:
+    - Like separating operations from intelligence
+    - Optimized for specific tasks
+    - Improved performance and scaling
+    &quot;&quot;&quot;
+    def __init__(self):
+        self.events = []
+
+    def handle_command(self, command):
+        # Process and validate command
+        event = self._process_command(command)
+        self.events.append(event)
+        return event
+
+    def _process_command(self, command):
+        # Command processing logic
+        return {&quot;type&quot;: command.type, &quot;data&quot;: command.data}
+
+class QueryStack:
+    def __init__(self):
+        self.read_model = {}
+
+    def handle_query(self, query):
+        # Return data from read-optimized model
+        return self.read_model.get(query.key)
+
+# Field Implementation
+command_stack = CommandStack()
+query_stack = QueryStack()
+</code></pre>
+<h3 id="2-api-gateway-forward-operating-base">2. API Gateway - Forward Operating Base</h3>
+<pre><code class="language-python">class APIGateway:
+    &quot;&quot;&quot;
+    Mission: Provide centralized access point for multiple services.
+
+    Tactical Application:
+    - Like a Forward Operating Base
+    - Central point of control
+    - Resource coordination
+    &quot;&quot;&quot;
+    def __init__(self):
+        self.services = {}
+        self.auth_provider = None
+
+    def register_service(self, name, service):
+        self.services[name] = service
+
+    def route_request(self, service_name, request):
+        if not self._authenticate(request):
+            raise Exception(&quot;Authentication failed&quot;)
+
+        service = self.services.get(service_name)
+        if not service:
+            raise Exception(f&quot;Service {service_name} not found&quot;)
+
+        return service.handle_request(request)
+
+    def _authenticate(self, request):
+        return self.auth_provider.verify(request.token)
+
+# Field Implementation
+gateway = APIGateway()
+gateway.register_service(&quot;logistics&quot;, LogisticsService())
+gateway.register_service(&quot;personnel&quot;, PersonnelService())
+</code></pre>
+<hr />
+<h2 id="additional-resources">Additional Resources</h2>
+<h3 id="training-materials">Training Materials</h3>
+<ul>
+<li><a href="https://vetswhocode.io/system-design">System Design Field Manual</a></li>
+<li><a href="https://vetswhocode.io/scalability">Scalability Best Practices</a></li>
+</ul>
+<h3 id="field-notes">Field Notes</h3>
+<ol>
+<li>System design patterns are like strategic military planning</li>
+<li>Always plan for:</li>
+<li>Scalability (force multiplication)</li>
+<li>Reliability (defensive positions)</li>
+<li>Data Management (intelligence operations)</li>
+<li>Remember: Systems must be both robust and adaptable</li>
+</ol>
+<hr />
+<p><em>"Building resilient systems with military precision"</em> - VetsWhoCode</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../software-design-patterns/" class="btn btn-neutral float-left" title="Software Engineering Design Patterns"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../data-patterns/" class="btn btn-neutral float-right" title="Data Patterns">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../software-design-patterns/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../data-patterns/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

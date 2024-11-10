@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Data Patterns - Vets Who Code SOPs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Data Patterns";
+        var mkdocs_page_input_path = "data-patterns.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Vets Who Code SOPs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../code-of-conduct/">Code Of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Curriculum</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Command Line</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../getting-to-know-the-command-line/">Getting To Know The Command Line</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-basics/">Command Line Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-text-manipulation/">Command Line Text Manipulation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-utilities/">Command Line Utilities</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-command-line-features/">Advanced Command Line Features</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-cheat-sheet/">Command Line Cheat Sheet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../bash/">Bash Scripting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Git</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github-voice-overview/">AI Voice Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github/">Git And Github</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../basics-of-git/">Git Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-flow/">Git Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../github-cli/">Github CLI</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../intro-to-python/">Introduction To Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-python-operations/">Advanced Python Operations</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Patterns</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../coding-patterns-for-interviews/">Coding Interview Patterns</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../software-design-patterns/">Software Engineering Design Patterns</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../system-design-patterns/">System Design Patterns</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Data Patterns</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#table-of-contents">Table of Contents</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#data-processing-patterns">Data Processing Patterns</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#military-context">Military Context</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#1-mapreduce-distributed-intelligence-analysis">1. MapReduce - Distributed Intelligence Analysis</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-stream-processing-real-time-intelligence">2. Stream Processing - Real-time Intelligence</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#machine-learning-patterns">Machine Learning Patterns</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#military-context_1">Military Context</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#1-feature-engineering-intelligence-preparation">1. Feature Engineering - Intelligence Preparation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-model-deployment-unit-deployment">2. Model Deployment - Unit Deployment</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#data-storage-patterns">Data Storage Patterns</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#military-context_2">Military Context</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#1-data-lake-central-intelligence-repository">1. Data Lake - Central Intelligence Repository</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-hot-warm-cold-storage-intelligence-tiering">2. Hot-Warm-Cold Storage - Intelligence Tiering</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#data-integration-patterns">Data Integration Patterns</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#military-context_3">Military Context</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#1-data-pipeline-intelligence-flow">1. Data Pipeline - Intelligence Flow</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-event-driven-etl-intelligence-updates">2. Event-Driven ETL - Intelligence Updates</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#additional-resources">Additional Resources</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#training-materials">Training Materials</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#field-notes">Field Notes</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >FastAPI</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api/">Introduction To FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-fast-api/">Advanced FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api-testing/">Testing In FastAPI</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Streamlit</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../streamlit-fundamentals/">Streamlit Fundamentals</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-streamlit/">Advanced Streamlit</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Vets Who Code SOPs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Curriculum</li>
+          <li class="breadcrumb-item">Patterns</li>
+      <li class="breadcrumb-item active">Data Patterns</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vetswhocode-intelligence-data-operations-patterns">VetsWhoCode: Intelligence &amp; Data Operations Patterns 🎖️</h1>
+<blockquote>
+<p>"Like military intelligence, data operations require precision, scale, and adaptability." - VetsWhoCode</p>
+</blockquote>
+<h2 id="overview">Overview</h2>
+<p>This field manual covers patterns for handling large-scale data operations and AI systems, explained through military analogies and practical implementations.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#data-processing-patterns">Data Processing Patterns</a></li>
+<li><a href="#machine-learning-patterns">Machine Learning Patterns</a></li>
+<li><a href="#data-storage-patterns">Data Storage Patterns</a></li>
+<li><a href="#data-integration-patterns">Data Integration Patterns</a></li>
+</ul>
+<hr />
+<h2 id="data-processing-patterns">Data Processing Patterns</h2>
+<h3 id="military-context">Military Context</h3>
+<p>Like coordinating large-scale military operations, these patterns handle massive data processing operations efficiently and reliably.</p>
+<h3 id="1-mapreduce-distributed-intelligence-analysis">1. MapReduce - Distributed Intelligence Analysis</h3>
+<pre><code class="language-python">class MapReduceFramework:
+    &quot;&quot;&quot;
+    Mission: Process large datasets using distributed computing resources.
+
+    Tactical Application:
+    - Like coordinating multiple intelligence teams
+    - Each team processes specific intel (Map)
+    - Command aggregates findings (Reduce)
+    &quot;&quot;&quot;
+    def __init__(self):
+        self.data_chunks = []
+        self.results = []
+
+    def map_phase(self, data, map_function):
+        # Distribute data to processing units
+        mapped_data = []
+        for chunk in self.data_chunks:
+            result = map_function(chunk)
+            mapped_data.append(result)
+        return mapped_data
+
+    def reduce_phase(self, mapped_data, reduce_function):
+        # Combine results from all units
+        return reduce_function(mapped_data)
+
+    def execute(self, data, map_fn, reduce_fn):
+        self.data_chunks = self._split_data(data)
+        mapped_data = self.map_phase(self.data_chunks, map_fn)
+        return self.reduce_phase(mapped_data, reduce_fn)
+
+    def _split_data(self, data, chunk_size=1000):
+        return [data[i:i + chunk_size] 
+                for i in range(0, len(data), chunk_size)]
+
+# Field Implementation
+def word_count_map(text):
+    return [(word, 1) for word in text.split()]
+
+def word_count_reduce(mapped_data):
+    word_counts = {}
+    for word, count in mapped_data:
+        word_counts[word] = word_counts.get(word, 0) + count
+    return word_counts
+
+mapreduce = MapReduceFramework()
+intel_data = &quot;Enemy movement detected in sector alpha...&quot;
+results = mapreduce.execute(intel_data, word_count_map, word_count_reduce)
+</code></pre>
+<h3 id="2-stream-processing-real-time-intelligence">2. Stream Processing - Real-time Intelligence</h3>
+<pre><code class="language-python">from datetime import datetime
+from queue import Queue
+
+class StreamProcessor:
+    &quot;&quot;&quot;
+    Mission: Process continuous data streams in real-time.
+
+    Tactical Application:
+    - Like real-time battlefield monitoring
+    - Continuous intelligence gathering
+    - Immediate threat detection
+    &quot;&quot;&quot;
+    def __init__(self):
+        self.data_stream = Queue()
+        self.processors = []
+        self.alert_threshold = 0.8
+
+    def add_processor(self, processor):
+        self.processors.append(processor)
+
+    def process_event(self, event):
+        event['timestamp'] = datetime.now()
+
+        for processor in self.processors:
+            event = processor.process(event)
+
+            if self._detect_threat(event):
+                self._raise_alert(event)
+
+        return event
+
+    def _detect_threat(self, event):
+        return event.get('threat_level', 0) &gt; self.alert_threshold
+
+    def _raise_alert(self, event):
+        print(f&quot;ALERT: High threat detected - {event}&quot;)
+
+# Field Implementation
+class ThreatDetector:
+    def process(self, event):
+        # Analyze event for threats
+        if 'enemy_activity' in event['data']:
+            event['threat_level'] = 0.9
+        return event
+
+stream_processor = StreamProcessor()
+stream_processor.add_processor(ThreatDetector())
+</code></pre>
+<hr />
+<h2 id="machine-learning-patterns">Machine Learning Patterns</h2>
+<h3 id="military-context_1">Military Context</h3>
+<p>Like training and deploying specialized units, ML patterns focus on building and deploying intelligent systems.</p>
+<h3 id="1-feature-engineering-intelligence-preparation">1. Feature Engineering - Intelligence Preparation</h3>
+<pre><code class="language-python">import numpy as np
+
+class FeatureEngineer:
+    &quot;&quot;&quot;
+    Mission: Transform raw intelligence into actionable features.
+
+    Tactical Application:
+    - Like processing raw intel into actionable intelligence
+    - Identify key indicators
+    - Standardize reporting formats
+    &quot;&quot;&quot;
+    def __init__(self):
+        self.feature_transformers = {}
+        self.feature_importance = {}
+
+    def add_transformer(self, feature_name, transformer):
+        self.feature_transformers[feature_name] = transformer
+
+    def transform_features(self, raw_data):
+        features = {}
+        for name, transformer in self.feature_transformers.items():
+            features[name] = transformer(raw_data)
+
+        return self._normalize_features(features)
+
+    def _normalize_features(self, features):
+        # Standardize feature values
+        for name, values in features.items():
+            if isinstance(values, (list, np.ndarray)):
+                features[name] = (values - np.mean(values)) / np.std(values)
+        return features
+
+# Field Implementation
+def location_transformer(data):
+    # Convert location data to grid coordinates
+    return [data['lat'], data['lon']]
+
+engineer = FeatureEngineer()
+engineer.add_transformer('location', location_transformer)
+</code></pre>
+<h3 id="2-model-deployment-unit-deployment">2. Model Deployment - Unit Deployment</h3>
+<pre><code class="language-python">class ModelDeployment:
+    &quot;&quot;&quot;
+    Mission: Deploy and monitor ML models in production.
+
+    Tactical Application:
+    - Like deploying specialized units
+    - Continuous monitoring
+    - Performance evaluation
+    &quot;&quot;&quot;
+    def __init__(self, model, version):
+        self.model = model
+        self.version = version
+        self.metrics = {
+            'accuracy': [],
+            'latency': [],
+            'errors': []
+        }
+
+    def predict(self, input_data):
+        try:
+            start_time = time.time()
+            prediction = self.model.predict(input_data)
+            latency = time.time() - start_time
+
+            self._update_metrics(prediction, latency)
+            return prediction
+
+        except Exception as e:
+            self._log_error(e)
+            return None
+
+    def _update_metrics(self, prediction, latency):
+        self.metrics['latency'].append(latency)
+        # Update other metrics
+
+    def _log_error(self, error):
+        self.metrics['errors'].append({
+            'timestamp': datetime.now(),
+            'error': str(error)
+        })
+
+# Field Implementation
+model_deployment = ModelDeployment(trained_model, version=&quot;1.0&quot;)
+</code></pre>
+<hr />
+<h2 id="data-storage-patterns">Data Storage Patterns</h2>
+<h3 id="military-context_2">Military Context</h3>
+<p>Like managing military logistics and intelligence archives, these patterns handle data storage and retrieval efficiently.</p>
+<h3 id="1-data-lake-central-intelligence-repository">1. Data Lake - Central Intelligence Repository</h3>
+<pre><code class="language-python">class DataLake:
+    &quot;&quot;&quot;
+    Mission: Store vast amounts of raw intelligence data.
+
+    Tactical Application:
+    - Like central intelligence repository
+    - Raw data storage
+    - Multiple access patterns
+    &quot;&quot;&quot;
+    def __init__(self, storage_path):
+        self.storage_path = storage_path
+        self.metadata = {}
+        self.access_logs = []
+
+    def store_data(self, data_id, data, metadata=None):
+        # Store raw data with metadata
+        file_path = f&quot;{self.storage_path}/{data_id}&quot;
+        self._write_data(file_path, data)
+
+        if metadata:
+            self.metadata[data_id] = metadata
+
+        self._log_access('write', data_id)
+
+    def retrieve_data(self, data_id):
+        # Retrieve data and log access
+        file_path = f&quot;{self.storage_path}/{data_id}&quot;
+        data = self._read_data(file_path)
+        self._log_access('read', data_id)
+        return data
+
+    def _log_access(self, operation, data_id):
+        self.access_logs.append({
+            'timestamp': datetime.now(),
+            'operation': operation,
+            'data_id': data_id
+        })
+
+# Field Implementation
+data_lake = DataLake(&quot;/path/to/storage&quot;)
+data_lake.store_data(&quot;intel_001&quot;, intel_data, {&quot;classification&quot;: &quot;SECRET&quot;})
+</code></pre>
+<h3 id="2-hot-warm-cold-storage-intelligence-tiering">2. Hot-Warm-Cold Storage - Intelligence Tiering</h3>
+<pre><code class="language-python">class TieredStorage:
+    &quot;&quot;&quot;
+    Mission: Optimize data storage based on access patterns.
+
+    Tactical Application:
+    - Like tiered intelligence classification
+    - Priority-based access
+    - Resource optimization
+    &quot;&quot;&quot;
+    def __init__(self):
+        self.hot_storage = {}  # Active intelligence
+        self.warm_storage = {} # Recent intelligence
+        self.cold_storage = {} # Archived intelligence
+
+    def store_data(self, data_id, data, tier='hot'):
+        if tier == 'hot':
+            self.hot_storage[data_id] = data
+        elif tier == 'warm':
+            self.warm_storage[data_id] = data
+        else:
+            self.cold_storage[data_id] = data
+
+    def access_data(self, data_id):
+        # Check each tier and promote if needed
+        if data_id in self.cold_storage:
+            data = self.cold_storage.pop(data_id)
+            self.warm_storage[data_id] = data
+            return data
+
+        if data_id in self.warm_storage:
+            data = self.warm_storage.pop(data_id)
+            self.hot_storage[data_id] = data
+            return data
+
+        return self.hot_storage.get(data_id)
+
+# Field Implementation
+storage = TieredStorage()
+storage.store_data(&quot;current_ops&quot;, ops_data, &quot;hot&quot;)
+storage.store_data(&quot;last_month&quot;, old_data, &quot;warm&quot;)
+</code></pre>
+<hr />
+<h2 id="data-integration-patterns">Data Integration Patterns</h2>
+<h3 id="military-context_3">Military Context</h3>
+<p>Like coordinating joint operations, these patterns ensure smooth data flow between different systems.</p>
+<h3 id="1-data-pipeline-intelligence-flow">1. Data Pipeline - Intelligence Flow</h3>
+<pre><code class="language-python">class DataPipeline:
+    &quot;&quot;&quot;
+    Mission: Coordinate data flow between systems.
+
+    Tactical Application:
+    - Like intelligence flow in joint operations
+    - Coordinated data movement
+    - Quality control
+    &quot;&quot;&quot;
+    def __init__(self):
+        self.stages = []
+        self.monitoring = PipelineMonitor()
+
+    def add_stage(self, stage):
+        self.stages.append(stage)
+
+    def execute(self, data):
+        current_data = data
+        for stage in self.stages:
+            try:
+                current_data = stage.process(current_data)
+                self.monitoring.log_success(stage.name)
+            except Exception as e:
+                self.monitoring.log_failure(stage.name, str(e))
+                raise e
+
+        return current_data
+
+# Field Implementation
+class DataStage:
+    def __init__(self, name, process_fn):
+        self.name = name
+        self.process = process_fn
+
+pipeline = DataPipeline()
+pipeline.add_stage(DataStage(&quot;extract&quot;, extract_fn))
+pipeline.add_stage(DataStage(&quot;transform&quot;, transform_fn))
+</code></pre>
+<h3 id="2-event-driven-etl-intelligence-updates">2. Event-Driven ETL - Intelligence Updates</h3>
+<pre><code class="language-python">class EventDrivenETL:
+    &quot;&quot;&quot;
+    Mission: Process data updates in real-time.
+
+    Tactical Application:
+    - Like real-time intelligence updates
+    - Immediate data processing
+    - Automated responses
+    &quot;&quot;&quot;
+    def __init__(self):
+        self.event_handlers = {}
+        self.event_queue = Queue()
+
+    def register_handler(self, event_type, handler):
+        self.event_handlers[event_type] = handler
+
+    def process_event(self, event):
+        event_type = event['type']
+        if event_type in self.event_handlers:
+            handler = self.event_handlers[event_type]
+            return handler(event['data'])
+        else:
+            raise ValueError(f&quot;No handler for event type: {event_type}&quot;)
+
+# Field Implementation
+def intel_update_handler(data):
+    # Process intelligence update
+    return processed_data
+
+etl = EventDrivenETL()
+etl.register_handler(&quot;intel_update&quot;, intel_update_handler)
+</code></pre>
+<hr />
+<h2 id="additional-resources">Additional Resources</h2>
+<h3 id="training-materials">Training Materials</h3>
+<ul>
+<li><a href="https://vetswhocode.io/data-ops">Data Operations Field Manual</a></li>
+<li><a href="https://vetswhocode.io/ai-ml">AI/ML Deployment Guide</a></li>
+</ul>
+<h3 id="field-notes">Field Notes</h3>
+<ol>
+<li>Data operations require strategic planning and tactical execution</li>
+<li>Always consider:</li>
+<li>Data quality (intelligence accuracy)</li>
+<li>Processing efficiency (operational speed)</li>
+<li>Storage optimization (resource management)</li>
+<li>Remember: Good data leads to good decisions</li>
+</ol>
+<hr />
+<p><em>"Processing data with military precision"</em> - VetsWhoCode</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../system-design-patterns/" class="btn btn-neutral float-left" title="System Design Patterns"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../fast-api/" class="btn btn-neutral float-right" title="Introduction To FastAPI">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../system-design-patterns/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../fast-api/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

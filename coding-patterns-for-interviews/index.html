@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Coding Interview Patterns - Vets Who Code SOPs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Coding Interview Patterns";
+        var mkdocs_page_input_path = "coding-patterns-for-interviews.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Vets Who Code SOPs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../code-of-conduct/">Code Of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Curriculum</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Command Line</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../getting-to-know-the-command-line/">Getting To Know The Command Line</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-basics/">Command Line Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-text-manipulation/">Command Line Text Manipulation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-utilities/">Command Line Utilities</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-command-line-features/">Advanced Command Line Features</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-cheat-sheet/">Command Line Cheat Sheet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../bash/">Bash Scripting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Git</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github-voice-overview/">AI Voice Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github/">Git And Github</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../basics-of-git/">Git Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-flow/">Git Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../github-cli/">Github CLI</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../intro-to-python/">Introduction To Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-python-operations/">Advanced Python Operations</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Patterns</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Coding Interview Patterns</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#mission-overview">Mission Overview</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#table-of-contents">Table of Contents</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mission-briefing">Mission Briefing</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#battle-rhythm">Battle Rhythm</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#two-pointers-pattern">Two Pointers Pattern</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#tactical-overview">Tactical Overview</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#battle-plan">Battle Plan</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#implementation-equipment-load-distribution">Implementation: Equipment Load Distribution</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mission-applications">Mission Applications</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#combat-tips">Combat Tips</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#after-action-review">After Action Review</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#key-tactical-points">Key Tactical Points</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#field-notes">Field Notes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#training-resources">Training Resources</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#standard-operating-procedures">Standard Operating Procedures</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../software-design-patterns/">Software Engineering Design Patterns</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../system-design-patterns/">System Design Patterns</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../data-patterns/">Data Patterns</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >FastAPI</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api/">Introduction To FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-fast-api/">Advanced FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api-testing/">Testing In FastAPI</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Streamlit</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../streamlit-fundamentals/">Streamlit Fundamentals</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-streamlit/">Advanced Streamlit</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Vets Who Code SOPs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Curriculum</li>
+          <li class="breadcrumb-item">Patterns</li>
+      <li class="breadcrumb-item active">Coding Interview Patterns</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vetswhocode-combat-ready-coding-patterns">VetsWhoCode: Combat-Ready Coding Patterns 🎖️</h1>
+<blockquote>
+<p>"In code as in combat, patterns and preparation determine success." - VetsWhoCode</p>
+</blockquote>
+<h2 id="mission-overview">Mission Overview</h2>
+<p>These battle-tested coding patterns form the foundation of technical interviews and efficient problem-solving. Like standard operating procedures (SOPs) in combat, these patterns provide proven solutions to common challenges.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#mission-briefing">Mission Briefing</a></li>
+<li><a href="#two-pointers-pattern">Two Pointers Pattern</a></li>
+<li><a href="#sliding-window-pattern">Sliding Window Pattern</a></li>
+<li><a href="#fast--slow-pointers-pattern">Fast &amp; Slow Pointers Pattern</a></li>
+<li><a href="#binary-search-pattern">Binary Search Pattern</a></li>
+<li><a href="#after-action-review">After Action Review</a></li>
+</ul>
+<h2 id="mission-briefing">Mission Briefing</h2>
+<p>These patterns are your tactical toolset for coding interviews. Like a well-maintained weapon system, each pattern serves a specific purpose and should be mastered through consistent practice and application.</p>
+<h3 id="battle-rhythm">Battle Rhythm</h3>
+<ol>
+<li>Identify the pattern that fits your mission</li>
+<li>Apply the appropriate tactical solution</li>
+<li>Test and verify your implementation</li>
+<li>Optimize for better performance</li>
+</ol>
+<hr />
+<h2 id="two-pointers-pattern">Two Pointers Pattern</h2>
+<h3 id="tactical-overview">Tactical Overview</h3>
+<p><strong>Mission Type:</strong> Coordinated Movement Operations</p>
+<p><strong>Military Context:</strong> Like coordinating two fire teams during a patrol - each team moves with purpose and coordination to achieve the mission objective. Just as fire teams maintain relative positioning, our pointers maintain their relationship while moving through the array.</p>
+<h3 id="battle-plan">Battle Plan</h3>
+<ol>
+<li>Initialize two pointers at strategic positions</li>
+<li>Move pointers based on mission parameters</li>
+<li>Maintain coordination between pointer movements</li>
+<li>Achieve objective with minimal traversal</li>
+</ol>
+<h3 id="implementation-equipment-load-distribution">Implementation: Equipment Load Distribution</h3>
+<pre><code class="language-python">def find_equipment_pairs(weights, target_weight):
+    &quot;&quot;&quot;
+    Mission: Find pairs of equipment that add up to target weight.
+
+    Tactical Application: 
+    - Organizing gear for balanced load distribution
+    - Matching battle buddies for equipment carry
+    - Ensuring optimal weight distribution across the unit
+
+    Operation Parameters:
+    weights (list): List of equipment weights
+    target_weight (int): Target combined weight
+
+    Mission Outcome:
+    list: Pairs of weights that match target
+    &quot;&quot;&quot;
+    weights.sort()  # Organize equipment by weight
+    left = 0  # Alpha team position
+    right = len(weights) - 1  # Bravo team position
+    pairs = []
+
+    while left &lt; right:
+        current_weight = weights[left] + weights[right]
+        if current_weight == target_weight:
+            pairs.append((weights[left], weights[right]))
+            left += 1  # Alpha team advances
+            right -= 1  # Bravo team falls back
+        elif current_weight &lt; target_weight:
+            left += 1  # Alpha team moves forward
+        else:
+            right -= 1  # Bravo team adjusts position
+
+    return pairs
+
+# Field Operations Test
+equipment_weights = [10, 15, 20, 25, 30, 35]
+target = 45
+pairs = find_equipment_pairs(equipment_weights, target)
+print(f&quot;SITREP: Equipment pairs matching {target}lbs: {pairs}&quot;)
+</code></pre>
+<h3 id="mission-applications">Mission Applications</h3>
+<ol>
+<li>Finding pairs in sorted arrays (Two Sum)</li>
+<li>Container optimization (Water Container)</li>
+<li>Removing duplicates from sorted arrays</li>
+</ol>
+<h3 id="combat-tips">Combat Tips</h3>
+<ul>
+<li>Always sort when dealing with pair finding</li>
+<li>Consider edge cases like empty arrays</li>
+<li>Watch for pointer bounds</li>
+</ul>
+<p>[Additional sections follow same enhanced format...]</p>
+<h2 id="after-action-review">After Action Review</h2>
+<h3 id="key-tactical-points">Key Tactical Points</h3>
+<ol>
+<li>Each pattern represents a battle-tested approach to solving specific types of problems</li>
+<li>Practice these patterns until they become muscle memory</li>
+<li>Remember: In both coding and combat, preparation and pattern recognition are key to success</li>
+</ol>
+<h3 id="field-notes">Field Notes</h3>
+<ul>
+<li>Document your approaches</li>
+<li>Learn from failed attempts</li>
+<li>Build your pattern recognition skills</li>
+</ul>
+<h3 id="training-resources">Training Resources</h3>
+<ul>
+<li><a href="https://vetswhocode.io/patterns">VetsWhoCode Pattern Drills</a></li>
+<li><a href="https://vetswhocode.io/prep">Technical Interview Prep Guide</a></li>
+<li><a href="https://vetswhocode.io/exercises">Combat Coding Exercises</a></li>
+</ul>
+<hr />
+<h2 id="standard-operating-procedures">Standard Operating Procedures</h2>
+<ol>
+<li>Always identify the pattern before coding</li>
+<li>Test with multiple scenarios</li>
+<li>Consider edge cases</li>
+<li>Optimize after achieving basic functionality</li>
+</ol>
+<hr />
+<p><em>"Code with Honor, Debug with Discipline"</em> - VetsWhoCode</p>
+<p><em>"Mission success through tactical coding excellence"</em></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../advanced-python-operations/" class="btn btn-neutral float-left" title="Advanced Python Operations"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../software-design-patterns/" class="btn btn-neutral float-right" title="Software Engineering Design Patterns">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../advanced-python-operations/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../software-design-patterns/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

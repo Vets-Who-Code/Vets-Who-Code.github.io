@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Software Engineering Design Patterns - Vets Who Code SOPs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Software Engineering Design Patterns";
+        var mkdocs_page_input_path = "software-design-patterns.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Vets Who Code SOPs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../code-of-conduct/">Code Of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Curriculum</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Command Line</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../getting-to-know-the-command-line/">Getting To Know The Command Line</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-basics/">Command Line Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-text-manipulation/">Command Line Text Manipulation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-utilities/">Command Line Utilities</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-command-line-features/">Advanced Command Line Features</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-cheat-sheet/">Command Line Cheat Sheet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../bash/">Bash Scripting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Git</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github-voice-overview/">AI Voice Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github/">Git And Github</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../basics-of-git/">Git Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-flow/">Git Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../github-cli/">Github CLI</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../intro-to-python/">Introduction To Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-python-operations/">Advanced Python Operations</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Patterns</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../coding-patterns-for-interviews/">Coding Interview Patterns</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Software Engineering Design Patterns</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#table-of-contents">Table of Contents</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#creational-patterns">Creational Patterns</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#military-context">Military Context</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#1-singleton-pattern-command-center">1. Singleton Pattern - Command Center</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-factory-method-equipment-factory">2. Factory Method - Equipment Factory</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3-builder-pattern-mission-planner">3. Builder Pattern - Mission Planner</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#structural-patterns">Structural Patterns</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#military-context_1">Military Context</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#1-adapter-pattern-communications-interface">1. Adapter Pattern - Communications Interface</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-decorator-pattern-equipment-modifications">2. Decorator Pattern - Equipment Modifications</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#behavioral-patterns">Behavioral Patterns</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#military-context_2">Military Context</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#1-observer-pattern-alert-system">1. Observer Pattern - Alert System</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-strategy-pattern-mission-tactics">2. Strategy Pattern - Mission Tactics</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#field-notes">Field Notes</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../system-design-patterns/">System Design Patterns</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../data-patterns/">Data Patterns</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >FastAPI</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api/">Introduction To FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-fast-api/">Advanced FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api-testing/">Testing In FastAPI</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Streamlit</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../streamlit-fundamentals/">Streamlit Fundamentals</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-streamlit/">Advanced Streamlit</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Vets Who Code SOPs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Curriculum</li>
+          <li class="breadcrumb-item">Patterns</li>
+      <li class="breadcrumb-item active">Software Engineering Design Patterns</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vetswhocode-strategic-design-patterns">VetsWhoCode: Strategic Design Patterns 🎖️</h1>
+<blockquote>
+<p>"Good architecture, like good leadership, creates a foundation for success." - VetsWhoCode</p>
+</blockquote>
+<h2 id="overview">Overview</h2>
+<p>This field manual covers essential software design patterns through a military lens. Each pattern is presented with tactical analogies and practical Python implementations.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#creational-patterns">Creational Patterns</a></li>
+<li><a href="#structural-patterns">Structural Patterns</a></li>
+<li><a href="#behavioral-patterns">Behavioral Patterns</a></li>
+</ul>
+<hr />
+<h2 id="creational-patterns">Creational Patterns</h2>
+<h3 id="military-context">Military Context</h3>
+<p>Like establishing different types of military installations, creational patterns define how we set up and organize our software assets. Each pattern serves a specific strategic purpose.</p>
+<h3 id="1-singleton-pattern-command-center">1. Singleton Pattern - Command Center</h3>
+<pre><code class="language-python">class CommandCenter:
+    &quot;&quot;&quot;
+    Mission: Ensure only one command center exists for coordinating operations.
+
+    Tactical Application:
+    - Central command and control
+    - Unified communications hub
+    - Resource management center
+    &quot;&quot;&quot;
+    _instance = None
+
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+            cls._instance.operations_log = []
+            cls._instance.active_units = {}
+        return cls._instance
+
+    def log_operation(self, operation):
+        self.operations_log.append(operation)
+
+    def register_unit(self, unit_id, unit_type):
+        self.active_units[unit_id] = unit_type
+
+# Field Test
+command1 = CommandCenter()
+command2 = CommandCenter()
+print(f&quot;Same command center: {command1 is command2}&quot;)  # True
+</code></pre>
+<h3 id="2-factory-method-equipment-factory">2. Factory Method - Equipment Factory</h3>
+<pre><code class="language-python">from abc import ABC, abstractmethod
+
+class Equipment(ABC):
+    @abstractmethod
+    def operate(self):
+        pass
+
+class Rifle(Equipment):
+    def operate(self):
+        return &quot;Rifle ready for operation&quot;
+
+class Radio(Equipment):
+    def operate(self):
+        return &quot;Radio established comms&quot;
+
+class EquipmentFactory:
+    &quot;&quot;&quot;
+    Mission: Standardize equipment creation process.
+
+    Tactical Application:
+    - Standardized equipment procurement
+    - Quality control
+    - Inventory management
+    &quot;&quot;&quot;
+    @staticmethod
+    def create_equipment(equipment_type):
+        if equipment_type == &quot;rifle&quot;:
+            return Rifle()
+        elif equipment_type == &quot;radio&quot;:
+            return Radio()
+        raise ValueError(f&quot;Unknown equipment type: {equipment_type}&quot;)
+
+# Field Test
+factory = EquipmentFactory()
+rifle = factory.create_equipment(&quot;rifle&quot;)
+radio = factory.create_equipment(&quot;radio&quot;)
+</code></pre>
+<h3 id="3-builder-pattern-mission-planner">3. Builder Pattern - Mission Planner</h3>
+<pre><code class="language-python">class MissionPlan:
+    def __init__(self):
+        self.objectives = []
+        self.resources = []
+        self.timeline = None
+        self.extraction_plan = None
+
+class MissionBuilder:
+    &quot;&quot;&quot;
+    Mission: Construct complex mission plans step by step.
+
+    Tactical Application:
+    - Detailed mission planning
+    - Resource allocation
+    - Contingency planning
+    &quot;&quot;&quot;
+    def __init__(self):
+        self.mission = MissionPlan()
+
+    def add_objective(self, objective):
+        self.mission.objectives.append(objective)
+        return self
+
+    def add_resource(self, resource):
+        self.mission.resources.append(resource)
+        return self
+
+    def set_timeline(self, timeline):
+        self.mission.timeline = timeline
+        return self
+
+    def set_extraction(self, extraction_plan):
+        self.mission.extraction_plan = extraction_plan
+        return self
+
+    def build(self):
+        return self.mission
+
+# Field Test
+mission = (MissionBuilder()
+    .add_objective(&quot;Secure perimeter&quot;)
+    .add_resource(&quot;Alpha Team&quot;)
+    .set_timeline(&quot;H-Hour to H+6&quot;)
+    .set_extraction(&quot;Helo pickup at LZ Bravo&quot;)
+    .build())
+</code></pre>
+<hr />
+<h2 id="structural-patterns">Structural Patterns</h2>
+<h3 id="military-context_1">Military Context</h3>
+<p>Like organizing units and establishing command relationships, structural patterns define how different components of the system work together.</p>
+<h3 id="1-adapter-pattern-communications-interface">1. Adapter Pattern - Communications Interface</h3>
+<pre><code class="language-python">class ModernRadio:
+    def transmit_digital(self, message):
+        return f&quot;Digital transmission: {message}&quot;
+
+class LegacyRadio:
+    def send_analog(self, message):
+        return f&quot;Analog signal: {message}&quot;
+
+class RadioAdapter:
+    &quot;&quot;&quot;
+    Mission: Enable communication between modern and legacy systems.
+
+    Tactical Application:
+    - Cross-platform communications
+    - Legacy system integration
+    - Interoperability assurance
+    &quot;&quot;&quot;
+    def __init__(self, legacy_radio):
+        self.legacy_radio = legacy_radio
+
+    def transmit_digital(self, message):
+        analog_message = self.convert_to_analog(message)
+        return self.legacy_radio.send_analog(analog_message)
+
+    def convert_to_analog(self, message):
+        return f&quot;Converted: {message}&quot;
+
+# Field Test
+modern = ModernRadio()
+legacy = LegacyRadio()
+adapter = RadioAdapter(legacy)
+print(adapter.transmit_digital(&quot;Alpha moving to objective&quot;))
+</code></pre>
+<h3 id="2-decorator-pattern-equipment-modifications">2. Decorator Pattern - Equipment Modifications</h3>
+<pre><code class="language-python">from abc import ABC, abstractmethod
+
+class Weapon(ABC):
+    @abstractmethod
+    def operate(self):
+        pass
+
+class BaseRifle(Weapon):
+    def operate(self):
+        return &quot;Standard rifle operations&quot;
+
+class WeaponModification(Weapon):
+    &quot;&quot;&quot;
+    Mission: Add modular capabilities to equipment.
+
+    Tactical Application:
+    - Equipment customization
+    - Mission-specific modifications
+    - Capability enhancement
+    &quot;&quot;&quot;
+    def __init__(self, weapon):
+        self._weapon = weapon
+
+class ScopeDecorator(WeaponModification):
+    def operate(self):
+        return f&quot;{self._weapon.operate()} + Enhanced targeting&quot;
+
+class SuppressorDecorator(WeaponModification):
+    def operate(self):
+        return f&quot;{self._weapon.operate()} + Noise reduction&quot;
+
+# Field Test
+rifle = BaseRifle()
+scoped_rifle = ScopeDecorator(rifle)
+tactical_rifle = SuppressorDecorator(scoped_rifle)
+print(tactical_rifle.operate())
+</code></pre>
+<hr />
+<h2 id="behavioral-patterns">Behavioral Patterns</h2>
+<h3 id="military-context_2">Military Context</h3>
+<p>Like standard operating procedures (SOPs), behavioral patterns define how different components communicate and operate together.</p>
+<h3 id="1-observer-pattern-alert-system">1. Observer Pattern - Alert System</h3>
+<pre><code class="language-python">from abc import ABC, abstractmethod
+
+class AlertSystem(ABC):
+    @abstractmethod
+    def update(self, message):
+        pass
+
+class Unit(AlertSystem):
+    def __init__(self, name):
+        self.name = name
+
+    def update(self, message):
+        print(f&quot;{self.name} received alert: {message}&quot;)
+
+class CommandPost:
+    &quot;&quot;&quot;
+    Mission: Coordinate and disseminate information to multiple units.
+
+    Tactical Application:
+    - Alert dissemination
+    - Unit coordination
+    - Information broadcasting
+    &quot;&quot;&quot;
+    def __init__(self):
+        self._units = []
+
+    def attach(self, unit):
+        self._units.append(unit)
+
+    def detach(self, unit):
+        self._units.remove(unit)
+
+    def notify(self, message):
+        for unit in self._units:
+            unit.update(message)
+
+# Field Test
+command_post = CommandPost()
+alpha_team = Unit(&quot;Alpha Team&quot;)
+bravo_team = Unit(&quot;Bravo Team&quot;)
+
+command_post.attach(alpha_team)
+command_post.attach(bravo_team)
+command_post.notify(&quot;Enemy contact at grid 123456&quot;)
+</code></pre>
+<h3 id="2-strategy-pattern-mission-tactics">2. Strategy Pattern - Mission Tactics</h3>
+<pre><code class="language-python">from abc import ABC, abstractmethod
+
+class TacticalApproach(ABC):
+    @abstractmethod
+    def execute(self):
+        pass
+
+class StealthApproach(TacticalApproach):
+    def execute(self):
+        return &quot;Executing silent approach&quot;
+
+class DirectAssault(TacticalApproach):
+    def execute(self):
+        return &quot;Executing frontal assault&quot;
+
+class MissionExecutor:
+    &quot;&quot;&quot;
+    Mission: Adapt tactical approach based on situation.
+
+    Tactical Application:
+    - Flexible mission execution
+    - Adaptable tactics
+    - Situational response
+    &quot;&quot;&quot;
+    def __init__(self, strategy: TacticalApproach):
+        self._strategy = strategy
+
+    def change_strategy(self, strategy: TacticalApproach):
+        self._strategy = strategy
+
+    def execute_mission(self):
+        return self._strategy.execute()
+
+# Field Test
+mission = MissionExecutor(StealthApproach())
+print(mission.execute_mission())
+mission.change_strategy(DirectAssault())
+print(mission.execute_mission())
+</code></pre>
+<hr />
+<h3 id="field-notes">Field Notes</h3>
+<ol>
+<li>Design patterns are like battle-tested strategies - use them wisely</li>
+<li>Each pattern solves specific tactical problems</li>
+<li>Remember: Good architecture enables mission success</li>
+</ol>
+<hr />
+<p><em>"Building robust systems with military precision"</em> - VetsWhoCode</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../coding-patterns-for-interviews/" class="btn btn-neutral float-left" title="Coding Interview Patterns"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../system-design-patterns/" class="btn btn-neutral float-right" title="System Design Patterns">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../coding-patterns-for-interviews/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../system-design-patterns/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
