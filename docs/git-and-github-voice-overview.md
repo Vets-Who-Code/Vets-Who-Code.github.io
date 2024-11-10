@@ -4,4 +4,7 @@ Welcome to the voice overview of all the lessons. In this audio guide, we will c
 
 ## Listen to the Overview
 
-![Listen to the Overview](assets/voice-overview/git-and-github.wav)
+<audio controls>
+  <source src="../assets/voice-overview/git-and-github.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>

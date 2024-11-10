@@ -5,19 +5,37 @@ nav:
   - Code Of Conduct: code-of-conduct.md
   - Curriculum:
     - Command Line:
+        - Getting To Know The Command Line: getting-to-know-the-command-line.md
         - Command Line Basics: command-line-basics.md
         - Command Line Text Manipulation: command-line-text-manipulation.md
         - Command Line Utilities: command-line-utilities.md
         - Advanced Command Line Features: advanced-command-line-features.md
+        - Command Line Cheat Sheet: command-line-cheat-sheet.md
     - Bash Scripting: bash.md
     - Git:
+        - AI Voice Overview: git-and-github-voice-overview.md
         - Git And Github: git-and-github.md
         - Git Basics: basics-of-git.md
         - Git Flow: git-flow.md
         - Github CLI: github-cli.md
+    - Python:
+        - Introduction To Python: intro-to-python.md
+        - Advanced Python Operations: advanced-python-operations.md
+    - Patterns:
+        - Coding Interview Patterns: coding-patterns-for-interviews.md
+        - Software Engineering Design Patterns: software-design-patterns.md
+        - System Design Patterns: system-design-patterns.md
+        - Data Patterns: data-patterns.md 
+    - FastAPI:
+        - Introduction To FastAPI: fast-api.md
+        - Advanced FastAPI: advanced-fast-api.md
+        - Testing In FastAPI: fast-api-testing.md
+    - Streamlit:
+        - Streamlit Fundamentals: streamlit-fundamentals.md
+        - Advanced Streamlit: advanced-streamlit.md
 
 theme:
-  name: "readthedocs"
+  name: readthedocs
 
 # Link to the custom CSS
 extra_css:
