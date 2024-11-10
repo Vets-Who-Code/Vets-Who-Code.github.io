@@ -112,9 +112,43 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#implementation-equipment-load-distribution">Implementation: Equipment Load Distribution</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#mission-applications">Mission Applications</a>
-    </li>
     <li class="toctree-l4"><a class="reference internal" href="#combat-tips">Combat Tips</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sliding-window-pattern">Sliding Window Pattern</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#tactical-overview_1">Tactical Overview</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#battle-plan_1">Battle Plan</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#implementation-unit-performance-tracking">Implementation: Unit Performance Tracking</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#combat-tips_1">Combat Tips</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fast-slow-pointers-pattern">Fast &amp; Slow Pointers Pattern</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#tactical-overview_2">Tactical Overview</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#battle-plan_2">Battle Plan</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#implementation-patrol-route-cycle-detection">Implementation: Patrol Route Cycle Detection</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#combat-tips_2">Combat Tips</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#binary-search-pattern">Binary Search Pattern</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#tactical-overview_3">Tactical Overview</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#battle-plan_3">Battle Plan</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#implementation-personnel-location-in-formation">Implementation: Personnel Location in Formation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#combat-tips_3">Combat Tips</a>
     </li>
         </ul>
     </li>
@@ -123,8 +157,6 @@
     <li class="toctree-l4"><a class="reference internal" href="#key-tactical-points">Key Tactical Points</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#field-notes">Field Notes</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#training-resources">Training Resources</a>
     </li>
         </ul>
     </li>
@@ -195,7 +227,6 @@
 <li><a href="#mission-briefing">Mission Briefing</a></li>
 <li><a href="#two-pointers-pattern">Two Pointers Pattern</a></li>
 <li><a href="#sliding-window-pattern">Sliding Window Pattern</a></li>
-<li><a href="#fast--slow-pointers-pattern">Fast &amp; Slow Pointers Pattern</a></li>
 <li><a href="#binary-search-pattern">Binary Search Pattern</a></li>
 <li><a href="#after-action-review">After Action Review</a></li>
 </ul>
@@ -261,19 +292,200 @@ target = 45
 pairs = find_equipment_pairs(equipment_weights, target)
 print(f&quot;SITREP: Equipment pairs matching {target}lbs: {pairs}&quot;)
 </code></pre>
-<h3 id="mission-applications">Mission Applications</h3>
-<ol>
-<li>Finding pairs in sorted arrays (Two Sum)</li>
-<li>Container optimization (Water Container)</li>
-<li>Removing duplicates from sorted arrays</li>
-</ol>
 <h3 id="combat-tips">Combat Tips</h3>
 <ul>
 <li>Always sort when dealing with pair finding</li>
 <li>Consider edge cases like empty arrays</li>
 <li>Watch for pointer bounds</li>
 </ul>
-<p>[Additional sections follow same enhanced format...]</p>
+<hr />
+<h2 id="sliding-window-pattern">Sliding Window Pattern</h2>
+<h3 id="tactical-overview_1">Tactical Overview</h3>
+<p><strong>Mission Type:</strong> Surveillance and Monitoring Operations</p>
+<p><strong>Military Context:</strong> Analogous to maintaining a surveillance window on an area of operation. Like how a unit maintains constant observation while moving through terrain, the sliding window keeps track of a specific subset of data while moving through the array.</p>
+<h3 id="battle-plan_1">Battle Plan</h3>
+<ol>
+<li>Establish initial observation window</li>
+<li>Monitor and record metrics within window</li>
+<li>Advance window systematically</li>
+<li>Maintain optimal window size for mission requirements</li>
+</ol>
+<h3 id="implementation-unit-performance-tracking">Implementation: Unit Performance Tracking</h3>
+<pre><code class="language-python">def analyze_performance_window(performance_scores, days):
+    &quot;&quot;&quot;
+    Mission: Track maximum average performance over consecutive days.
+
+    Tactical Application:
+    - Monitoring unit readiness
+    - Tracking squad performance trends
+    - Identifying optimal training periods
+    - Measuring combat effectiveness
+
+    Operation Parameters:
+    performance_scores (list): Daily performance metrics
+    days (int): Window size to analyze
+
+    Mission Outcome:
+    float: Maximum average performance for any window
+    &quot;&quot;&quot;
+    if not performance_scores or days &lt;= 0:
+        return 0
+
+    # Establish initial observation window
+    current_sum = sum(performance_scores[:days])
+    max_sum = current_sum
+
+    # Advance observation window
+    for i in range(days, len(performance_scores)):
+        # Shift window forward
+        current_sum = current_sum - performance_scores[i - days] + performance_scores[i]
+        max_sum = max(max_sum, current_sum)
+
+    return max_sum / days
+
+# Field Operations Test
+daily_scores = [85, 90, 92, 88, 86, 95, 92]
+window_size = 3
+max_avg = analyze_performance_window(daily_scores, window_size)
+print(f&quot;SITREP: Peak performance average over {window_size} days: {max_avg}&quot;)
+</code></pre>
+<h3 id="combat-tips_1">Combat Tips</h3>
+<ul>
+<li>Initialize window bounds correctly</li>
+<li>Update window contents efficiently</li>
+<li>Track maximum/minimum values as needed</li>
+</ul>
+<hr />
+<h2 id="fast-slow-pointers-pattern">Fast &amp; Slow Pointers Pattern</h2>
+<h3 id="tactical-overview_2">Tactical Overview</h3>
+<p><strong>Mission Type:</strong> Reconnaissance Operations</p>
+<p><strong>Military Context:</strong> Similar to scout team and main element movement. The scout team (fast pointer) moves ahead at twice the pace while maintaining coordination with the main element (slow pointer).</p>
+<h3 id="battle-plan_2">Battle Plan</h3>
+<ol>
+<li>Deploy scout element (fast pointer)</li>
+<li>Coordinate with main element (slow pointer)</li>
+<li>Maintain communication between elements</li>
+<li>Identify patterns or cycles in movement</li>
+</ol>
+<h3 id="implementation-patrol-route-cycle-detection">Implementation: Patrol Route Cycle Detection</h3>
+<pre><code class="language-python">class PatrolPoint:
+    &quot;&quot;&quot;
+    Tactical waypoint in patrol route
+    &quot;&quot;&quot;
+    def __init__(self, location, next=None):
+        self.location = location
+        self.next = next
+
+def detect_circular_patrol(patrol_route):
+    &quot;&quot;&quot;
+    Mission: Detect if a patrol route circles back to a previous point.
+
+    Tactical Application:
+    - Route reconnaissance
+    - Patrol pattern analysis
+    - Identifying redundant coverage
+    - Ensuring efficient area coverage
+
+    Operation Parameters:
+    patrol_route: Starting point of patrol route
+
+    Mission Outcome:
+    bool: True if route contains a cycle
+    &quot;&quot;&quot;
+    if not patrol_route:
+        return False
+
+    # Scout team (fast) and main element (slow)
+    main_element = patrol_route
+    scout_team = patrol_route.next
+
+    while scout_team and scout_team.next:
+        if main_element == scout_team:
+            return True  # Circular pattern detected
+        main_element = main_element.next
+        scout_team = scout_team.next.next
+
+    return False
+
+# Field Operations Test
+# Create patrol route: Alpha -&gt; Bravo -&gt; Charlie -&gt; Delta -&gt; Bravo
+point_a = PatrolPoint(&quot;Alpha&quot;)
+point_b = PatrolPoint(&quot;Bravo&quot;)
+point_c = PatrolPoint(&quot;Charlie&quot;)
+point_d = PatrolPoint(&quot;Delta&quot;)
+
+point_a.next = point_b
+point_b.next = point_c
+point_c.next = point_d
+point_d.next = point_b  # Creates cycle
+
+is_circular = detect_circular_patrol(point_a)
+print(f&quot;SITREP: Patrol route contains circular pattern: {is_circular}&quot;)
+</code></pre>
+<h3 id="combat-tips_2">Combat Tips</h3>
+<ul>
+<li>Watch for null/none values</li>
+<li>Handle edge cases carefully</li>
+<li>Maintain proper pointer speeds</li>
+</ul>
+<hr />
+<h2 id="binary-search-pattern">Binary Search Pattern</h2>
+<h3 id="tactical-overview_3">Tactical Overview</h3>
+<p><strong>Mission Type:</strong> Target Acquisition Operations</p>
+<p><strong>Military Context:</strong> Similar to bracketing procedures in artillery fire missions. You systematically narrow down your target area by adjusting between known boundaries until you achieve target acquisition.</p>
+<h3 id="battle-plan_3">Battle Plan</h3>
+<ol>
+<li>Establish search boundaries</li>
+<li>Calculate mid-point</li>
+<li>Adjust search sector based on target position</li>
+<li>Repeat until target acquired or sector cleared</li>
+</ol>
+<h3 id="implementation-personnel-location-in-formation">Implementation: Personnel Location in Formation</h3>
+<pre><code class="language-python">def locate_in_formation(positions, target_id):
+    &quot;&quot;&quot;
+    Mission: Efficiently locate a service member's position in formation.
+
+    Tactical Application:
+    - Personnel accountability
+    - Formation management
+    - Quick reaction force assignments
+    - Rapid personnel location
+
+    Operation Parameters:
+    positions (list): Sorted list of position IDs
+    target_id (int): ID to locate
+
+    Mission Outcome:
+    int: Index of target position or -1 if not found
+    &quot;&quot;&quot;
+    left = 0  # Left boundary
+    right = len(positions) - 1  # Right boundary
+
+    while left &lt;= right:
+        mid = (left + right) // 2  # Center of current sector
+
+        if positions[mid] == target_id:
+            return mid  # Target acquired
+        elif positions[mid] &lt; target_id:
+            left = mid + 1  # Adjust sector right
+        else:
+            right = mid - 1  # Adjust sector left
+
+    return -1  # Target not found
+
+# Field Operations Test
+formation_positions = [2, 4, 6, 8, 10, 12, 14, 16]
+target = 10
+position = locate_in_formation(formation_positions, target)
+print(f&quot;SITREP: Service member {target} located at position: {position}&quot;)
+</code></pre>
+<h3 id="combat-tips_3">Combat Tips</h3>
+<ul>
+<li>Ensure array is sorted before search</li>
+<li>Handle boundary conditions</li>
+<li>Watch for integer overflow in midpoint calculation</li>
+</ul>
+<hr />
 <h2 id="after-action-review">After Action Review</h2>
 <h3 id="key-tactical-points">Key Tactical Points</h3>
 <ol>
@@ -287,13 +499,6 @@ print(f&quot;SITREP: Equipment pairs matching {target}lbs: {pairs}&quot;)
 <li>Learn from failed attempts</li>
 <li>Build your pattern recognition skills</li>
 </ul>
-<h3 id="training-resources">Training Resources</h3>
-<ul>
-<li><a href="https://vetswhocode.io/patterns">VetsWhoCode Pattern Drills</a></li>
-<li><a href="https://vetswhocode.io/prep">Technical Interview Prep Guide</a></li>
-<li><a href="https://vetswhocode.io/exercises">Combat Coding Exercises</a></li>
-</ul>
-<hr />
 <h2 id="standard-operating-procedures">Standard Operating Procedures</h2>
 <ol>
 <li>Always identify the pattern before coding</li>
