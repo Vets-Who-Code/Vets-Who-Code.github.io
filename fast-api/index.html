@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Introduction To FastAPI - Vets Who Code SOPs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Introduction To FastAPI";
+        var mkdocs_page_input_path = "fast-api.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Vets Who Code SOPs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../code-of-conduct/">Code Of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Curriculum</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Command Line</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../getting-to-know-the-command-line/">Getting To Know The Command Line</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-basics/">Command Line Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-text-manipulation/">Command Line Text Manipulation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-utilities/">Command Line Utilities</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-command-line-features/">Advanced Command Line Features</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-cheat-sheet/">Command Line Cheat Sheet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../bash/">Bash Scripting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Git</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github-voice-overview/">AI Voice Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github/">Git And Github</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../basics-of-git/">Git Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-flow/">Git Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../github-cli/">Github CLI</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Python</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../intro-to-python/">Introduction To Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-python-operations/">Advanced Python Operations</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Introduction To FastAPI</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#mission-brief-fastapi-introduction">Mission Brief: FastAPI Introduction</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-1-base-setup">Phase 1: Base Setup</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#required-equipment">Required Equipment</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#first-deployment">First Deployment</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#launch-operations">Launch Operations</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-2-basic-operations-routes">Phase 2: Basic Operations (Routes)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#personnel-management-system">Personnel Management System</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-3-advanced-operations">Phase 3: Advanced Operations</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#authentication-security">Authentication &amp; Security</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#award-system-api">Award System API</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-4-database-integration">Phase 4: Database Integration</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#using-sqlalchemy">Using SQLAlchemy</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-5-background-tasks">Phase 5: Background Tasks</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#mission-status-updates">Mission Status Updates</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#field-exercise-complete-api-implementation">Field Exercise: Complete API Implementation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#next-mission-parameters">Next Mission Parameters</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-fast-api/">Advanced FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api-testing/">Testing In FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../streamlit-fundamentals/">Streamlit Fundamentals</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-streamlit/">Advanced Streamlit</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Vets Who Code SOPs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Curriculum</li>
+          <li class="breadcrumb-item">Python</li>
+      <li class="breadcrumb-item active">Introduction To FastAPI</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vets-who-code-fastapi-operations-guide">Vets Who Code - FastAPI Operations Guide 🎖️</h1>
+<h2 id="mission-brief-fastapi-introduction">Mission Brief: FastAPI Introduction</h2>
+<p>FastAPI is like a highly efficient FOB (Forward Operating Base) for your web operations. It's:</p>
+<ul>
+<li>Fast (high-performance)</li>
+<li>Easy to deploy</li>
+<li>Built for modern Python operations</li>
+<li>Automatically documented</li>
+<li>Production-ready</li>
+</ul>
+<h2 id="phase-1-base-setup">Phase 1: Base Setup</h2>
+<h3 id="required-equipment">Required Equipment</h3>
+<pre><code class="language-bash"># Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
+
+# Install dependencies
+pip install fastapi uvicorn
+</code></pre>
+<h3 id="first-deployment">First Deployment</h3>
+<pre><code class="language-python"># main.py
+from fastapi import FastAPI
+
+# Initialize FOB (Create FastAPI instance)
+app = FastAPI(
+    title=&quot;VWC API Operations&quot;,
+    description=&quot;Veteran-focused API operations&quot;,
+    version=&quot;1.0.0&quot;
+)
+
+# First Checkpoint (Root endpoint)
+@app.get(&quot;/&quot;)
+async def base_check():
+    return {
+        &quot;status&quot;: &quot;operational&quot;,
+        &quot;message&quot;: &quot;VWC API Standing By&quot;
+    }
+</code></pre>
+<h3 id="launch-operations">Launch Operations</h3>
+<pre><code class="language-bash"># Start the server
+uvicorn main:app --reload
+</code></pre>
+<h2 id="phase-2-basic-operations-routes">Phase 2: Basic Operations (Routes)</h2>
+<h3 id="personnel-management-system">Personnel Management System</h3>
+<pre><code class="language-python">from typing import List, Optional
+from pydantic import BaseModel
+from datetime import date
+
+# Data Models (Intel Structure)
+class ServiceMember(BaseModel):
+    id: int
+    first_name: str
+    last_name: str
+    rank: str
+    branch: str
+    service_start: date
+    status: str = &quot;Active&quot;
+
+# Database Simulation
+db_personnel = []
+
+# Routes
+@app.post(&quot;/personnel/&quot;, response_model=ServiceMember)
+async def create_personnel(member: ServiceMember):
+    db_personnel.append(member)
+    return member
+
+@app.get(&quot;/personnel/&quot;, response_model=List[ServiceMember])
+async def get_all_personnel():
+    return db_personnel
+
+@app.get(&quot;/personnel/{member_id}&quot;, response_model=ServiceMember)
+async def get_personnel(member_id: int):
+    for member in db_personnel:
+        if member.id == member_id:
+            return member
+    raise HTTPException(status_code=404, detail=&quot;Service member not found&quot;)
+</code></pre>
+<h2 id="phase-3-advanced-operations">Phase 3: Advanced Operations</h2>
+<h3 id="authentication-security">Authentication &amp; Security</h3>
+<pre><code class="language-python">from fastapi import Depends, HTTPException, status
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from jose import JWTError, jwt
+from passlib.context import CryptContext
+from datetime import datetime, timedelta
+
+# Security Configuration
+SECRET_KEY = &quot;your-secret-key&quot;
+ALGORITHM = &quot;HS256&quot;
+ACCESS_TOKEN_EXPIRE_MINUTES = 30
+
+pwd_context = CryptContext(schemes=[&quot;bcrypt&quot;], deprecated=&quot;auto&quot;)
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl=&quot;token&quot;)
+
+# User Model
+class User(BaseModel):
+    username: str
+    full_name: Optional[str] = None
+    disabled: Optional[bool] = None
+
+# Token Generation
+def create_access_token(data: dict):
+    to_encode = data.copy()
+    expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+    to_encode.update({&quot;exp&quot;: expire})
+    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+    return encoded_jwt
+
+# Authentication Route
+@app.post(&quot;/token&quot;)
+async def login(form_data: OAuth2PasswordRequestForm = Depends()):
+    # Authentication logic here
+    access_token = create_access_token(data={&quot;sub&quot;: form_data.username})
+    return {&quot;access_token&quot;: access_token, &quot;token_type&quot;: &quot;bearer&quot;}
+</code></pre>
+<h3 id="award-system-api">Award System API</h3>
+<pre><code class="language-python">from enum import Enum
+
+class AwardType(str, Enum):
+    PURPLE_HEART = &quot;Purple Heart&quot;
+    BRONZE_STAR = &quot;Bronze Star&quot;
+    COMBAT_ACTION = &quot;Combat Action Ribbon&quot;
+
+class Award(BaseModel):
+    type: AwardType
+    recipient_id: int
+    award_date: date
+    citation: Optional[str] = None
+
+@app.post(&quot;/awards/&quot;)
+async def issue_award(award: Award, token: str = Depends(oauth2_scheme)):
+    # Award issuing logic
+    return {&quot;status&quot;: &quot;Award issued&quot;, &quot;award&quot;: award}
+
+@app.get(&quot;/personnel/{member_id}/awards&quot;)
+async def get_member_awards(member_id: int, token: str = Depends(oauth2_scheme)):
+    # Award retrieval logic
+    return {&quot;member_id&quot;: member_id, &quot;awards&quot;: []}
+</code></pre>
+<h2 id="phase-4-database-integration">Phase 4: Database Integration</h2>
+<h3 id="using-sqlalchemy">Using SQLAlchemy</h3>
+<pre><code class="language-python">from sqlalchemy import create_engine, Column, Integer, String, Date
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
+SQLALCHEMY_DATABASE_URL = &quot;sqlite:///./vwc_operations.db&quot;
+engine = create_engine(SQLALCHEMY_DATABASE_URL)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+Base = declarative_base()
+
+# Database Models
+class DBServiceMember(Base):
+    __tablename__ = &quot;service_members&quot;
+
+    id = Column(Integer, primary_key=True, index=True)
+    first_name = Column(String)
+    last_name = Column(String)
+    rank = Column(String)
+    branch = Column(String)
+    service_start = Column(Date)
+    status = Column(String)
+
+# Database Dependency
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
+# Updated Routes with Database
+@app.post(&quot;/personnel/&quot;, response_model=ServiceMember)
+async def create_personnel(
+    member: ServiceMember,
+    db: Session = Depends(get_db)
+):
+    db_member = DBServiceMember(**member.dict())
+    db.add(db_member)
+    db.commit()
+    db.refresh(db_member)
+    return db_member
+</code></pre>
+<h2 id="phase-5-background-tasks">Phase 5: Background Tasks</h2>
+<h3 id="mission-status-updates">Mission Status Updates</h3>
+<pre><code class="language-python">from fastapi import BackgroundTasks
+
+def update_mission_status(mission_id: str):
+    # Simulate long-running task
+    time.sleep(5)
+    # Update mission status logic here
+    print(f&quot;Mission {mission_id} status updated&quot;)
+
+@app.post(&quot;/missions/{mission_id}/status&quot;)
+async def update_status(
+    mission_id: str,
+    background_tasks: BackgroundTasks
+):
+    background_tasks.add_task(update_mission_status, mission_id)
+    return {&quot;message&quot;: &quot;Status update initiated&quot;}
+</code></pre>
+<h2 id="field-exercise-complete-api-implementation">Field Exercise: Complete API Implementation</h2>
+<p>Here's a practical exercise combining these concepts - a Veteran Service Record System:</p>
+<pre><code class="language-python"># Complete implementation example
+from fastapi import FastAPI, HTTPException, Depends, BackgroundTasks
+from typing import List, Optional
+from pydantic import BaseModel
+from datetime import date
+import asyncio
+
+app = FastAPI(title=&quot;Veteran Service Record System&quot;)
+
+# Models
+class ServiceRecord(BaseModel):
+    id: int
+    name: str
+    service_number: str
+    branch: str
+    rank: str
+    start_date: date
+    end_date: Optional[date] = None
+    status: str
+    awards: List[str] = []
+
+# Simulated Database
+records_db = {}
+
+# Routes
+@app.post(&quot;/records/&quot;, response_model=ServiceRecord)
+async def create_record(record: ServiceRecord):
+    if record.id in records_db:
+        raise HTTPException(status_code=400, detail=&quot;Record already exists&quot;)
+    records_db[record.id] = record
+    return record
+
+@app.get(&quot;/records/{record_id}&quot;, response_model=ServiceRecord)
+async def get_record(record_id: int):
+    if record_id not in records_db:
+        raise HTTPException(status_code=404, detail=&quot;Record not found&quot;)
+    return records_db[record_id]
+
+@app.put(&quot;/records/{record_id}/awards&quot;)
+async def add_award(
+    record_id: int,
+    award: str,
+    background_tasks: BackgroundTasks
+):
+    if record_id not in records_db:
+        raise HTTPException(status_code=404, detail=&quot;Record not found&quot;)
+
+    background_tasks.add_task(update_award_database, record_id, award)
+    records_db[record_id].awards.append(award)
+    return {&quot;message&quot;: &quot;Award added successfully&quot;}
+
+# Background task
+async def update_award_database(record_id: int, award: str):
+    await asyncio.sleep(2)  # Simulate database update
+    print(f&quot;Award {award} recorded for service member {record_id}&quot;)
+</code></pre>
+<h2 id="next-mission-parameters">Next Mission Parameters</h2>
+<ol>
+<li>Advanced Topics:</li>
+<li>WebSocket implementations</li>
+<li>File uploads/downloads</li>
+<li>Rate limiting</li>
+<li>Caching</li>
+<li>
+<p>Testing FastAPI applications</p>
+</li>
+<li>
+<p>Deployment Operations:</p>
+</li>
+<li>Docker containerization</li>
+<li>Cloud deployment (AWS, Azure, GCP)</li>
+<li>CI/CD pipelines</li>
+<li>Production configurations</li>
+</ol>
+<p>Remember:</p>
+<ul>
+<li>Document your APIs thoroughly</li>
+<li>Implement proper security measures</li>
+<li>Test all endpoints</li>
+<li>Handle errors gracefully</li>
+<li>Monitor performance</li>
+</ul>
+<p>🇺🇸 #VetsWhoCode</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../advanced-python-operations/" class="btn btn-neutral float-left" title="Advanced Python Operations"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../advanced-fast-api/" class="btn btn-neutral float-right" title="Advanced FastAPI">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../advanced-python-operations/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../advanced-fast-api/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

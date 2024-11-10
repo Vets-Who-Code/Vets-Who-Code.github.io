@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Advanced Streamlit - Vets Who Code SOPs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Advanced Streamlit";
+        var mkdocs_page_input_path = "advanced-streamlit.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Vets Who Code SOPs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../code-of-conduct/">Code Of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Curriculum</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Command Line</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../getting-to-know-the-command-line/">Getting To Know The Command Line</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-basics/">Command Line Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-text-manipulation/">Command Line Text Manipulation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-utilities/">Command Line Utilities</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-command-line-features/">Advanced Command Line Features</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-cheat-sheet/">Command Line Cheat Sheet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../bash/">Bash Scripting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Git</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github-voice-overview/">AI Voice Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github/">Git And Github</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../basics-of-git/">Git Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-flow/">Git Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../github-cli/">Github CLI</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Python</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../intro-to-python/">Introduction To Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-python-operations/">Advanced Python Operations</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api/">Introduction To FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-fast-api/">Advanced FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api-testing/">Testing In FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../streamlit-fundamentals/">Streamlit Fundamentals</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Advanced Streamlit</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#taking-your-streamlit-apps-to-the-next-level">Taking Your Streamlit Apps to the Next Level</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#advanced-learning-objectives">🎯 Advanced Learning Objectives</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lesson-1-streamlit-cloud-deployment">📚 Lesson 1: Streamlit Cloud Deployment</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lesson-2-custom-components">📚 Lesson 2: Custom Components</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lesson-3-authentication-security">📚 Lesson 3: Authentication &amp; Security</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lesson-4-responsive-design">📚 Lesson 4: Responsive Design</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lesson-5-advanced-visualizations">📚 Lesson 5: Advanced Visualizations</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#practice-projects">🛠️ Practice Projects</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#best-practices">📝 Best Practices</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#next-steps">🚀 Next Steps</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Vets Who Code SOPs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Curriculum</li>
+          <li class="breadcrumb-item">Python</li>
+      <li class="breadcrumb-item active">Advanced Streamlit</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vets-who-code-advanced-streamlit-development">Vets Who Code: Advanced Streamlit Development</h1>
+<h2 id="taking-your-streamlit-apps-to-the-next-level">Taking Your Streamlit Apps to the Next Level</h2>
+<h3 id="advanced-learning-objectives">🎯 Advanced Learning Objectives</h3>
+<p>After completing this lesson, you will be able to:</p>
+<ul>
+<li>Deploy applications to Streamlit Cloud</li>
+<li>Create custom Streamlit components</li>
+<li>Implement secure authentication</li>
+<li>Build responsive layouts</li>
+<li>Create advanced data visualizations</li>
+</ul>
+<h3 id="lesson-1-streamlit-cloud-deployment">📚 Lesson 1: Streamlit Cloud Deployment</h3>
+<h4 id="local-setup-for-deployment">Local Setup for Deployment</h4>
+<ol>
+<li>Create <code>requirements.txt</code>:</li>
+</ol>
+<pre><code class="language-txt">streamlit==1.31.0
+pandas==2.0.3
+numpy==1.24.3
+python-dotenv==1.0.0
+</code></pre>
+<ol>
+<li>Create <code>.gitignore</code>:</li>
+</ol>
+<pre><code class="language-txt">venv/
+.env
+__pycache__/
+*.pyc
+.DS_Store
+</code></pre>
+<ol>
+<li>Create <code>config.toml</code> in <code>.streamlit</code> folder:</li>
+</ol>
+<pre><code class="language-toml">[theme]
+primaryColor = &quot;#D6372E&quot;  # VWC Red
+backgroundColor = &quot;#FFFFFF&quot;
+secondaryBackgroundColor = &quot;#F0F2F6&quot;
+textColor = &quot;#262730&quot;
+font = &quot;sans serif&quot;
+
+[server]
+maxUploadSize = 200
+enableXsrfProtection = true
+</code></pre>
+<h4 id="deployment-steps">Deployment Steps</h4>
+<ol>
+<li>Push to GitHub:</li>
+</ol>
+<pre><code class="language-bash">git init
+git add .
+git commit -m &quot;Initial commit&quot;
+git remote add origin your-repo-url
+git push -u origin main
+</code></pre>
+<ol>
+<li>Streamlit Cloud Setup:</li>
+<li>Visit streamlit.io/cloud</li>
+<li>Connect your GitHub repository</li>
+<li>Select main file</li>
+<li>Add secrets in dashboard</li>
+<li>Deploy</li>
+</ol>
+<h3 id="lesson-2-custom-components">📚 Lesson 2: Custom Components</h3>
+<h4 id="basic-custom-component">Basic Custom Component</h4>
+<p>Create <code>custom_components.py</code>:</p>
+<pre><code class="language-python">import streamlit as st
+import streamlit.components.v1 as components
+
+def custom_html_component():
+    components.html(
+        &quot;&quot;&quot;
+        &lt;div style=&quot;padding: 20px; background: #f0f2f6; border-radius: 10px;&quot;&gt;
+            &lt;h2&gt;Custom HTML Component&lt;/h2&gt;
+            &lt;p&gt;This is a custom component using HTML and JavaScript.&lt;/p&gt;
+            &lt;button onclick=&quot;alert('Hello from custom component!')&quot;&gt;
+                Click Me
+            &lt;/button&gt;
+        &lt;/div&gt;
+        &quot;&quot;&quot;,
+        height=200
+    )
+
+def custom_chart_component():
+    components.html(
+        &quot;&quot;&quot;
+        &lt;script src=&quot;https://cdn.plot.ly/plotly-latest.min.js&quot;&gt;&lt;/script&gt;
+        &lt;div id=&quot;chart&quot;&gt;&lt;/div&gt;
+        &lt;script&gt;
+            var data = [{
+                type: 'scatter',
+                x: [1, 2, 3, 4],
+                y: [10, 15, 13, 17]
+            }];
+            Plotly.newPlot('chart', data);
+        &lt;/script&gt;
+        &quot;&quot;&quot;,
+        height=400
+    )
+
+# Usage
+st.title(&quot;Custom Components Demo&quot;)
+custom_html_component()
+custom_chart_component()
+</code></pre>
+<h3 id="lesson-3-authentication-security">📚 Lesson 3: Authentication &amp; Security</h3>
+<h4 id="basic-authentication">Basic Authentication</h4>
+<p>Create <code>auth.py</code>:</p>
+<pre><code class="language-python">import streamlit as st
+import hmac
+import hashlib
+from datetime import datetime, timedelta
+
+class Authenticator:
+    def __init__(self):
+        if 'authenticated' not in st.session_state:
+            st.session_state.authenticated = False
+            st.session_state.auth_time = None
+
+    def _hash_password(self, password: str) -&gt; str:
+        return hashlib.sha256(password.encode()).hexdigest()
+
+    def _check_password(self, username: str, password: str) -&gt; bool:
+        # Replace with database lookup in production
+        users = {
+            &quot;demo&quot;: self._hash_password(&quot;demo123&quot;)
+        }
+        return username in users and users[username] == self._hash_password(password)
+
+    def login_form(self):
+        if not st.session_state.authenticated:
+            st.title(&quot;Login&quot;)
+
+            with st.form(&quot;login_form&quot;):
+                username = st.text_input(&quot;Username&quot;)
+                password = st.text_input(&quot;Password&quot;, type=&quot;password&quot;)
+                submitted = st.form_submit_button(&quot;Login&quot;)
+
+                if submitted:
+                    if self._check_password(username, password):
+                        st.session_state.authenticated = True
+                        st.session_state.auth_time = datetime.now()
+                        st.experimental_rerun()
+                    else:
+                        st.error(&quot;Invalid credentials&quot;)
+
+        return st.session_state.authenticated
+
+# Usage example
+auth = Authenticator()
+if auth.login_form():
+    st.write(&quot;Welcome to the secure area!&quot;)
+</code></pre>
+<h3 id="lesson-4-responsive-design">📚 Lesson 4: Responsive Design</h3>
+<h4 id="responsive-layout-example">Responsive Layout Example</h4>
+<p>Create <code>responsive.py</code>:</p>
+<pre><code class="language-python">import streamlit as st
+
+def get_device_type():
+    # Basic device detection using viewport width
+    # Note: This is a simplified approach
+    return st.select_slider(
+        &quot;Preview as:&quot;,
+        options=[&quot;Mobile&quot;, &quot;Tablet&quot;, &quot;Desktop&quot;],
+        value=&quot;Desktop&quot;,
+        key=&quot;device_type&quot;
+    )
+
+st.title(&quot;Responsive Design Demo&quot;)
+
+device = get_device_type()
+
+# Responsive layout based on device
+if device == &quot;Mobile&quot;:
+    # Single column layout
+    st.write(&quot;Mobile Layout&quot;)
+    st.image(&quot;https://via.placeholder.com/300x200&quot;)
+    st.write(&quot;Content below image&quot;)
+
+elif device == &quot;Tablet&quot;:
+    # Two column layout
+    col1, col2 = st.columns([1, 1])
+    with col1:
+        st.write(&quot;Tablet Layout - Left&quot;)
+        st.image(&quot;https://via.placeholder.com/400x300&quot;)
+    with col2:
+        st.write(&quot;Tablet Layout - Right&quot;)
+        st.write(&quot;Content next to image&quot;)
+
+else:  # Desktop
+    # Three column layout
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col1:
+        st.write(&quot;Sidebar content&quot;)
+    with col2:
+        st.write(&quot;Desktop Layout - Main&quot;)
+        st.image(&quot;https://via.placeholder.com/800x400&quot;)
+    with col3:
+        st.write(&quot;Additional content&quot;)
+
+# Responsive CSS
+st.markdown(&quot;&quot;&quot;
+    &lt;style&gt;
+    @media (max-width: 640px) {
+        .main { padding: 1rem; }
+        .stImage { max-width: 100%; }
+    }
+    &lt;/style&gt;
+&quot;&quot;&quot;, unsafe_allow_html=True)
+</code></pre>
+<h3 id="lesson-5-advanced-visualizations">📚 Lesson 5: Advanced Visualizations</h3>
+<h4 id="interactive-dashboard">Interactive Dashboard</h4>
+<p>Create <code>advanced_viz.py</code>:</p>
+<pre><code class="language-python">import streamlit as st
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+from datetime import datetime, timedelta
+
+# Generate sample data
+def generate_data():
+    dates = pd.date_range(
+        start=datetime.now() - timedelta(days=30),
+        end=datetime.now(),
+        freq='D'
+    )
+
+    df = pd.DataFrame({
+        'date': dates,
+        'users': np.random.randint(100, 1000, size=len(dates)),
+        'revenue': np.random.uniform(1000, 5000, size=len(dates)),
+        'conversion': np.random.uniform(0.1, 0.3, size=len(dates))
+    })
+    return df
+
+# Create interactive visualizations
+def create_dashboard():
+    st.title(&quot;Advanced Analytics Dashboard&quot;)
+
+    # Load data
+    df = generate_data()
+
+    # Date filter
+    date_range = st.date_input(
+        &quot;Select Date Range&quot;,
+        value=(df['date'].min(), df['date'].max()),
+        key=&quot;date_range&quot;
+    )
+
+    # Filter data
+    mask = (df['date'].dt.date &gt;= date_range[0]) &amp; (df['date'].dt.date &lt;= date_range[1])
+    filtered_df = df[mask]
+
+    # Metrics row
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.metric(
+            &quot;Total Users&quot;,
+            f&quot;{filtered_df['users'].sum():,.0f}&quot;,
+            f&quot;{filtered_df['users'].diff().mean():+.1f}/day&quot;
+        )
+    with col2:
+        st.metric(
+            &quot;Total Revenue&quot;,
+            f&quot;${filtered_df['revenue'].sum():,.2f}&quot;,
+            f&quot;{filtered_df['revenue'].pct_change().mean()*100:+.1f}%&quot;
+        )
+    with col3:
+        st.metric(
+            &quot;Avg Conversion&quot;,
+            f&quot;{filtered_df['conversion'].mean()*100:.1f}%&quot;,
+            f&quot;{filtered_df['conversion'].diff().mean()*100:+.2f}pp&quot;
+        )
+
+    # Interactive charts
+    tab1, tab2 = st.tabs([&quot;Time Series&quot;, &quot;Analysis&quot;])
+
+    with tab1:
+        # Create time series chart
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(
+            x=filtered_df['date'],
+            y=filtered_df['users'],
+            name=&quot;Users&quot;,
+            line=dict(color=&quot;#D6372E&quot;)
+        ))
+        fig.add_trace(go.Scatter(
+            x=filtered_df['date'],
+            y=filtered_df['revenue'],
+            name=&quot;Revenue&quot;,
+            yaxis=&quot;y2&quot;
+        ))
+
+        fig.update_layout(
+            title=&quot;Users and Revenue Over Time&quot;,
+            yaxis=dict(title=&quot;Users&quot;),
+            yaxis2=dict(title=&quot;Revenue&quot;, overlaying=&quot;y&quot;, side=&quot;right&quot;),
+            hovermode=&quot;x unified&quot;
+        )
+
+        st.plotly_chart(fig, use_container_width=True)
+
+    with tab2:
+        # Create scatter plot
+        fig = px.scatter(
+            filtered_df,
+            x='users',
+            y='revenue',
+            size='conversion',
+            color='conversion',
+            color_continuous_scale=&quot;Reds&quot;,
+            title=&quot;User-Revenue Correlation&quot;
+        )
+
+        st.plotly_chart(fig, use_container_width=True)
+
+if __name__ == &quot;__main__&quot;:
+    create_dashboard()
+</code></pre>
+<h3 id="practice-projects">🛠️ Practice Projects</h3>
+<ol>
+<li>
+<p><strong>Secure Dashboard Application</strong></p>
+</li>
+<li>
+<p>Implement user authentication</p>
+</li>
+<li>Create role-based access control</li>
+<li>Add secure data storage</li>
+<li>
+<p>Deploy to Streamlit Cloud</p>
+</li>
+<li>
+<p><strong>Responsive Chat Interface</strong></p>
+</li>
+<li>
+<p>Build custom chat components</p>
+</li>
+<li>Create mobile-friendly layout</li>
+<li>Add real-time updates</li>
+<li>
+<p>Implement message persistence</p>
+</li>
+<li>
+<p><strong>Advanced Analytics Dashboard</strong></p>
+</li>
+<li>
+<p>Create interactive visualizations</p>
+</li>
+<li>Add custom filtering</li>
+<li>Implement data export</li>
+<li>Build responsive layout</li>
+</ol>
+<h3 id="best-practices">📝 Best Practices</h3>
+<ol>
+<li>
+<p><strong>Security</strong></p>
+</li>
+<li>
+<p>Use environment variables</p>
+</li>
+<li>Implement proper authentication</li>
+<li>Validate user input</li>
+<li>Use HTTPS</li>
+<li>
+<p>Keep dependencies updated</p>
+</li>
+<li>
+<p><strong>Performance</strong></p>
+</li>
+<li>
+<p>Cache expensive operations</p>
+</li>
+<li>Optimize data loading</li>
+<li>Use efficient layouts</li>
+<li>
+<p>Minimize re-runs</p>
+</li>
+<li>
+<p><strong>Deployment</strong></p>
+</li>
+<li>
+<p>Use requirements.txt</p>
+</li>
+<li>Configure secrets</li>
+<li>Set up monitoring</li>
+<li>
+<p>Enable error tracking</p>
+</li>
+<li>
+<p><strong>Design</strong></p>
+</li>
+<li>
+<p>Follow responsive design principles</p>
+</li>
+<li>Maintain consistent branding</li>
+<li>Use appropriate color schemes</li>
+<li>Consider accessibility</li>
+</ol>
+<h3 id="next-steps">🚀 Next Steps</h3>
+<ol>
+<li>Explore WebSocket integration</li>
+<li>Study database connectivity</li>
+<li>Learn about custom caching</li>
+<li>Master component lifecycle</li>
+<li>Practice CI/CD deployment</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../streamlit-fundamentals/" class="btn btn-neutral float-left" title="Streamlit Fundamentals"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../streamlit-fundamentals/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

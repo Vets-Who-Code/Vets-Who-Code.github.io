@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Advanced Python Operations - Vets Who Code SOPs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Advanced Python Operations";
+        var mkdocs_page_input_path = "advanced-python-operations.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Vets Who Code SOPs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../code-of-conduct/">Code Of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Curriculum</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Command Line</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../getting-to-know-the-command-line/">Getting To Know The Command Line</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-basics/">Command Line Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-text-manipulation/">Command Line Text Manipulation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-utilities/">Command Line Utilities</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-command-line-features/">Advanced Command Line Features</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-cheat-sheet/">Command Line Cheat Sheet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../bash/">Bash Scripting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Git</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github-voice-overview/">AI Voice Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github/">Git And Github</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../basics-of-git/">Git Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-flow/">Git Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../github-cli/">Github CLI</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Python</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../intro-to-python/">Introduction To Python</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Advanced Python Operations</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#phase-1-battle-drills-functions">Phase 1: Battle Drills (Functions)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#basic-function-structure">Basic Function Structure</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function-parameters-loading-combat-gear">Function Parameters (Loading Combat Gear)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-2-combat-contingencies-error-handling">Phase 2: Combat Contingencies (Error Handling)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#basic-error-handling">Basic Error Handling</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#custom-exceptions">Custom Exceptions</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-3-mission-logs-file-operations">Phase 3: Mission Logs (File Operations)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#basic-file-operations">Basic File Operations</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#csv-operations-personnel-records">CSV Operations (Personnel Records)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-4-unit-organization-classes">Phase 4: Unit Organization (Classes)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#basic-class-structure">Basic Class Structure</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#inheritance-specialized-units">Inheritance (Specialized Units)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-5-support-elements-modules">Phase 5: Support Elements (Modules)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#creating-custom-modules">Creating Custom Modules</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#module-organization">Module Organization</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#field-exercise-combined-arms-operation">Field Exercise: Combined Arms Operation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#movement-orders-next-steps">Movement Orders (Next Steps)</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api/">Introduction To FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-fast-api/">Advanced FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api-testing/">Testing In FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../streamlit-fundamentals/">Streamlit Fundamentals</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-streamlit/">Advanced Streamlit</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Vets Who Code SOPs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Curriculum</li>
+          <li class="breadcrumb-item">Python</li>
+      <li class="breadcrumb-item active">Advanced Python Operations</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vets-who-code-advanced-python-operations">Vets Who Code - Advanced Python Operations 🎖️</h1>
+<h2 id="phase-1-battle-drills-functions">Phase 1: Battle Drills (Functions)</h2>
+<h3 id="basic-function-structure">Basic Function Structure</h3>
+<pre><code class="language-python">def call_sign_generator(last_name, unit):
+    &quot;&quot;&quot;
+    Docstring: Like a mission brief, explains the function's purpose
+    Args:
+        last_name: String of operator's last name
+        unit: String of unit designation
+    Returns:
+        String: Generated call sign
+    &quot;&quot;&quot;
+    return f&quot;VIPER_{last_name.upper()}_{unit}&quot;
+
+# Using the function
+operator_call_sign = call_sign_generator(&quot;Smith&quot;, &quot;PYTHON&quot;)
+print(operator_call_sign)  # Output: VIPER_SMITH_PYTHON
+</code></pre>
+<h3 id="function-parameters-loading-combat-gear">Function Parameters (Loading Combat Gear)</h3>
+<pre><code class="language-python"># Default Parameters
+def create_fire_team(team_leader, size=4, designation=&quot;Alpha&quot;):
+    return f&quot;Team {designation}: {size} operators led by {team_leader}&quot;
+
+# Multiple Parameters
+def mission_brief(date, time, location, *objectives, **support_units):
+    &quot;&quot;&quot;
+    *objectives: Variable args (tuple) for multiple mission objectives
+    **support_units: Keyword args (dict) for support elements
+    &quot;&quot;&quot;
+    brief = f&quot;Mission Date: {date} at {time}\nLocation: {location}\n&quot;
+    brief += &quot;\nObjectives:\n&quot;
+    for obj in objectives:
+        brief += f&quot;- {obj}\n&quot;
+    brief += &quot;\nSupport Units:\n&quot;
+    for unit, role in support_units.items():
+        brief += f&quot;- {unit}: {role}\n&quot;
+    return brief
+
+# Using complex function
+brief = mission_brief(&quot;2024-11-10&quot;, &quot;0600&quot;,
+                     &quot;Grid Alpha-7&quot;,
+                     &quot;Secure Perimeter&quot;,
+                     &quot;Establish Comms&quot;,
+                     &quot;Deploy Assets&quot;,
+                     air_support=&quot;Close Air Support&quot;,
+                     medical=&quot;Combat Medic Team&quot;)
+</code></pre>
+<h2 id="phase-2-combat-contingencies-error-handling">Phase 2: Combat Contingencies (Error Handling)</h2>
+<h3 id="basic-error-handling">Basic Error Handling</h3>
+<pre><code class="language-python">def check_ammunition(mag_count):
+    try:
+        if not isinstance(mag_count, int):
+            raise TypeError(&quot;Magazine count must be a number&quot;)
+        if mag_count &lt; 0:
+            raise ValueError(&quot;Magazine count cannot be negative&quot;)
+        if mag_count &lt; 3:
+            print(&quot;Low ammunition warning!&quot;)
+        return f&quot;Ammunition check: {mag_count} magazines&quot;
+    except TypeError as e:
+        return f&quot;Error in ammunition count: {e}&quot;
+    except ValueError as e:
+        return f&quot;Invalid ammunition count: {e}&quot;
+    except Exception as e:
+        return f&quot;Unknown error in ammunition check: {e}&quot;
+    finally:
+        print(&quot;Ammunition check complete&quot;)
+</code></pre>
+<h3 id="custom-exceptions">Custom Exceptions</h3>
+<pre><code class="language-python">class MissionCriticalError(Exception):
+    &quot;&quot;&quot;Custom exception for mission-critical failures&quot;&quot;&quot;
+    pass
+
+def verify_comms(signal_strength):
+    try:
+        if signal_strength &lt; 50:
+            raise MissionCriticalError(&quot;Communications signal too weak&quot;)
+        return &quot;Communications operational&quot;
+    except MissionCriticalError as e:
+        return f&quot;MISSION CRITICAL: {e}&quot;
+</code></pre>
+<h2 id="phase-3-mission-logs-file-operations">Phase 3: Mission Logs (File Operations)</h2>
+<h3 id="basic-file-operations">Basic File Operations</h3>
+<pre><code class="language-python"># Writing mission logs
+def write_mission_log(mission_id, details):
+    try:
+        with open(f&quot;mission_{mission_id}.log&quot;, &quot;w&quot;) as log_file:
+            log_file.write(f&quot;Mission ID: {mission_id}\n&quot;)
+            log_file.write(f&quot;Timestamp: {datetime.now()}\n&quot;)
+            log_file.write(&quot;Details:\n&quot;)
+            log_file.write(details)
+    except IOError as e:
+        print(f&quot;Error writing mission log: {e}&quot;)
+
+# Reading mission logs
+def read_mission_log(mission_id):
+    try:
+        with open(f&quot;mission_{mission_id}.log&quot;, &quot;r&quot;) as log_file:
+            return log_file.read()
+    except FileNotFoundError:
+        return &quot;Mission log not found&quot;
+</code></pre>
+<h3 id="csv-operations-personnel-records">CSV Operations (Personnel Records)</h3>
+<pre><code class="language-python">import csv
+
+def log_personnel_data(filename, personnel_list):
+    with open(filename, 'w', newline='') as csvfile:
+        writer = csv.DictWriter(csvfile, 
+                              fieldnames=['id', 'name', 'rank', 'unit'])
+        writer.writeheader()
+        for person in personnel_list:
+            writer.writerow(person)
+
+def read_personnel_data(filename):
+    with open(filename, 'r') as csvfile:
+        reader = csv.DictReader(csvfile)
+        return list(reader)
+</code></pre>
+<h2 id="phase-4-unit-organization-classes">Phase 4: Unit Organization (Classes)</h2>
+<h3 id="basic-class-structure">Basic Class Structure</h3>
+<pre><code class="language-python">class MilitaryUnit:
+    def __init__(self, designation, strength, location):
+        self.designation = designation
+        self.strength = strength
+        self.location = location
+        self.status = &quot;Active&quot;
+
+    def deploy(self, new_location):
+        self.location = new_location
+        return f&quot;{self.designation} deployed to {new_location}&quot;
+
+    def report_status(self):
+        return f&quot;Unit: {self.designation}\nStrength: {self.strength}\nLocation: {self.location}\nStatus: {self.status}&quot;
+
+# Using the class
+alpha_team = MilitaryUnit(&quot;Alpha&quot;, 12, &quot;Base&quot;)
+print(alpha_team.deploy(&quot;Grid Bravo-7&quot;))
+print(alpha_team.report_status())
+</code></pre>
+<h3 id="inheritance-specialized-units">Inheritance (Specialized Units)</h3>
+<pre><code class="language-python">class SpecialOperationsUnit(MilitaryUnit):
+    def __init__(self, designation, strength, location, specialty):
+        super().__init__(designation, strength, location)
+        self.specialty = specialty
+        self.deployed = False
+
+    def conduct_operation(self, operation_type):
+        if operation_type == self.specialty:
+            return f&quot;Conducting {operation_type} operation with {self.strength} operators&quot;
+        return f&quot;Operation type mismatch with unit specialty&quot;
+
+# Using inherited class
+delta_force = SpecialOperationsUnit(&quot;Delta&quot;, 8, &quot;Classified&quot;, &quot;Direct Action&quot;)
+print(delta_force.conduct_operation(&quot;Direct Action&quot;))
+</code></pre>
+<h2 id="phase-5-support-elements-modules">Phase 5: Support Elements (Modules)</h2>
+<h3 id="creating-custom-modules">Creating Custom Modules</h3>
+<pre><code class="language-python"># mission_utils.py
+def generate_grid_reference(x, y):
+    return f&quot;GRID_{x}{y}&quot;
+
+def calculate_bearing(start, end):
+    # Complex bearing calculation logic here
+    pass
+
+# Using modules
+from mission_utils import generate_grid_reference
+grid = generate_grid_reference(5, 8)
+</code></pre>
+<h3 id="module-organization">Module Organization</h3>
+<pre><code class="language-python"># Project structure
+military_ops/
+    __init__.py
+    personnel/
+        __init__.py
+        roster.py
+        qualifications.py
+    operations/
+        __init__.py
+        mission_planning.py
+        logistics.py
+    utils/
+        __init__.py
+        grid_calc.py
+        comms.py
+</code></pre>
+<h2 id="field-exercise-combined-arms-operation">Field Exercise: Combined Arms Operation</h2>
+<p>Let's combine all these concepts in a practical exercise - a Mission Planning System:</p>
+<pre><code class="language-python">class MissionPlanningSystem:
+    def __init__(self):
+        self.missions = {}
+        self.units = {}
+        self.logs = []
+
+    def plan_mission(self, mission_id, objective):
+        try:
+            if mission_id in self.missions:
+                raise ValueError(&quot;Mission ID already exists&quot;)
+
+            mission = {
+                &quot;id&quot;: mission_id,
+                &quot;objective&quot;: objective,
+                &quot;status&quot;: &quot;Planning&quot;,
+                &quot;units&quot;: []
+            }
+
+            self.missions[mission_id] = mission
+            self._log_event(f&quot;Mission {mission_id} created&quot;)
+            return &quot;Mission created successfully&quot;
+
+        except Exception as e:
+            self._log_event(f&quot;Error creating mission: {e}&quot;)
+            raise
+
+    def assign_unit(self, mission_id, unit):
+        if mission_id in self.missions:
+            self.missions[mission_id][&quot;units&quot;].append(unit)
+            self._log_event(f&quot;Unit {unit.designation} assigned to mission {mission_id}&quot;)
+
+    def _log_event(self, event):
+        timestamp = datetime.now().strftime(&quot;%Y-%m-%d %H:%M:%S&quot;)
+        log_entry = f&quot;[{timestamp}] {event}&quot;
+        self.logs.append(log_entry)
+
+        # Write to file
+        with open(&quot;mission_logs.txt&quot;, &quot;a&quot;) as f:
+            f.write(log_entry + &quot;\n&quot;)
+
+# Using the system
+mps = MissionPlanningSystem()
+alpha = MilitaryUnit(&quot;Alpha&quot;, 10, &quot;Base&quot;)
+try:
+    mps.plan_mission(&quot;OPS001&quot;, &quot;Secure Objective Bravo&quot;)
+    mps.assign_unit(&quot;OPS001&quot;, alpha)
+except Exception as e:
+    print(f&quot;Mission planning failed: {e}&quot;)
+</code></pre>
+<h2 id="movement-orders-next-steps">Movement Orders (Next Steps)</h2>
+<ol>
+<li>Practice implementing these concepts with your own scenarios</li>
+<li>Build a complete project combining multiple concepts</li>
+<li>Learn about:</li>
+<li>Testing (Mission Rehearsal)</li>
+<li>Debugging (Equipment Checks)</li>
+<li>Advanced OOP concepts (Unit Organization)</li>
+<li>API integration (Joint Operations)</li>
+</ol>
+<p>Remember:</p>
+<ul>
+<li>Code with discipline</li>
+<li>Document thoroughly</li>
+<li>Test rigorously</li>
+<li>Stay mission-focused</li>
+</ul>
+<p>🇺🇸 #VetsWhoCode</p>
+<p>Need clarification on any operations or ready for specific exercises?</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../intro-to-python/" class="btn btn-neutral float-left" title="Introduction To Python"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../fast-api/" class="btn btn-neutral float-right" title="Introduction To FastAPI">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../intro-to-python/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../fast-api/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

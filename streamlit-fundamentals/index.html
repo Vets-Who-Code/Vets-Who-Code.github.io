@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Streamlit Fundamentals - Vets Who Code SOPs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Streamlit Fundamentals";
+        var mkdocs_page_input_path = "streamlit-fundamentals.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Vets Who Code SOPs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../code-of-conduct/">Code Of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Curriculum</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Command Line</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../getting-to-know-the-command-line/">Getting To Know The Command Line</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-basics/">Command Line Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-text-manipulation/">Command Line Text Manipulation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-utilities/">Command Line Utilities</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-command-line-features/">Advanced Command Line Features</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-cheat-sheet/">Command Line Cheat Sheet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../bash/">Bash Scripting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Git</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github-voice-overview/">AI Voice Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github/">Git And Github</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../basics-of-git/">Git Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-flow/">Git Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../github-cli/">Github CLI</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Python</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../intro-to-python/">Introduction To Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-python-operations/">Advanced Python Operations</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api/">Introduction To FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-fast-api/">Advanced FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api-testing/">Testing In FastAPI</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Streamlit Fundamentals</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#building-interactive-web-applications-with-python">Building Interactive Web Applications with Python</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#lesson-objectives">🎯 Lesson Objectives</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#setup-instructions">🛠️ Setup Instructions</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lesson-1-streamlit-basics">📚 Lesson 1: Streamlit Basics</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lesson-2-layouts-and-containers">📚 Lesson 2: Layouts and Containers</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lesson-3-state-management">📚 Lesson 3: State Management</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lesson-4-chat-interface-components">📚 Lesson 4: Chat Interface Components</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lesson-5-data-visualization">📚 Lesson 5: Data Visualization</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#practice-exercises">🔄 Practice Exercises</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mini-projects">🚀 Mini-Projects</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#best-practices">📝 Best Practices</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#next-steps">🎯 Next Steps</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#resources">📚 Resources</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tips">💡 Tips</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-streamlit/">Advanced Streamlit</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Vets Who Code SOPs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Curriculum</li>
+          <li class="breadcrumb-item">Python</li>
+      <li class="breadcrumb-item active">Streamlit Fundamentals</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vets-who-code-streamlit-fundamentals">Vets Who Code: Streamlit Fundamentals</h1>
+<h2 id="building-interactive-web-applications-with-python">Building Interactive Web Applications with Python</h2>
+<h3 id="lesson-objectives">🎯 Lesson Objectives</h3>
+<p>After completing this lesson, you will be able to:</p>
+<ul>
+<li>Set up a Streamlit development environment</li>
+<li>Understand core Streamlit components and layouts</li>
+<li>Create interactive user interfaces</li>
+<li>Handle user input and state management</li>
+<li>Build data visualizations</li>
+<li>Deploy Streamlit applications</li>
+</ul>
+<h3 id="setup-instructions">🛠️ Setup Instructions</h3>
+<ol>
+<li>Ensure Python 3.10 is installed:</li>
+</ol>
+<pre><code class="language-bash">python --version  # Should show Python 3.10.x
+</code></pre>
+<ol>
+<li>Create and activate a virtual environment:</li>
+</ol>
+<pre><code class="language-bash">python -m venv vwc-streamlit
+source vwc-streamlit/bin/activate  # Windows: vwc-streamlit\Scripts\activate
+</code></pre>
+<ol>
+<li>Install required packages:</li>
+</ol>
+<pre><code class="language-bash">pip install streamlit==1.31.0 pandas numpy
+</code></pre>
+<h3 id="lesson-1-streamlit-basics">📚 Lesson 1: Streamlit Basics</h3>
+<p>Create a file named <code>lesson1.py</code>:</p>
+<pre><code class="language-python">import streamlit as st
+
+# Page configuration
+st.set_page_config(
+    page_title=&quot;VWC Streamlit Lesson 1&quot;,
+    page_icon=&quot;🎖️&quot;,
+    layout=&quot;wide&quot;
+)
+
+# Basic text elements
+st.title(&quot;Welcome to Streamlit! 🚀&quot;)
+st.header(&quot;Let's learn the basics&quot;)
+st.subheader(&quot;Text elements and markdown&quot;)
+
+# Markdown support
+st.markdown(&quot;&quot;&quot;
+    Here's what we can do with markdown:
+    - **Bold text**
+    - *Italic text*
+    - `Code snippets`
+    - [Links](https://vetswhocode.io)
+&quot;&quot;&quot;)
+
+# Interactive elements
+if st.button(&quot;Click me!&quot;):
+    st.write(&quot;Button was clicked!&quot;)
+
+user_input = st.text_input(&quot;Enter your name&quot;)
+if user_input:
+    st.write(f&quot;Hello, {user_input}!&quot;)
+
+# Run with: streamlit run lesson1.py
+</code></pre>
+<h3 id="lesson-2-layouts-and-containers">📚 Lesson 2: Layouts and Containers</h3>
+<p>Create <code>lesson2.py</code>:</p>
+<pre><code class="language-python">import streamlit as st
+
+st.title(&quot;Layout in Streamlit&quot;)
+
+# Columns
+col1, col2 = st.columns(2)
+
+with col1:
+    st.header(&quot;Column 1&quot;)
+    st.write(&quot;This is the left column&quot;)
+    st.button(&quot;Left Button&quot;)
+
+with col2:
+    st.header(&quot;Column 2&quot;)
+    st.write(&quot;This is the right column&quot;)
+    st.button(&quot;Right Button&quot;)
+
+# Sidebar
+with st.sidebar:
+    st.header(&quot;Sidebar&quot;)
+    option = st.selectbox(
+        &quot;Choose an option&quot;,
+        [&quot;Option 1&quot;, &quot;Option 2&quot;, &quot;Option 3&quot;]
+    )
+
+# Tabs
+tab1, tab2 = st.tabs([&quot;Tab 1&quot;, &quot;Tab 2&quot;])
+
+with tab1:
+    st.write(&quot;This is tab 1&quot;)
+
+with tab2:
+    st.write(&quot;This is tab 2&quot;)
+
+# Containers
+with st.container():
+    st.write(&quot;This is a container&quot;)
+    st.write(&quot;It helps organize content&quot;)
+</code></pre>
+<h3 id="lesson-3-state-management">📚 Lesson 3: State Management</h3>
+<p>Create <code>lesson3.py</code>:</p>
+<pre><code class="language-python">import streamlit as st
+
+# Initialize session state
+if &quot;counter&quot; not in st.session_state:
+    st.session_state.counter = 0
+
+st.title(&quot;State Management in Streamlit&quot;)
+
+# Display counter
+st.write(f&quot;Counter value: {st.session_state.counter}&quot;)
+
+# Buttons to modify state
+if st.button(&quot;Increment&quot;):
+    st.session_state.counter += 1
+    st.experimental_rerun()
+
+if st.button(&quot;Decrement&quot;):
+    st.session_state.counter -= 1
+    st.experimental_rerun()
+
+# Form example
+with st.form(&quot;my_form&quot;):
+    name = st.text_input(&quot;Name&quot;)
+    age = st.number_input(&quot;Age&quot;, min_value=0, max_value=120)
+    submitted = st.form_submit_button(&quot;Submit&quot;)
+
+    if submitted:
+        st.write(f&quot;Name: {name}, Age: {age}&quot;)
+</code></pre>
+<h3 id="lesson-4-chat-interface-components">📚 Lesson 4: Chat Interface Components</h3>
+<p>Create <code>lesson4.py</code>:</p>
+<pre><code class="language-python">import streamlit as st
+from datetime import datetime
+
+# Initialize chat history
+if &quot;messages&quot; not in st.session_state:
+    st.session_state.messages = []
+
+st.title(&quot;Chat Interface Components&quot;)
+
+# Chat display
+for message in st.session_state.messages:
+    with st.container():
+        st.write(f&quot;{message['role']}: {message['content']}&quot;)
+        st.caption(f&quot;Sent at {message['timestamp']}&quot;)
+
+# Message input
+message = st.text_input(&quot;Type a message&quot;)
+if st.button(&quot;Send&quot;) and message:
+    # Add message to history
+    st.session_state.messages.append({
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: message,
+        &quot;timestamp&quot;: datetime.now().strftime(&quot;%I:%M %p&quot;)
+    })
+
+    # Simulate response
+    st.session_state.messages.append({
+        &quot;role&quot;: &quot;assistant&quot;,
+        &quot;content&quot;: f&quot;You said: {message}&quot;,
+        &quot;timestamp&quot;: datetime.now().strftime(&quot;%I:%M %p&quot;)
+    })
+    st.experimental_rerun()
+
+# Clear chat button
+if st.button(&quot;Clear Chat&quot;):
+    st.session_state.messages = []
+    st.experimental_rerun()
+</code></pre>
+<h3 id="lesson-5-data-visualization">📚 Lesson 5: Data Visualization</h3>
+<p>Create <code>lesson5.py</code>:</p>
+<pre><code class="language-python">import streamlit as st
+import pandas as pd
+import numpy as np
+
+st.title(&quot;Data Visualization in Streamlit&quot;)
+
+# Create sample data
+data = pd.DataFrame({
+    'date': pd.date_range('2024-01-01', '2024-01-10'),
+    'values': np.random.randn(10).cumsum()
+})
+
+# Line chart
+st.subheader(&quot;Line Chart&quot;)
+st.line_chart(data.set_index('date'))
+
+# Bar chart
+st.subheader(&quot;Bar Chart&quot;)
+st.bar_chart(data.set_index('date'))
+
+# Metrics
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.metric(&quot;Total&quot;, f&quot;{data['values'].sum():.2f}&quot;)
+with col2:
+    st.metric(&quot;Average&quot;, f&quot;{data['values'].mean():.2f}&quot;)
+with col3:
+    st.metric(&quot;Max&quot;, f&quot;{data['values'].max():.2f}&quot;)
+</code></pre>
+<h3 id="practice-exercises">🔄 Practice Exercises</h3>
+<ol>
+<li>Create a todo list application using session state</li>
+<li>Build a simple calculator with a form</li>
+<li>Create a data dashboard with multiple visualizations</li>
+<li>Implement a file uploader with preview</li>
+<li>Build a multi-page application using st.sidebar</li>
+</ol>
+<h3 id="mini-projects">🚀 Mini-Projects</h3>
+<ol>
+<li>
+<p><strong>AI Chat Interface</strong></p>
+</li>
+<li>
+<p>Implement message history</p>
+</li>
+<li>Add user input handling</li>
+<li>Create styled message bubbles</li>
+<li>
+<p>Add typing indicators</p>
+</li>
+<li>
+<p><strong>Data Dashboard</strong></p>
+</li>
+<li>
+<p>Load and display data</p>
+</li>
+<li>Add interactive filters</li>
+<li>Create multiple visualizations</li>
+<li>Implement data download</li>
+</ol>
+<h3 id="best-practices">📝 Best Practices</h3>
+<ol>
+<li><strong>Performance</strong></li>
+</ol>
+<pre><code class="language-python"># Cache data loading
+@st.cache_data
+def load_data():
+    return pd.read_csv(&quot;data.csv&quot;)
+
+# Cache resource-intensive computations
+@st.cache_resource
+def load_model():
+    return Model()
+</code></pre>
+<ol>
+<li><strong>Error Handling</strong></li>
+</ol>
+<pre><code class="language-python">try:
+    result = process_data()
+except Exception as e:
+    st.error(f&quot;An error occurred: {str(e)}&quot;)
+</code></pre>
+<ol>
+<li><strong>User Experience</strong></li>
+</ol>
+<pre><code class="language-python">with st.spinner(&quot;Processing...&quot;):
+    # Long running operation
+    process_data()
+st.success(&quot;Done!&quot;)
+</code></pre>
+<h3 id="next-steps">🎯 Next Steps</h3>
+<ol>
+<li>Explore Streamlit Cloud deployment</li>
+<li>Learn about custom components</li>
+<li>Study authentication and security</li>
+<li>Practice responsive design</li>
+<li>Master advanced visualizations</li>
+</ol>
+<h3 id="resources">📚 Resources</h3>
+<ul>
+<li><a href="https://docs.streamlit.io/">Streamlit Documentation</a></li>
+<li><a href="https://streamlit.io/gallery">Streamlit Gallery</a></li>
+<li><a href="https://github.com/Vets-Who-Code">VWC GitHub</a></li>
+<li><a href="https://docs.python.org/3.10/">Python 3.10 Documentation</a></li>
+</ul>
+<h3 id="tips">💡 Tips</h3>
+<ul>
+<li>Use <code>st.experimental_rerun()</code> sparingly</li>
+<li>Keep state management simple</li>
+<li>Test locally before deployment</li>
+<li>Use caching for performance</li>
+<li>Follow Python best practices</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../fast-api-testing/" class="btn btn-neutral float-left" title="Testing In FastAPI"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../advanced-streamlit/" class="btn btn-neutral float-right" title="Advanced Streamlit">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../fast-api-testing/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../advanced-streamlit/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

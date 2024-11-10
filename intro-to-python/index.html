@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Introduction To Python - Vets Who Code SOPs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Introduction To Python";
+        var mkdocs_page_input_path = "intro-to-python.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Vets Who Code SOPs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../code-of-conduct/">Code Of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Curriculum</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Command Line</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../getting-to-know-the-command-line/">Getting To Know The Command Line</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-basics/">Command Line Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-text-manipulation/">Command Line Text Manipulation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-utilities/">Command Line Utilities</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-command-line-features/">Advanced Command Line Features</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-cheat-sheet/">Command Line Cheat Sheet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../bash/">Bash Scripting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Git</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github-voice-overview/">AI Voice Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github/">Git And Github</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../basics-of-git/">Git Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-flow/">Git Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../github-cli/">Github CLI</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Python</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Introduction To Python</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#mission-briefing">Mission Briefing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-1-establishing-base-setup">Phase 1: Establishing Base (Setup)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#setting-up-your-fob-forward-operating-base">Setting Up Your FOB (Forward Operating Base)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#first-boots-on-the-ground">First Boots on the Ground</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-2-basic-training">Phase 2: Basic Training</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#intelligence-types-data-types">Intelligence Types (Data Types)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#field-communications-basic-operations">Field Communications (Basic Operations)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-3-combat-operations-control-flow">Phase 3: Combat Operations (Control Flow)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#mission-planning-if-statements">Mission Planning (If Statements)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#patrol-patterns-loops">Patrol Patterns (Loops)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-4-equipment-and-logistics-data-structures">Phase 4: Equipment and Logistics (Data Structures)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#equipment-roster-lists">Equipment Roster (Lists)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mission-intel-dictionaries">Mission Intel (Dictionaries)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-5-field-exercise">Phase 5: Field Exercise</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#next-mission-parameters">Next Mission Parameters</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#coming-up-next">Coming Up Next:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#core-values-to-remember">Core Values to Remember:</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-python-operations/">Advanced Python Operations</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api/">Introduction To FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-fast-api/">Advanced FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api-testing/">Testing In FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../streamlit-fundamentals/">Streamlit Fundamentals</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-streamlit/">Advanced Streamlit</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Vets Who Code SOPs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Curriculum</li>
+          <li class="breadcrumb-item">Python</li>
+      <li class="breadcrumb-item active">Introduction To Python</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vets-who-code-python-fundamentals">Vets Who Code - Python Fundamentals 🎖️</h1>
+<h2 id="mission-briefing">Mission Briefing</h2>
+<p>Welcome to the Python track of Vets Who Code! Like any good military operation, we'll break this down into clear, manageable objectives. Your military experience has already equipped you with the discipline and problem-solving skills needed to excel in programming.</p>
+<h2 id="phase-1-establishing-base-setup">Phase 1: Establishing Base (Setup)</h2>
+<h3 id="setting-up-your-fob-forward-operating-base">Setting Up Your FOB (Forward Operating Base)</h3>
+<ol>
+<li>Download Python from python.org (like requisitioning new equipment)</li>
+<li>Install with "Add Python to PATH" checked (establishing your supply lines)</li>
+<li>Verify installation in terminal:</li>
+</ol>
+<pre><code class="language-bash">python --version
+</code></pre>
+<h3 id="first-boots-on-the-ground">First Boots on the Ground</h3>
+<pre><code class="language-python"># Your first line of code is like your first patrol
+print(&quot;Vets Who Code: Reporting for Duty!&quot;)
+</code></pre>
+<h2 id="phase-2-basic-training">Phase 2: Basic Training</h2>
+<h3 id="intelligence-types-data-types">Intelligence Types (Data Types)</h3>
+<pre><code class="language-python"># Personnel Count (Integer)
+squad_size = 12
+
+# Supply Levels (Float)
+fuel_level = 85.5
+
+# Call Signs (String)
+unit_name = &quot;Alpha&quot;
+status = 'Oscar Mike'  # 'On Mission'
+
+# Mission Status (Boolean)
+is_deployed = True
+mission_complete = False
+
+# Intel Not Available (None)
+pending_orders = None
+</code></pre>
+<h3 id="field-communications-basic-operations">Field Communications (Basic Operations)</h3>
+<pre><code class="language-python"># Tactical Math
+available_transport = 5
+required_transport = 3
+
+total_transport = available_transport + required_transport
+remaining_transport = available_transport - required_transport
+
+# Unit Designations
+battalion = &quot;2nd&quot;
+division = &quot;Infantry&quot;
+unit = battalion + &quot; &quot; + division  # 2nd Infantry
+
+# Field Reports
+print(f&quot;Unit Strength: {squad_size}&quot;)
+print(f&quot;Unit Status: {status}&quot;)
+</code></pre>
+<h2 id="phase-3-combat-operations-control-flow">Phase 3: Combat Operations (Control Flow)</h2>
+<h3 id="mission-planning-if-statements">Mission Planning (If Statements)</h3>
+<pre><code class="language-python">def check_readiness(troops, vehicles):
+    if troops &gt;= 10 and vehicles &gt;= 2:
+        return &quot;Unit is Combat Ready&quot;
+    elif troops &gt;= 5:
+        return &quot;Unit is Patrol Ready&quot;
+    else:
+        return &quot;Unit Needs Reinforcement&quot;
+
+# Example Usage
+unit_status = check_readiness(8, 1)
+print(unit_status)
+</code></pre>
+<h3 id="patrol-patterns-loops">Patrol Patterns (Loops)</h3>
+<pre><code class="language-python"># Perimeter Check (For Loop)
+sectors = [&quot;North&quot;, &quot;East&quot;, &quot;South&quot;, &quot;West&quot;]
+for sector in sectors:
+    print(f&quot;Sector {sector} is secure&quot;)
+
+# Watch Rotation (While Loop)
+watch_hours = 4
+current_hour = 0
+while current_hour &lt; watch_hours:
+    print(f&quot;Hour {current_hour + 1} of watch&quot;)
+    current_hour += 1
+</code></pre>
+<h2 id="phase-4-equipment-and-logistics-data-structures">Phase 4: Equipment and Logistics (Data Structures)</h2>
+<h3 id="equipment-roster-lists">Equipment Roster (Lists)</h3>
+<pre><code class="language-python"># Basic gear list
+gear = [&quot;rifle&quot;, &quot;nods&quot;, &quot;radio&quot;, &quot;ruck&quot;]
+
+# Adding gear
+gear.append(&quot;ifak&quot;)  # Adds to end
+gear.insert(0, &quot;weapon&quot;)  # Adds at position
+
+# Checking gear
+print(f&quot;First item: {gear[0]}&quot;)
+print(f&quot;Last item: {gear[-1]}&quot;)
+
+# Removing gear
+gear.remove(&quot;radio&quot;)  # Removes specific item
+last_item = gear.pop()  # Removes and returns last item
+</code></pre>
+<h3 id="mission-intel-dictionaries">Mission Intel (Dictionaries)</h3>
+<pre><code class="language-python"># Mission details
+mission = {
+    &quot;type&quot;: &quot;Training&quot;,
+    &quot;location&quot;: &quot;Virtual FOB&quot;,
+    &quot;duration&quot;: 14,
+    &quot;unit&quot;: &quot;VWC Python Platoon&quot;
+}
+
+# Accessing intel
+print(f&quot;Mission Type: {mission['type']}&quot;)
+print(f&quot;Location: {mission.get('location')}&quot;)
+
+# Updating intel
+mission[&quot;status&quot;] = &quot;In Progress&quot;
+mission[&quot;duration&quot;] = 21
+</code></pre>
+<h2 id="phase-5-field-exercise">Phase 5: Field Exercise</h2>
+<p>Here's a practical exercise combining the concepts - a Military Awards Database:</p>
+<pre><code class="language-python">def awards_database():
+    &quot;&quot;&quot;
+    Military Awards Reference System
+    &quot;&quot;&quot;
+    awards = {
+        &quot;1&quot;: {
+            &quot;name&quot;: &quot;Purple Heart&quot;,
+            &quot;criteria&quot;: &quot;Wounded in combat&quot;,
+            &quot;precedence&quot;: &quot;High&quot;,
+            &quot;branch&quot;: &quot;All services&quot;
+        },
+        &quot;2&quot;: {
+            &quot;name&quot;: &quot;Combat Action Ribbon&quot;,
+            &quot;criteria&quot;: &quot;Engaged in combat&quot;,
+            &quot;precedence&quot;: &quot;Medium&quot;,
+            &quot;branch&quot;: &quot;Navy/Marines&quot;
+        }
+    }
+
+    while True:
+        print(&quot;\nVWC Awards Database&quot;)
+        print(&quot;------------------&quot;)
+        for key, award in awards.items():
+            print(f&quot;{key}: {award['name']}&quot;)
+        print(&quot;3: Exit System&quot;)
+
+        selection = input(&quot;\nEnter award number: &quot;)
+
+        if selection == &quot;3&quot;:
+            print(&quot;Database Secured!&quot;)
+            break
+        elif selection in awards:
+            award = awards[selection]
+            print(f&quot;\nName: {award['name']}&quot;)
+            print(f&quot;Criteria: {award['criteria']}&quot;)
+            print(f&quot;Precedence: {award['precedence']}&quot;)
+            print(f&quot;Branch: {award['branch']}&quot;)
+        else:
+            print(&quot;Invalid selection, try again&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    awards_database()
+</code></pre>
+<h2 id="next-mission-parameters">Next Mission Parameters</h2>
+<h3 id="coming-up-next">Coming Up Next:</h3>
+<ol>
+<li>Functions (Battle Drills)</li>
+<li>Error Handling (Combat Contingencies)</li>
+<li>File Operations (Mission Logs)</li>
+<li>Classes (Unit Organization)</li>
+<li>Modules (Support Elements)</li>
+</ol>
+<h3 id="core-values-to-remember">Core Values to Remember:</h3>
+<ul>
+<li>Attention to Detail (Clean Code)</li>
+<li>Adapt and Overcome (Problem Solving)</li>
+<li>Leave No One Behind (Help Others Learn)</li>
+<li>Mission First (Working Code)</li>
+</ul>
+<p>Ready to move to advanced operations? Remember:</p>
+<ul>
+<li>Stay motivated</li>
+<li>Keep practicing</li>
+<li>Debug with discipline</li>
+<li>Learn from each mission</li>
+</ul>
+<p>🇺🇸 #VetsWhoCode </p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../github-cli/" class="btn btn-neutral float-left" title="Github CLI"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../advanced-python-operations/" class="btn btn-neutral float-right" title="Advanced Python Operations">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../github-cli/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../advanced-python-operations/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

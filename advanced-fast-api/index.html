@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Advanced FastAPI - Vets Who Code SOPs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Advanced FastAPI";
+        var mkdocs_page_input_path = "advanced-fast-api.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Vets Who Code SOPs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../code-of-conduct/">Code Of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Curriculum</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Command Line</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../getting-to-know-the-command-line/">Getting To Know The Command Line</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-basics/">Command Line Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-text-manipulation/">Command Line Text Manipulation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-utilities/">Command Line Utilities</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-command-line-features/">Advanced Command Line Features</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-cheat-sheet/">Command Line Cheat Sheet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../bash/">Bash Scripting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Git</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github-voice-overview/">AI Voice Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github/">Git And Github</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../basics-of-git/">Git Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-flow/">Git Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../github-cli/">Github CLI</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Python</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../intro-to-python/">Introduction To Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-python-operations/">Advanced Python Operations</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api/">Introduction To FastAPI</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Advanced FastAPI</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#part-1-advanced-fastapi-features">Part 1: Advanced FastAPI Features</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#websocket-implementation-real-time-communications">WebSocket Implementation (Real-time Communications)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#file-operations-with-azure-storage">File Operations with Azure Storage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#rate-limiting">Rate Limiting</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#caching-with-azure-redis-cache">Caching with Azure Redis Cache</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#part-2-azure-deployment-operations">Part 2: Azure Deployment Operations</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#azure-app-service-configuration">Azure App Service Configuration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#container-registry-setup">Container Registry Setup</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#azure-devops-pipeline">Azure DevOps Pipeline</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#azure-monitor-integration">Azure Monitor Integration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#azure-key-vault-integration">Azure Key Vault Integration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#production-configuration">Production Configuration</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#field-exercise-complete-azure-deployed-api">Field Exercise: Complete Azure-Deployed API</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#deployment-commands">Deployment Commands</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#next-mission-parameters">Next Mission Parameters</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api-testing/">Testing In FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../streamlit-fundamentals/">Streamlit Fundamentals</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-streamlit/">Advanced Streamlit</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Vets Who Code SOPs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Curriculum</li>
+          <li class="breadcrumb-item">Python</li>
+      <li class="breadcrumb-item active">Advanced FastAPI</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vwc-fastapi-advanced-operations-guide">VWC FastAPI Advanced Operations Guide 🎖️</h1>
+<h2 id="part-1-advanced-fastapi-features">Part 1: Advanced FastAPI Features</h2>
+<h3 id="websocket-implementation-real-time-communications">WebSocket Implementation (Real-time Communications)</h3>
+<pre><code class="language-python">from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from typing import List
+
+app = FastAPI()
+
+class CommandCenter:
+    def __init__(self):
+        self.active_connections: List[WebSocket] = []
+
+    async def connect(self, websocket: WebSocket):
+        await websocket.accept()
+        self.active_connections.append(websocket)
+
+    def disconnect(self, websocket: WebSocket):
+        self.active_connections.remove(websocket)
+
+    async def broadcast(self, message: str):
+        for connection in self.active_connections:
+            await connection.send_text(message)
+
+command_center = CommandCenter()
+
+@app.websocket(&quot;/ws/mission-updates/{unit_id}&quot;)
+async def mission_updates(websocket: WebSocket, unit_id: str):
+    await command_center.connect(websocket)
+    try:
+        while True:
+            data = await websocket.receive_text()
+            await command_center.broadcast(f&quot;Unit {unit_id}: {data}&quot;)
+    except WebSocketDisconnect:
+        command_center.disconnect(websocket)
+        await command_center.broadcast(f&quot;Unit {unit_id} disconnected&quot;)
+</code></pre>
+<h3 id="file-operations-with-azure-storage">File Operations with Azure Storage</h3>
+<pre><code class="language-python">from fastapi import UploadFile, File
+from azure.storage.blob import BlobServiceClient
+import os
+
+class AzureStorageManager:
+    def __init__(self):
+        conn_str = os.getenv(&quot;AZURE_STORAGE_CONNECTION_STRING&quot;)
+        self.blob_service_client = BlobServiceClient.from_connection_string(conn_str)
+        self.container_name = &quot;mission-docs&quot;
+
+    async def upload_file(self, file: UploadFile):
+        blob_client = self.blob_service_client.get_blob_client(
+            container=self.container_name,
+            blob=file.filename
+        )
+        data = await file.read()
+        await blob_client.upload_blob(data)
+        return blob_client.url
+
+    async def download_file(self, filename: str):
+        blob_client = self.blob_service_client.get_blob_client(
+            container=self.container_name,
+            blob=filename
+        )
+        return await blob_client.download_blob()
+
+storage_manager = AzureStorageManager()
+
+@app.post(&quot;/upload-document/&quot;)
+async def upload_document(file: UploadFile = File(...)):
+    try:
+        url = await storage_manager.upload_file(file)
+        return {&quot;status&quot;: &quot;success&quot;, &quot;url&quot;: url}
+    except Exception as e:
+        return {&quot;status&quot;: &quot;error&quot;, &quot;message&quot;: str(e)}
+</code></pre>
+<h3 id="rate-limiting">Rate Limiting</h3>
+<pre><code class="language-python">from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+
+limiter = Limiter(key_func=get_remote_address)
+app = FastAPI()
+app.state.limiter = limiter
+app.add_exception_handler(429, _rate_limit_exceeded_handler)
+
+@app.get(&quot;/secure-intel&quot;)
+@limiter.limit(&quot;5/minute&quot;)
+async def get_secure_intel(request: Request):
+    return {&quot;intel&quot;: &quot;Classified information&quot;}
+</code></pre>
+<h3 id="caching-with-azure-redis-cache">Caching with Azure Redis Cache</h3>
+<pre><code class="language-python">from fastapi_cache import FastAPICache
+from fastapi_cache.backends.redis import RedisBackend
+from fastapi_cache.decorator import cache
+import aioredis
+
+@app.on_event(&quot;startup&quot;)
+async def startup():
+    redis = aioredis.from_url(
+        os.getenv(&quot;AZURE_REDIS_CONNECTION_STRING&quot;),
+        encoding=&quot;utf8&quot;
+    )
+    FastAPICache.init(RedisBackend(redis), prefix=&quot;vwc-cache&quot;)
+
+@app.get(&quot;/mission-brief/{mission_id}&quot;)
+@cache(expire=60)
+async def get_mission_brief(mission_id: str):
+    return {&quot;mission_id&quot;: mission_id, &quot;brief&quot;: &quot;Mission details...&quot;}
+</code></pre>
+<h2 id="part-2-azure-deployment-operations">Part 2: Azure Deployment Operations</h2>
+<h3 id="azure-app-service-configuration">Azure App Service Configuration</h3>
+<pre><code class="language-python"># config.py
+from pydantic_settings import BaseSettings
+
+class Settings(BaseSettings):
+    APP_NAME: str = &quot;VWC API&quot;
+    AZURE_STORAGE_CONNECTION_STRING: str
+    AZURE_REDIS_CONNECTION_STRING: str
+    AZURE_SQL_CONNECTION_STRING: str
+    APPLICATIONINSIGHTS_CONNECTION_STRING: str
+
+    class Config:
+        env_file = &quot;.env&quot;
+</code></pre>
+<h3 id="container-registry-setup">Container Registry Setup</h3>
+<pre><code class="language-dockerfile"># Dockerfile
+FROM python:3.9-slim
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY ./app ./app
+
+CMD [&quot;uvicorn&quot;, &quot;app.main:app&quot;, &quot;--host&quot;, &quot;0.0.0.0&quot;, &quot;--port&quot;, &quot;8000&quot;]
+</code></pre>
+<h3 id="azure-devops-pipeline">Azure DevOps Pipeline</h3>
+<pre><code class="language-yaml"># azure-pipelines.yml
+trigger:
+- main
+
+variables:
+  azureSubscription: 'VWC-Azure'
+  containerRegistry: 'vwccontainers.azurecr.io'
+  imageRepository: 'vwc-api'
+  dockerfilePath: 'Dockerfile'
+  tag: '$(Build.BuildId)'
+
+stages:
+- stage: Build
+  jobs:
+  - job: BuildAndTest
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: '$(containerRegistry)'
+        repository: '$(imageRepository)'
+        command: 'buildAndPush'
+        Dockerfile: '$(dockerfilePath)'
+        tags: '$(tag)'
+
+- stage: Deploy
+  jobs:
+  - job: Deploy
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: AzureWebAppContainer@1
+      inputs:
+        azureSubscription: '$(azureSubscription)'
+        appName: 'vwc-api'
+        containers: '$(containerRegistry)/$(imageRepository):$(tag)'
+</code></pre>
+<h3 id="azure-monitor-integration">Azure Monitor Integration</h3>
+<pre><code class="language-python"># monitoring.py
+from opencensus.ext.azure.trace_exporter import AzureExporter
+from opencensus.trace.tracer import Tracer
+from opencensus.trace.samplers import ProbabilitySampler
+import logging
+
+class AzureMonitoring:
+    def __init__(self, connection_string: str):
+        self.tracer = Tracer(
+            exporter=AzureExporter(connection_string=connection_string),
+            sampler=ProbabilitySampler(1.0)
+        )
+
+    def track_request(self, name: str):
+        with self.tracer.span(name=name) as span:
+            span.add_attribute(&quot;service&quot;, &quot;vwc-api&quot;)
+            return span
+
+# Usage in main.py
+monitoring = AzureMonitoring(os.getenv(&quot;APPLICATIONINSIGHTS_CONNECTION_STRING&quot;))
+
+@app.middleware(&quot;http&quot;)
+async def monitoring_middleware(request: Request, call_next):
+    with monitoring.track_request(f&quot;{request.method} {request.url.path}&quot;):
+        response = await call_next(request)
+        return response
+</code></pre>
+<h3 id="azure-key-vault-integration">Azure Key Vault Integration</h3>
+<pre><code class="language-python"># security.py
+from azure.keyvault.secrets import SecretClient
+from azure.identity import DefaultAzureCredential
+
+class SecureConfig:
+    def __init__(self):
+        credential = DefaultAzureCredential()
+        vault_url = os.getenv(&quot;AZURE_KEYVAULT_URL&quot;)
+        self.client = SecretClient(vault_url=vault_url, credential=credential)
+
+    def get_secret(self, name: str) -&gt; str:
+        return self.client.get_secret(name).value
+
+# Usage
+secure_config = SecureConfig()
+db_password = secure_config.get_secret(&quot;database-password&quot;)
+</code></pre>
+<h3 id="production-configuration">Production Configuration</h3>
+<pre><code class="language-python"># production.py
+from azure.identity import DefaultAzureCredential
+from fastapi.middleware.cors import CORSMiddleware
+
+def configure_production(app: FastAPI):
+    # CORS configuration
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=[&quot;https://*.azurewebsites.net&quot;],
+        allow_credentials=True,
+        allow_methods=[&quot;*&quot;],
+        allow_headers=[&quot;*&quot;],
+    )
+
+    # Azure authentication
+    credential = DefaultAzureCredential()
+
+    # Health check endpoint
+    @app.get(&quot;/health&quot;)
+    async def health_check():
+        return {&quot;status&quot;: &quot;healthy&quot;, &quot;environment&quot;: &quot;azure-production&quot;}
+</code></pre>
+<h2 id="field-exercise-complete-azure-deployed-api">Field Exercise: Complete Azure-Deployed API</h2>
+<p>Here's a complete example combining these concepts:</p>
+<pre><code class="language-python"># main.py
+from fastapi import FastAPI, Depends, HTTPException, Request
+from azure.identity import DefaultAzureCredential
+from azure.storage.blob import BlobServiceClient
+from azure.keyvault.secrets import SecretClient
+import logging
+
+class AzureAPI:
+    def __init__(self):
+        self.app = FastAPI(title=&quot;VWC Mission Control&quot;)
+        self.credential = DefaultAzureCredential()
+        self.setup_azure_services()
+        self.setup_routes()
+        self.setup_monitoring()
+
+    def setup_azure_services(self):
+        # Key Vault setup
+        vault_url = os.getenv(&quot;AZURE_KEYVAULT_URL&quot;)
+        self.key_vault = SecretClient(
+            vault_url=vault_url,
+            credential=self.credential
+        )
+
+        # Blob storage setup
+        storage_connection = self.key_vault.get_secret(&quot;storage-connection&quot;).value
+        self.blob_service = BlobServiceClient.from_connection_string(storage_connection)
+
+    def setup_monitoring(self):
+        connection_string = self.key_vault.get_secret(&quot;appinsights-connection&quot;).value
+        self.monitoring = AzureMonitoring(connection_string)
+
+    def setup_routes(self):
+        @self.app.get(&quot;/&quot;)
+        async def root():
+            return {&quot;status&quot;: &quot;operational&quot;, &quot;service&quot;: &quot;VWC API&quot;}
+
+        @self.app.post(&quot;/documents/&quot;)
+        async def upload_document(file: UploadFile = File(...)):
+            try:
+                container_client = self.blob_service.get_container_client(&quot;documents&quot;)
+                blob_client = container_client.get_blob_client(file.filename)
+                data = await file.read()
+                await blob_client.upload_blob(data)
+                return {&quot;status&quot;: &quot;success&quot;, &quot;url&quot;: blob_client.url}
+            except Exception as e:
+                logging.error(f&quot;Upload failed: {str(e)}&quot;)
+                raise HTTPException(status_code=500, detail=str(e))
+
+# Initialize application
+azure_api = AzureAPI()
+app = azure_api.app
+</code></pre>
+<h2 id="deployment-commands">Deployment Commands</h2>
+<pre><code class="language-bash"># Login to Azure
+az login
+
+# Create resource group
+az group create --name vwc-resources --location eastus
+
+# Create App Service plan
+az appservice plan create \
+    --name vwc-service-plan \
+    --resource-group vwc-resources \
+    --sku B1 \
+    --is-linux
+
+# Create Web App
+az webapp create \
+    --resource-group vwc-resources \
+    --plan vwc-service-plan \
+    --name vwc-fastapi-app \
+    --runtime &quot;PYTHON:3.9&quot;
+
+# Configure deployment
+az webapp config appsettings set \
+    --resource-group vwc-resources \
+    --name vwc-fastapi-app \
+    --settings \
+        WEBSITES_PORT=8000 \
+        SCM_DO_BUILD_DURING_DEPLOYMENT=true
+</code></pre>
+<h2 id="next-mission-parameters">Next Mission Parameters</h2>
+<ol>
+<li>Advanced Azure Features:</li>
+<li>Azure Functions integration</li>
+<li>Azure API Management</li>
+<li>Azure Front Door setup</li>
+<li>
+<p>Virtual Networks configuration</p>
+</li>
+<li>
+<p>Security Hardening:</p>
+</li>
+<li>Managed Identities</li>
+<li>Role-Based Access Control</li>
+<li>Network Security Groups</li>
+<li>Web Application Firewall</li>
+</ol>
+<p>Remember:</p>
+<ul>
+<li>Monitor your resources</li>
+<li>Set up proper logging</li>
+<li>Configure automated backups</li>
+<li>Use managed identities</li>
+<li>Follow least privilege principle</li>
+</ul>
+<p>🇺🇸 #VetsWhoCode</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../fast-api/" class="btn btn-neutral float-left" title="Introduction To FastAPI"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../fast-api-testing/" class="btn btn-neutral float-right" title="Testing In FastAPI">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../fast-api/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../fast-api-testing/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

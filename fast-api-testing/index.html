@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Command Line Cheat Sheet - Vets Who Code SOPs</title>
+    <title>Testing In FastAPI - Vets Who Code SOPs</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Command Line Cheat Sheet";
-        var mkdocs_page_input_path = "command-line-cheat-sheet.md";
+        var mkdocs_page_name = "Testing In FastAPI";
+        var mkdocs_page_input_path = "fast-api-testing.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -50,8 +50,8 @@
               </ul>
               <p class="caption"><span class="caption-text">Curriculum</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" >Command Line</a>
-    <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Command Line</a>
+    <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../getting-to-know-the-command-line/">Getting To Know The Command Line</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../command-line-basics/">Command Line Basics</a>
@@ -62,31 +62,7 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../advanced-command-line-features/">Advanced Command Line Features</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">Command Line Cheat Sheet</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#navigation">Navigation</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#file-operations">File Operations</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#file-viewing-and-editing">File Viewing and Editing</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#file-permissions">File Permissions</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#system-information">System Information</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#network">Network</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#package-management-debianubuntu">Package Management (Debian/Ubuntu)</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#text-processing">Text Processing</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#process-management">Process Management</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#shortcuts">Shortcuts</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#miscellaneous">Miscellaneous</a>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-cheat-sheet/">Command Line Cheat Sheet</a>
                 </li>
     </ul>
                   </li>
@@ -106,8 +82,8 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" >Python</a>
-    <ul>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Python</a>
+    <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../intro-to-python/">Introduction To Python</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../advanced-python-operations/">Advanced Python Operations</a>
@@ -116,7 +92,7 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../advanced-fast-api/">Advanced FastAPI</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../fast-api-testing/">Testing In FastAPI</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Testing In FastAPI</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../streamlit-fundamentals/">Streamlit Fundamentals</a>
                 </li>
@@ -140,8 +116,8 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Curriculum</li>
-          <li class="breadcrumb-item">Command Line</li>
-      <li class="breadcrumb-item active">Command Line Cheat Sheet</li>
+          <li class="breadcrumb-item">Python</li>
+      <li class="breadcrumb-item active">Testing In FastAPI</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -150,87 +126,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="command-line-cheat-sheet">Command Line Cheat Sheet</h1>
-<h2 id="navigation">Navigation</h2>
-<pre><code class="language-bash">pwd                 # Print working directory
-ls                  # List directory contents
-ls -la              # List detailed contents, including hidden files
-cd &lt;directory&gt;      # Change directory
-cd ..               # Move up one directory
-cd ~                # Go to home directory
-</code></pre>
-<h2 id="file-operations">File Operations</h2>
-<pre><code class="language-bash">touch &lt;file&gt;        # Create a new file
-mkdir &lt;directory&gt;   # Create a new directory
-cp &lt;source&gt; &lt;dest&gt;  # Copy file or directory
-mv &lt;source&gt; &lt;dest&gt;  # Move or rename file or directory
-rm &lt;file&gt;           # Remove a file
-rm -r &lt;directory&gt;   # Remove a directory and its contents
-</code></pre>
-<h2 id="file-viewing-and-editing">File Viewing and Editing</h2>
-<pre><code class="language-bash">cat &lt;file&gt;          # Display file contents
-less &lt;file&gt;         # View file contents with pagination
-head &lt;file&gt;         # Show first 10 lines of file
-tail &lt;file&gt;         # Show last 10 lines of file
-nano &lt;file&gt;         # Open file in nano text editor
-vim &lt;file&gt;          # Open file in vim text editor
-</code></pre>
-<h2 id="file-permissions">File Permissions</h2>
-<pre><code class="language-bash">chmod +x &lt;file&gt;     # Make file executable
-chmod 755 &lt;file&gt;    # Set read, write, execute permissions
-chown &lt;user&gt; &lt;file&gt; # Change file owner
-</code></pre>
-<h2 id="system-information">System Information</h2>
-<pre><code class="language-bash">uname -a            # Display system information
-df -h               # Show disk usage
-free -h             # Display free and used memory
-top                 # Show running processes (interactive)
-ps aux              # List all running processes
-</code></pre>
-<h2 id="network">Network</h2>
-<pre><code class="language-bash">ping &lt;host&gt;         # Ping a host
-ssh &lt;user&gt;@&lt;host&gt;   # SSH into a remote machine
-scp &lt;file&gt; &lt;user&gt;@&lt;host&gt;:&lt;path&gt; # Secure copy file to remote host
-wget &lt;url&gt;          # Download file from web
-curl &lt;url&gt;          # Send HTTP request
-</code></pre>
-<h2 id="package-management-debianubuntu">Package Management (Debian/Ubuntu)</h2>
-<pre><code class="language-bash">apt update          # Update package list
-apt upgrade         # Upgrade installed packages
-apt install &lt;pkg&gt;   # Install a package
-apt remove &lt;pkg&gt;    # Remove a package
-</code></pre>
-<h2 id="text-processing">Text Processing</h2>
-<pre><code class="language-bash">grep &lt;pattern&gt; &lt;file&gt;    # Search for pattern in file
-sed 's/old/new/g' &lt;file&gt; # Replace text in file
-awk '{print $1}' &lt;file&gt;  # Print first column of file
-</code></pre>
-<h2 id="process-management">Process Management</h2>
-<pre><code class="language-bash">&lt;command&gt; &amp;         # Run command in background
-jobs                # List background jobs
-fg                  # Bring most recent job to foreground
-kill &lt;pid&gt;          # Terminate process by ID
-</code></pre>
-<h2 id="shortcuts">Shortcuts</h2>
-<pre><code class="language-bash">Ctrl + C            # Interrupt current process
-Ctrl + Z            # Suspend current process
-Ctrl + D            # Exit current shell
-Ctrl + L            # Clear screen
-Ctrl + R            # Search command history
-</code></pre>
-<h2 id="miscellaneous">Miscellaneous</h2>
-<pre><code class="language-bash">man &lt;command&gt;       # Display manual for command
-history             # Show command history
-echo $PATH          # Display PATH environment variable
-which &lt;command&gt;     # Show full path of command
-</code></pre>
-<p>Remember, these commands may vary slightly depending on your specific operating system and shell. Always refer to the man pages (<code>man &lt;command&gt;</code>) for detailed information about each command.</p>
+                
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../advanced-command-line-features/" class="btn btn-neutral float-left" title="Advanced Command Line Features"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../bash/" class="btn btn-neutral float-right" title="Bash Scripting">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../advanced-fast-api/" class="btn btn-neutral float-left" title="Advanced FastAPI"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../streamlit-fundamentals/" class="btn btn-neutral float-right" title="Streamlit Fundamentals">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -253,10 +155,10 @@ which &lt;command&gt;     # Show full path of command
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../advanced-command-line-features/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../advanced-fast-api/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../bash/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../streamlit-fundamentals/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
