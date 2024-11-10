@@ -151,6 +151,12 @@ p {
   background: #0a2550;
   color: #ffffff;
 }
+.wy-menu-vertical li.current a {
+  border: none;
+  background: #0a2550;
+  color: #ffffff;
+  padding: .4045em 2.427em;
+}
 
 /* Remove extra spacing */
 .wy-menu-vertical li.toctree-l1 {
