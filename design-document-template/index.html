@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Software Engineering Design Document Template - Vets Who Code SOPs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Software Engineering Design Document Template";
+        var mkdocs_page_input_path = "design-document-template.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Vets Who Code SOPs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../code-of-conduct/">Code Of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Curriculum</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Command Line</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../getting-to-know-the-command-line/">Getting To Know The Command Line</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-basics/">Command Line Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-text-manipulation/">Command Line Text Manipulation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-utilities/">Command Line Utilities</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-command-line-features/">Advanced Command Line Features</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../command-line-cheat-sheet/">Command Line Cheat Sheet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../bash/">Bash Scripting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Git</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github-voice-overview/">AI Voice Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-and-github/">Git And Github</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../basics-of-git/">Git Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git-flow/">Git Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../github-cli/">Github CLI</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../intro-to-python/">Introduction To Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-python-operations/">Advanced Python Operations</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Patterns</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../coding-patterns-for-interviews/">Coding Interview Patterns</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../software-design-patterns/">Software Engineering Design Patterns</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../system-design-patterns/">System Design Patterns</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../data-patterns/">Data Patterns</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >FastAPI</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api/">Introduction To FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-fast-api/">Advanced FastAPI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../fast-api-testing/">Testing In FastAPI</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Streamlit</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../streamlit-fundamentals/">Streamlit Fundamentals</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../advanced-streamlit/">Advanced Streamlit</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Docs</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Software Engineering Design Document Template</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#feature-name">Feature Name 🎯</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-big-picture">The Big Picture 🖼️</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#whats-the-problem">What's the Problem?</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#whats-our-goal">What's Our Goal?</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#how-will-we-know-its-working">How Will We Know It's Working?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#whos-involved">Who's Involved? 👥</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#team-members">Team Members</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#who-needs-to-approve">Who Needs to Approve?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#what-were-building">What We're Building 🛠️</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#this-feature-will">This Feature Will:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#this-feature-wont">This Feature Won't:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#user-stories">User Stories 📖</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#design-sketches">Design Sketches 🎨</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#technical-details">Technical Details 💻</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#tools-well-use">Tools We'll Use</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#datastorage">Data/Storage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#connections">Connections</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-challenges">Possible Challenges 🚧</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#what-could-go-wrong">What Could Go Wrong?</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#how-well-handle-it">How We'll Handle It</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#testing-plan">Testing Plan ✅</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#what-well-test">What We'll Test</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#how-well-test">How We'll Test</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#launch-plan">Launch Plan 🚀</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#how-well-release-it">How We'll Release It</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#how-well-track-success">How We'll Track Success</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#who-owns-it">Who Owns It? 👤</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#timeline">Timeline 📅</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ready-to-start">Ready to Start? ✍️</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#notes">Notes 📝</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Vets Who Code SOPs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Curriculum</li>
+          <li class="breadcrumb-item">Docs</li>
+      <li class="breadcrumb-item active">Software Engineering Design Document Template</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vets-who-code-feature-design-document">Vets Who Code Feature Design Document</h1>
+<h2 id="feature-name">Feature Name 🎯</h2>
+<p>[Give your feature a simple, clear name]</p>
+<p>Example: "Add Dark Mode to VWC Website"</p>
+<h2 id="the-big-picture">The Big Picture 🖼️</h2>
+<h3 id="whats-the-problem">What's the Problem?</h3>
+<p>[Explain what needs fixing - keep it simple!]</p>
+<p>Example: "Website is too bright at night, making it hard for veterans to read content in low-light conditions"</p>
+<h3 id="whats-our-goal">What's Our Goal?</h3>
+<p>[What are we trying to achieve?]</p>
+<p>Example: "Make the website easier to read at any time of day"</p>
+<h3 id="how-will-we-know-its-working">How Will We Know It's Working?</h3>
+<p>[List 2-3 simple ways to measure success]</p>
+<p>Example:
+- Users can switch between light and dark modes
+- Website remembers user's preference
+- Positive feedback from veterans</p>
+<h2 id="whos-involved">Who's Involved? 👥</h2>
+<h3 id="team-members">Team Members</h3>
+<ul>
+<li>Project Lead: [Name]</li>
+<li>Mentor: [Name]</li>
+<li>Fellow Veterans: [Names]</li>
+</ul>
+<h3 id="who-needs-to-approve">Who Needs to Approve?</h3>
+<ul>
+<li>[ ] Mentor</li>
+<li>[ ] Project Lead</li>
+<li>[ ] Team Vote</li>
+</ul>
+<h2 id="what-were-building">What We're Building 🛠️</h2>
+<h3 id="this-feature-will">This Feature Will:</h3>
+<p>[List what you're going to build]</p>
+<p>Example:
+- Add a dark mode toggle button
+- Create dark color scheme
+- Save user's preference</p>
+<h3 id="this-feature-wont">This Feature Won't:</h3>
+<p>[List what's not included - this helps prevent scope creep!]</p>
+<p>Example:
+- Won't affect the mobile app
+- Won't change the logo
+- Won't modify content</p>
+<h2 id="user-stories">User Stories 📖</h2>
+<p>Write 1-2 user stories like this:</p>
+<p>"As a veteran using the website at night,
+I want to switch to dark mode,
+So that I can read comfortably without eye strain"</p>
+<h2 id="design-sketches">Design Sketches 🎨</h2>
+<p>[Add simple drawings or wireframes]
+- Use tools like Excalidraw or Figma
+- Include before/after views
+- Mark interactive elements</p>
+<h2 id="technical-details">Technical Details 💻</h2>
+<h3 id="tools-well-use">Tools We'll Use</h3>
+<ul>
+<li>HTML: [Explain what you'll modify]</li>
+<li>CSS: [List new styles needed]</li>
+<li>JavaScript: [Describe new functions]</li>
+<li>React: [If using React, list components]</li>
+</ul>
+<h3 id="datastorage">Data/Storage</h3>
+<ul>
+<li>What data needs to be saved?</li>
+<li>Where will it be stored?</li>
+<li>How long should it be kept?</li>
+</ul>
+<h3 id="connections">Connections</h3>
+<ul>
+<li>Does it need an API?</li>
+<li>Does it connect to other features?</li>
+<li>Any external services needed?</li>
+</ul>
+<h2 id="possible-challenges">Possible Challenges 🚧</h2>
+<h3 id="what-could-go-wrong">What Could Go Wrong?</h3>
+<p>[List 2-3 main concerns]</p>
+<p>Example:
+- Dark mode might conflict with existing styles
+- Some users might have custom browser settings
+- Storage might not work in all browsers</p>
+<h3 id="how-well-handle-it">How We'll Handle It</h3>
+<p>[For each challenge, write a simple solution]</p>
+<p>Example:
+- Test with different browser settings
+- Add a reset button
+- Use multiple storage methods as backup</p>
+<h2 id="testing-plan">Testing Plan ✅</h2>
+<h3 id="what-well-test">What We'll Test</h3>
+<p>[List the main things to check]</p>
+<p>Example:
+- Toggle works on all pages
+- Colors meet accessibility standards
+- Preference saves correctly</p>
+<h3 id="how-well-test">How We'll Test</h3>
+<p>[Keep it simple but thorough]</p>
+<p>Example:
+- Manual testing on different browsers
+- Accessibility checker tools
+- Ask fellow veterans to try it</p>
+<h2 id="launch-plan">Launch Plan 🚀</h2>
+<h3 id="how-well-release-it">How We'll Release It</h3>
+<ol>
+<li>Test with small group</li>
+<li>Fix any issues</li>
+<li>Release to everyone</li>
+<li>Get feedback</li>
+</ol>
+<h3 id="how-well-track-success">How We'll Track Success</h3>
+<ul>
+<li>Watch for error reports</li>
+<li>Ask for user feedback</li>
+<li>Check if people use it</li>
+</ul>
+<h2 id="who-owns-it">Who Owns It? 👤</h2>
+<ul>
+<li>Who will maintain it?</li>
+<li>Who should people contact with issues?</li>
+<li>Where's the documentation?</li>
+</ul>
+<h2 id="timeline">Timeline 📅</h2>
+<p>[Break it into small steps with dates]</p>
+<p>Example:
+- Design Review: [Date]
+- Start Coding: [Date]
+- Testing: [Date]
+- Launch: [Date]</p>
+<h2 id="ready-to-start">Ready to Start? ✍️</h2>
+<p>Get these signatures:</p>
+<ul>
+<li>[ ] Feature Owner: <strong><em>_</em></strong><strong><em>_</em>_ Date: </strong>___</li>
+<li>[ ] Mentor: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_ Date: </em></strong>__</li>
+<li>[ ] Team Lead: <strong><em>_</em></strong><strong><em>_</em></strong>_ Date: _____</li>
+</ul>
+<h2 id="notes">Notes 📝</h2>
+<p>[Any other important information]</p>
+<p>Remember:
+- Keep it simple
+- Ask for help when needed
+- Document as you go
+- Test everything twice</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../advanced-streamlit/" class="btn btn-neutral float-left" title="Advanced Streamlit"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../advanced-streamlit/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

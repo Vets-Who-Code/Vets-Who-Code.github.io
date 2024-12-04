@@ -109,6 +109,52 @@
                 <li class="toctree-l2"><a class="reference internal" href="../advanced-fast-api/">Advanced FastAPI</a>
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">Testing In FastAPI</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#mission-brief-testing-strategy">Mission Brief: Testing Strategy</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-1-testing-setup">Phase 1: Testing Setup</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#required-equipment">Required Equipment</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#basic-test-configuration-conftestpy">Basic Test Configuration (conftest.py)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-2-basic-unit-tests">Phase 2: Basic Unit Tests</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#testing-api-endpoints">Testing API Endpoints</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#testing-authentication">Testing Authentication</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-3-advanced-testing-operations">Phase 3: Advanced Testing Operations</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#testing-database-operations">Testing Database Operations</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#testing-background-tasks">Testing Background Tasks</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-4-integration-testing">Phase 4: Integration Testing</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#testing-complete-workflows">Testing Complete Workflows</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-5-test-coverage-and-reporting">Phase 5: Test Coverage and Reporting</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#running-tests-with-coverage">Running Tests with Coverage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#coverage-configuration-setupcfg">Coverage Configuration (setup.cfg)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#field-exercise-complete-test-suite">Field Exercise: Complete Test Suite</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mission-parameters-best-practices">Mission Parameters (Best Practices)</a>
+    </li>
+    </ul>
                 </li>
     </ul>
                   </li>
@@ -117,6 +163,12 @@
                 <li class="toctree-l2"><a class="reference internal" href="../streamlit-fundamentals/">Streamlit Fundamentals</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../advanced-streamlit/">Advanced Streamlit</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Docs</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../design-document-template/">Software Engineering Design Document Template</a>
                 </li>
     </ul>
                   </li>
@@ -146,7 +198,362 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="vets-who-code-fastapi-testing-operations-guide">Vets Who Code - FastAPI Testing Operations Guide 🎖️</h1>
+<h2 id="mission-brief-testing-strategy">Mission Brief: Testing Strategy</h2>
+<p>Testing is like a pre-combat equipment check - it ensures everything works before deployment.</p>
+<h2 id="phase-1-testing-setup">Phase 1: Testing Setup</h2>
+<h3 id="required-equipment">Required Equipment</h3>
+<pre><code class="language-bash"># Install testing dependencies
+pip install pytest httpx pytest-asyncio pytest-cov
+
+# Project structure
+military_api/
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── models.py
+│   ├── routes.py
+│   └── database.py
+└── tests/
+    ├── __init__.py
+    ├── test_main.py
+    ├── test_routes.py
+    └── conftest.py
+</code></pre>
+<h3 id="basic-test-configuration-conftestpy">Basic Test Configuration (conftest.py)</h3>
+<pre><code class="language-python"># tests/conftest.py
+import pytest
+from fastapi.testclient import TestClient
+from typing import Generator
+from app.main import app
+from app.database import Base, get_db, engine
+
+@pytest.fixture(scope=&quot;function&quot;)
+def test_client() -&gt; Generator:
+    &quot;&quot;&quot;
+    Creates a test client for API testing operations
+    &quot;&quot;&quot;
+    with TestClient(app) as client:
+        yield client
+
+@pytest.fixture(scope=&quot;function&quot;)
+def test_db():
+    &quot;&quot;&quot;
+    Creates a clean test database for each test
+    &quot;&quot;&quot;
+    Base.metadata.create_all(bind=engine)
+    yield
+    Base.metadata.drop_all(bind=engine)
+</code></pre>
+<h2 id="phase-2-basic-unit-tests">Phase 2: Basic Unit Tests</h2>
+<h3 id="testing-api-endpoints">Testing API Endpoints</h3>
+<pre><code class="language-python"># tests/test_routes.py
+import pytest
+from fastapi.testclient import TestClient
+
+def test_read_main(test_client: TestClient):
+    &quot;&quot;&quot;
+    Tests the base endpoint response
+    &quot;&quot;&quot;
+    response = test_client.get(&quot;/&quot;)
+    assert response.status_code == 200
+    assert response.json() == {
+        &quot;status&quot;: &quot;operational&quot;,
+        &quot;message&quot;: &quot;VWC API Standing By&quot;
+    }
+
+def test_create_service_member(test_client: TestClient):
+    &quot;&quot;&quot;
+    Tests service member creation endpoint
+    &quot;&quot;&quot;
+    test_data = {
+        &quot;id&quot;: 1,
+        &quot;first_name&quot;: &quot;John&quot;,
+        &quot;last_name&quot;: &quot;Smith&quot;,
+        &quot;rank&quot;: &quot;SGT&quot;,
+        &quot;branch&quot;: &quot;Army&quot;,
+        &quot;service_start&quot;: &quot;2020-01-01&quot;,
+        &quot;status&quot;: &quot;Active&quot;
+    }
+
+    response = test_client.post(&quot;/personnel/&quot;, json=test_data)
+    assert response.status_code == 200
+    data = response.json()
+    assert data[&quot;first_name&quot;] == test_data[&quot;first_name&quot;]
+    assert data[&quot;rank&quot;] == test_data[&quot;rank&quot;]
+</code></pre>
+<h3 id="testing-authentication">Testing Authentication</h3>
+<pre><code class="language-python"># tests/test_auth.py
+import pytest
+from fastapi.testclient import TestClient
+
+def test_login(test_client: TestClient):
+    &quot;&quot;&quot;
+    Tests user authentication
+    &quot;&quot;&quot;
+    response = test_client.post(
+        &quot;/token&quot;,
+        data={&quot;username&quot;: &quot;test_user&quot;, &quot;password&quot;: &quot;test_pass&quot;}
+    )
+    assert response.status_code == 200
+    assert &quot;access_token&quot; in response.json()
+
+@pytest.mark.parametrize(
+    &quot;credentials,expected_status&quot;,
+    [
+        ({&quot;username&quot;: &quot;wrong_user&quot;, &quot;password&quot;: &quot;test_pass&quot;}, 401),
+        ({&quot;username&quot;: &quot;test_user&quot;, &quot;password&quot;: &quot;wrong_pass&quot;}, 401),
+    ],
+)
+def test_login_invalid_credentials(
+    test_client: TestClient,
+    credentials,
+    expected_status
+):
+    &quot;&quot;&quot;
+    Tests authentication with invalid credentials
+    &quot;&quot;&quot;
+    response = test_client.post(&quot;/token&quot;, data=credentials)
+    assert response.status_code == expected_status
+</code></pre>
+<h2 id="phase-3-advanced-testing-operations">Phase 3: Advanced Testing Operations</h2>
+<h3 id="testing-database-operations">Testing Database Operations</h3>
+<pre><code class="language-python"># tests/test_database.py
+import pytest
+from sqlalchemy.orm import Session
+from app.models import ServiceMember
+from datetime import date
+
+def test_create_service_member(test_db: Session):
+    &quot;&quot;&quot;
+    Tests database operations for service member creation
+    &quot;&quot;&quot;
+    member = ServiceMember(
+        id=1,
+        first_name=&quot;John&quot;,
+        last_name=&quot;Smith&quot;,
+        rank=&quot;SGT&quot;,
+        branch=&quot;Army&quot;,
+        service_start=date(2020, 1, 1)
+    )
+    test_db.add(member)
+    test_db.commit()
+
+    db_member = test_db.query(ServiceMember).first()
+    assert db_member.first_name == &quot;John&quot;
+    assert db_member.rank == &quot;SGT&quot;
+
+@pytest.mark.asyncio
+async def test_get_service_member(test_db: Session):
+    &quot;&quot;&quot;
+    Tests async database operations
+    &quot;&quot;&quot;
+    # Setup test data
+    member = ServiceMember(
+        id=1,
+        first_name=&quot;John&quot;,
+        last_name=&quot;Smith&quot;,
+        rank=&quot;SGT&quot;,
+        branch=&quot;Army&quot;,
+        service_start=date(2020, 1, 1)
+    )
+    test_db.add(member)
+    test_db.commit()
+
+    # Test retrieval
+    db_member = test_db.query(ServiceMember).filter(
+        ServiceMember.id == 1
+    ).first()
+    assert db_member is not None
+    assert db_member.first_name == &quot;John&quot;
+</code></pre>
+<h3 id="testing-background-tasks">Testing Background Tasks</h3>
+<pre><code class="language-python"># tests/test_tasks.py
+import pytest
+from fastapi import BackgroundTasks
+from unittest.mock import Mock, patch
+
+def test_background_task_creation(test_client: TestClient):
+    &quot;&quot;&quot;
+    Tests background task scheduling
+    &quot;&quot;&quot;
+    with patch('app.tasks.update_mission_status') as mock_task:
+        response = test_client.post(&quot;/missions/1/status&quot;)
+        assert response.status_code == 200
+        mock_task.assert_called_once_with(&quot;1&quot;)
+
+@pytest.mark.asyncio
+async def test_award_update_task():
+    &quot;&quot;&quot;
+    Tests award update background task
+    &quot;&quot;&quot;
+    mock_db = Mock()
+    record_id = 1
+    award = &quot;Purple Heart&quot;
+
+    with patch('asyncio.sleep'):  # Mock the sleep function
+        await update_award_database(record_id, award)
+        mock_db.update_award.assert_called_once_with(
+            record_id,
+            award
+        )
+</code></pre>
+<h2 id="phase-4-integration-testing">Phase 4: Integration Testing</h2>
+<h3 id="testing-complete-workflows">Testing Complete Workflows</h3>
+<pre><code class="language-python"># tests/test_integration.py
+import pytest
+from fastapi.testclient import TestClient
+
+def test_complete_service_record_workflow(test_client: TestClient):
+    &quot;&quot;&quot;
+    Tests complete service record workflow:
+    1. Create service member
+    2. Add awards
+    3. Update status
+    4. Retrieve complete record
+    &quot;&quot;&quot;
+    # Create service member
+    member_data = {
+        &quot;id&quot;: 1,
+        &quot;first_name&quot;: &quot;John&quot;,
+        &quot;last_name&quot;: &quot;Smith&quot;,
+        &quot;rank&quot;: &quot;SGT&quot;,
+        &quot;branch&quot;: &quot;Army&quot;,
+        &quot;service_start&quot;: &quot;2020-01-01&quot;
+    }
+    response = test_client.post(&quot;/personnel/&quot;, json=member_data)
+    assert response.status_code == 200
+    member_id = response.json()[&quot;id&quot;]
+
+    # Add award
+    award_data = {
+        &quot;type&quot;: &quot;Purple Heart&quot;,
+        &quot;award_date&quot;: &quot;2021-06-15&quot;
+    }
+    response = test_client.post(
+        f&quot;/personnel/{member_id}/awards&quot;,
+        json=award_data
+    )
+    assert response.status_code == 200
+
+    # Verify final record
+    response = test_client.get(f&quot;/personnel/{member_id}&quot;)
+    assert response.status_code == 200
+    data = response.json()
+    assert len(data[&quot;awards&quot;]) == 1
+    assert data[&quot;awards&quot;][0][&quot;type&quot;] == &quot;Purple Heart&quot;
+</code></pre>
+<h2 id="phase-5-test-coverage-and-reporting">Phase 5: Test Coverage and Reporting</h2>
+<h3 id="running-tests-with-coverage">Running Tests with Coverage</h3>
+<pre><code class="language-bash"># Run tests with coverage report
+pytest --cov=app tests/
+</code></pre>
+<h3 id="coverage-configuration-setupcfg">Coverage Configuration (setup.cfg)</h3>
+<pre><code class="language-ini">[coverage:run]
+source = app
+omit = tests/*
+
+[coverage:report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    raise NotImplementedError
+</code></pre>
+<h2 id="field-exercise-complete-test-suite">Field Exercise: Complete Test Suite</h2>
+<p>Here's a practical example combining all testing concepts:</p>
+<pre><code class="language-python"># tests/test_awards_system.py
+import pytest
+from fastapi.testclient import TestClient
+from app.models import Award, ServiceMember
+from datetime import date
+
+class TestAwardsSystem:
+    @pytest.fixture
+    def test_member(self, test_db):
+        &quot;&quot;&quot;Creates test service member&quot;&quot;&quot;
+        member = ServiceMember(
+            id=1,
+            first_name=&quot;John&quot;,
+            last_name=&quot;Smith&quot;,
+            rank=&quot;SGT&quot;,
+            branch=&quot;Army&quot;,
+            service_start=date(2020, 1, 1)
+        )
+        test_db.add(member)
+        test_db.commit()
+        return member
+
+    def test_create_award(
+        self,
+        test_client: TestClient,
+        test_member: ServiceMember
+    ):
+        &quot;&quot;&quot;Tests award creation&quot;&quot;&quot;
+        award_data = {
+            &quot;type&quot;: &quot;Purple Heart&quot;,
+            &quot;recipient_id&quot;: test_member.id,
+            &quot;award_date&quot;: &quot;2021-06-15&quot;,
+            &quot;citation&quot;: &quot;Wounded in action&quot;
+        }
+        response = test_client.post(&quot;/awards/&quot;, json=award_data)
+        assert response.status_code == 200
+        data = response.json()
+        assert data[&quot;type&quot;] == award_data[&quot;type&quot;]
+        assert data[&quot;recipient_id&quot;] == test_member.id
+
+    def test_get_member_awards(
+        self,
+        test_client: TestClient,
+        test_member: ServiceMember
+    ):
+        &quot;&quot;&quot;Tests award retrieval&quot;&quot;&quot;
+        response = test_client.get(
+            f&quot;/personnel/{test_member.id}/awards&quot;
+        )
+        assert response.status_code == 200
+        data = response.json()
+        assert isinstance(data[&quot;awards&quot;], list)
+
+    @pytest.mark.asyncio
+    async def test_award_background_processing(
+        self,
+        test_client: TestClient,
+        test_member: ServiceMember
+    ):
+        &quot;&quot;&quot;Tests award processing background task&quot;&quot;&quot;
+        with patch('app.tasks.process_award') as mock_task:
+            response = test_client.post(
+                f&quot;/awards/process/{test_member.id}&quot;
+            )
+            assert response.status_code == 200
+            mock_task.assert_called_once()
+</code></pre>
+<h2 id="mission-parameters-best-practices">Mission Parameters (Best Practices)</h2>
+<ol>
+<li>Testing Guidelines:</li>
+<li>Write tests before code (TDD)</li>
+<li>Test both success and failure cases</li>
+<li>Use meaningful test names</li>
+<li>Keep tests independent</li>
+<li>
+<p>Mock external services</p>
+</li>
+<li>
+<p>Testing Structure:</p>
+</li>
+<li>Unit tests for individual components</li>
+<li>Integration tests for workflows</li>
+<li>End-to-end tests for complete features</li>
+<li>Performance tests for critical paths</li>
+</ol>
+<p>Remember:</p>
+<ul>
+<li>Test early and often</li>
+<li>Maintain test coverage</li>
+<li>Document test cases</li>
+<li>Update tests with code changes</li>
+</ul>
+<p>🇺🇸 #VetsWhoCode</p>
               
             </div>
           </div><footer>
