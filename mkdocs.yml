@@ -33,6 +33,9 @@ nav:
     - Streamlit:
         - Streamlit Fundamentals: streamlit-fundamentals.md
         - Advanced Streamlit: advanced-streamlit.md
+        
+  - Docs:
+        - Software Engineering Design Document Template: design-document-template.md
 
 theme:
   name: readthedocs

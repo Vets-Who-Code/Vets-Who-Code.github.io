@@ -292,5 +292,3 @@ Remember:
 - Stay mission-focused
 
 🇺🇸 #VetsWhoCode
-
-Need clarification on any operations or ready for specific exercises?
